@@ -92,7 +92,7 @@ CREATE TABLE flashcards_review_history (
     review_result review_result,
     next_review_date TIMESTAMP,
     ease_factor REAL DEFAULT 2.5,
-    repetitions INTEGER
+    repetitions INTEGER DEFAULT 0
 );
 
 CREATE TABLE user_flashcards (
@@ -112,7 +112,7 @@ CREATE TABLE user_flashcards_review_history (
     review_result review_result,
     next_review_date TIMESTAMP,
     ease_factor REAL DEFAULT 2.5, 
-    repetitions INTEGER
+    repetitions INTEGER DEFAULT 0
 );
 
 CREATE TABLE user_flashcards_normal (
