@@ -1,18 +1,21 @@
-import React, {useState, useEffect} from 'react';
-
+import React, {useState, useEffect, useContext} from 'react';
+import { UserContext } from '../contexts/UserContext';
+import { TeacherProfile } from '..';
 
 export default function TeacherProfileForm() {
+    const { contextUsername } = useContext(UserContext);
     const [fullName, setFullName] = useState("");
     const [biography, setBiography] = useState("");
     const [homeLanguage, setHomeLanguage] = useState("");
     const [qualifications, setQualifications] = useState("");
     const [image, setImage] =  useState("")
+    const [data, setData] = useState([]);  
 
     
     const handleInputChange = (e) => {
         const { id, value } = e.target;
 
-        if (id === "fullname") {
+        if (id === "fullName") {
           setFullName(value);
         } else if (id === "biography") {
           setBiography(value);
@@ -61,20 +64,38 @@ export default function TeacherProfileForm() {
             })}
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
-            const data = await response.json();            
+            await response.json();  
+                      
             
         } catch (error) {
             console.log(error)
         }
     }
+
+    const searchTeacherAPI = async() => {
+        try {
+            const response = await fetch(`http://localhost:3000/api/TEACHER/${contextUsername}`);
+            const result = await response.json(); 
+            setData(result);           
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        searchTeacherAPI();
+
+    }, [handleSubmit]);
   
     return (
-        <>
+        <>  
+            {<TeacherProfile data={data} />}
             <p>Profile</p>
             <form className="Form" onSubmit={handleSubmit}>
-        <div className="fullname">
-            <label className="form_label" htmlFor="fullname">Full Name </label>
-            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="text" id="fullname" placeholder="Full Name"/>       
+        <div className="fullName">
+            <label className="form_label" htmlFor="fullName">Full Name </label>
+            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="text" id="fullName" placeholder="Full Name"/>       
         </div>
         <div className="homeLanguage">
             <label className="form_label" htmlFor="homeLanguage">Home Language </label>

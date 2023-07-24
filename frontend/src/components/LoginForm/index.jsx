@@ -1,9 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 //import {useNavigate} from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 
 export default function LoginForm() {
 
     //const navigate = useNavigate() 
+    const { setContextUsername } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -43,7 +45,8 @@ export default function LoginForm() {
 
             localStorage.setItem("username", data.username);
             localStorage.setItem("token", data.token);
-            //navigate("/home")          
+            //navigate("/home")    
+            setContextUsername(data.username);      
             
         } catch (error) {
             alert(error)
