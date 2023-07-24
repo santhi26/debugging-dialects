@@ -9,8 +9,8 @@ export default function Header () {
                 <nav>
                     <NavLink to="/" style={styles}>Home</NavLink>
                     <NavLink to="/registerHome" style={styles}>Register</NavLink>
-                    <NavLink to="/student" style={styles}>student page</NavLink>
-                    <NavLink to="/teacher" style={styles}>teacher page</NavLink>
+                    <NavLink to="/Login" style={styles}>Login</NavLink>
+                    
                 </nav>
             </header>
             <Outlet />
