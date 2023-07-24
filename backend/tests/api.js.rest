@@ -1,0 +1,38 @@
+
+
+###
+# GET A STUDENTS LEVEL
+GET http://localhost:3000/api/student/1/level
+###
+
+###
+# GET A FLASHCARD
+GET http://localhost:3000/api/flashcard/1
+###
+
+###
+# SEE FLASHCARDS DUE
+GET http://localhost:3000/api/flashcard/due/1
+###
+
+###
+# MARK A FLASHCARD AS REVIEWED
+POST http://localhost:3000/api/flashcard/3/review
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "reviewResult": "Good"
+}
+###
+
+###
+# MARK A FLASHCARD AS REVIEWED THAT THEY HAVEN'T REVIEWED BEFORE
+POST http://localhost:3000/api/flashcard/3/review
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "reviewResult": "Good"
+}
+###
