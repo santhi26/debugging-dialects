@@ -1,4 +1,5 @@
 const Flashcard = require('../Models/flashcards');
+const Students = require('../Models/students');
 
 // Fetch a flashcard by its ID
 const getFlashcard = async (req, res) => {
@@ -15,6 +16,29 @@ const getFlashcard = async (req, res) => {
     }
   }
 
+// Fetch all due flashcards for a user by user's ID
+const getDueFlashcards = async (req, res) => {
+  const userId = parseInt(req.params.userId, 10)
+
+  // Fetch user's level
+  const level = await Students.getLevel(userId);
+
+  if (!level || level.error) {
+    return res.status(500).json({ error: level.error });
+  }
+
+  const flashcards = await Flashcard.getDueFlashcards(userId, level);
+
+  if (flashcards.error) {
+    return res.status(500).json({ error: flashcards.error });
+  } else if (!flashcards) {
+    return res.status(404).json({ error: 'No due flashcards found' });
+  } else {
+    return res.status(200).json({ dueFlashcards: flashcards });
+  }
+}
+
 module.exports = {
-    getFlashcard,
+  getFlashcard,
+  getDueFlashcards,
 };
