@@ -28,7 +28,7 @@ CREATE TABLE students (
     student_name VARCHAR(255),
     student_home_language VARCHAR(255),
     student_rating INTEGER,
-    student_level INTEGER
+    student_level INTEGER DEFAULT 1
 );
 
 CREATE TABLE teachers (
