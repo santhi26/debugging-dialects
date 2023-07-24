@@ -48,6 +48,7 @@ const reviewFlashcard = async (req, res) => {
     res.status(500).json({ error: flashcardReview.error })
   } else {
     const updatedReview = sm2.review(flashcardReview, reviewResult);
+    updatedReview.reviewResult = reviewResult;
     const result = await Flashcard.updateReview(card_id, user_id, updatedReview);
     
     if (result.error) {
@@ -57,6 +58,7 @@ const reviewFlashcard = async (req, res) => {
     }
   }
 }
+
 
 module.exports = {
   getFlashcard,

@@ -1,5 +1,5 @@
 const review = (flashcard, reviewResult) => {
-  let easeFactor = 2.5; // The fixed ease factor value
+  let easeFactor = flashcard.easeFactor; // The initial ease factor value
 
   // Update the ease factor based on the user's rating
   if (reviewResult === 'Easy') {

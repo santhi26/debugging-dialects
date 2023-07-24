@@ -62,8 +62,8 @@ const Flashcard = {
   updateReview: async (card_id, user_id, review) => {
     try {
       const result = await db.query(
-        'UPDATE flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3 WHERE card_id = $4 AND user_id = $5 RETURNING *', 
-        [review.nextReviewDate, review.newEaseFactor, review.repetition, card_id, user_id]
+        'UPDATE flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3, review_result = $4 WHERE card_id = $5 AND user_id = $6 RETURNING *', 
+        [review.nextReviewDate, review.newEaseFactor, review.repetition, review.reviewResult, card_id, user_id]
       );
 
       return result.rows[0];
@@ -72,6 +72,7 @@ const Flashcard = {
       return { error: err.message };
     }
   },
+
 };
 
 module.exports = Flashcard;
