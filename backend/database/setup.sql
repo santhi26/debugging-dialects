@@ -12,7 +12,6 @@ DROP TABLE IF EXISTS teachers CASCADE;
 DROP TABLE IF EXISTS students CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
-
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
@@ -36,7 +35,7 @@ CREATE TABLE teachers (
     teacher_name VARCHAR(255),
     teacher_profile_image TEXT,
     teacher_biography TEXT,
-    student_home_language VARCHAR(255),
+    teacher_home_language VARCHAR(255),
     qualifications VARCHAR(255),
     teacher_rating INTEGER,
     earnings INTEGER,
@@ -82,14 +81,17 @@ CREATE TABLE flashcards_normal (
     PRIMARY KEY (flashcard_id, title)
 );
 
+CREATE TYPE review_result AS ENUM ('Easy', 'Good', 'Hard', 'Wrong');
+
 CREATE TABLE flashcards_review_history (
     review_id SERIAL PRIMARY KEY,
     card_id INTEGER REFERENCES flashcards(flashcard_id),
     user_id INTEGER REFERENCES users(user_id),
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    review_result BOOLEAN,
+    review_result review_result,
     next_review_date TIMESTAMP,
-    score INTEGER
+    ease_factor REAL,
+    repetitions INTEGER
 );
 
 CREATE TABLE user_flashcards (
@@ -106,9 +108,10 @@ CREATE TABLE user_flashcards_review_history (
     card_id INTEGER REFERENCES user_flashcards(flashcard_id),
     user_id INTEGER REFERENCES users(user_id),
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    review_result BOOLEAN,
+    review_result review_result,
     next_review_date TIMESTAMP,
-    score INTEGER
+    ease_factor REAL, 
+    repetitions INTEGER
 );
 
 CREATE TABLE user_flashcards_normal (
@@ -118,16 +121,6 @@ CREATE TABLE user_flashcards_normal (
     back TEXT,
     PRIMARY KEY (flashcard_id, title)
 );
-
-
-
-
-
-
-
-
-
-
 
 -- Insert English flashcards data
 INSERT INTO flashcards (type, level)
@@ -176,3 +169,21 @@ VALUES
     (1, 1, 'Hi there!', 2),
     (1, 1, 'How are you?', 3),
     (2, 3, 'Hello!', 1);
+
+INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
+VALUES
+    (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
+    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2),
+    (3, 2, 'Good', '2023-08-03 12:00:00', 2.7, 3);
+
+INSERT INTO user_flashcards (flashcard_id, user_id, front, back)
+VALUES
+    (1, 1, 'Hello', 'Hi'),
+    (2, 1, 'How are you?', 'I am fine, thank you.'),
+    (3, 2, 'Goodbye', 'See you later.');
+
+INSERT INTO user_flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
+VALUES
+    (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
+    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2),
+    (3, 2, 'Good', '2023-08-03 12:00:00', 2.7, 3);

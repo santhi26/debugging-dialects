@@ -38,7 +38,28 @@ const getDueFlashcards = async (req, res) => {
   }
 }
 
+// For reviewing flashcards
+const reviewFlashcard = async (req, res) => {
+  const { card_id, user_id, reviewResult } = req.body;
+
+  const flashcardReview = await Flashcard.getReview(card_id, user_id);
+
+  if (flashcardReview.error) {
+    res.status(500).json({ error: flashcardReview.error })
+  } else {
+    const updatedReview = sm2.review(flashcardReview, reviewResult);
+    const result = await Flashcard.updateReview(card_id, user_id, updatedReview);
+    
+    if (result.error) {
+      res.status(500).json({ error: result.error })
+    } else {
+      res.status(200).json({ review: result })
+    }
+  }
+}
+
 module.exports = {
   getFlashcard,
   getDueFlashcards,
+  reviewFlashcard,
 };

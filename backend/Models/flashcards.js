@@ -42,8 +42,36 @@ const Flashcard = {
     }
   },
 
+  // Get a flashcard's review by card ID and user ID
+  getReview: async (card_id, user_id) => {
+    try {
+      const review = await db.query('SELECT * FROM flashcards_review_history WHERE card_id = $1 AND user_id = $2', [card_id, user_id]);
 
+      if (review.rows.length > 0) {
+        return review.rows[0];
+      } else {
+        return { error: "Flashcard review not found" };
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
 
+  // Update a flashcard's review by card ID, user ID, and review data
+  updateReview: async (card_id, user_id, review) => {
+    try {
+      const result = await db.query(
+        'UPDATE flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3 WHERE card_id = $4 AND user_id = $5 RETURNING *', 
+        [review.nextReviewDate, review.newEaseFactor, review.repetition, card_id, user_id]
+      );
+
+      return result.rows[0];
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
 };
 
 module.exports = Flashcard;
