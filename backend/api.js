@@ -1,7 +1,7 @@
 // Include required packages
 const express = require('express')
 const cors = require('cors')
-const db = require('./utils/db')
+// const db = require('./utils/db')
 require('dotenv').config()
 
 // Initialize Express application
@@ -12,14 +12,14 @@ app.use(cors())
 app.use(express.json())
 
 // Import user, chat and flashcard routes
-const userRoutes = require('./routes/users')
-const flashcardRoutes = require('./routes/flashcards')
-const chatRoutes = require('./routes/chats')
+const userRoutes = require('./Routers/users')
+// const flashcardRoutes = require('./Routers/flashcards')
+// const chatRoutes = require('./Routers/chats')
 
 // Define API routes
 app.use('/api/user', userRoutes)
-app.use('/api/flashcard', flashcardRoutes)
-app.use('/api/chat', chatRoutes)
+// app.use('/api/flashcard', flashcardRoutes)
+// app.use('/api/chat', chatRoutes)
 
 
 app.get('/api/test-db', async (req, res) => {
@@ -32,4 +32,4 @@ app.get('/api/test-db', async (req, res) => {
   }
 });
 
-module.exports = api;
+module.exports = app;
