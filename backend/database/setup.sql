@@ -174,8 +174,7 @@ VALUES
 INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
 VALUES
     (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
-    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2),
-    (3, 2, 'Good', '2023-08-03 12:00:00', 2.7, 3);
+    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2);
 
 INSERT INTO user_flashcards (flashcard_id, user_id, front, back)
 VALUES

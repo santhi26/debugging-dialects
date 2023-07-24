@@ -41,7 +41,8 @@ const getDueFlashcards = async (req, res) => {
 
 // For reviewing flashcards
 const reviewFlashcard = async (req, res) => {
-  const { card_id, user_id, reviewResult } = req.body;
+  const card_id = req.params.id;
+  const { user_id, reviewResult } = req.body;
 
   const flashcardReview = await Flashcard.getReview(card_id, user_id);
 

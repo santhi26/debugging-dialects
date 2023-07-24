@@ -71,20 +71,20 @@ const Flashcard = {
   },
 
 
-  // Update a flashcard's review by card ID, user ID, and review data
-  updateReview: async (card_id, user_id, review) => {
-    try {
-      const result = await db.query(
-        'UPDATE flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3, review_result = $4 WHERE card_id = $5 AND user_id = $6 RETURNING *', 
-        [review.nextReviewDate, review.newEaseFactor, review.repetition, review.reviewResult, card_id, user_id]
-      );
+// Update a flashcard's review by card ID, user ID, and review data
+updateReview: async (card_id, user_id, review) => {
+  try {
+    const result = await db.query(
+      'UPDATE flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3, review_result = $4 WHERE card_id = $5 AND user_id = $6 RETURNING *', 
+      [review.nextReviewDate.toISOString(), review.newEaseFactor, review.repetition, review.reviewResult, card_id, user_id]
+    );
+    return result.rows[0];
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
 
-      return result.rows[0];
-    } catch (err) {
-      console.error(err);
-      return { error: err.message };
-    }
-  },
 
 };
 
