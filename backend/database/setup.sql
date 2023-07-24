@@ -19,7 +19,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     token CHAR(36),
     email VARCHAR(255) UNIQUE NOT NULL,
-    role VARCHAR(20) NOT NULL
+    role VARCHAR(20) NOT NULL,
     joined_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 

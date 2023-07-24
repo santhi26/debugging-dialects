@@ -7,17 +7,16 @@ export default function RegistrationForm() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [role, setRole] =  useState("")
 
+    
     const handleInputChange = (e) => {
         const {id, value, type, name} = e.target
 
         if (type === "radio" && name === "role") {
             setRole(value);
-        }        
-
+        }
         if(id === "fullName"){
             setFullName(value);
-        }
-        
+        }        
         if(id === "email"){
             setEmail(value);
         }
@@ -32,8 +31,7 @@ export default function RegistrationForm() {
         }
         if(id === "teacher"){
             setRole(value);
-        }
-        
+        }        
     }
 
     const handleSubmit  = (e) => {
@@ -53,12 +51,12 @@ export default function RegistrationForm() {
                     username: fullName,
                     password: password,
                     email: email,
-                    role: role
+                    role: role,
+                    joined_date: new Date().toISOString()
             })}
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
             const data = await response.json();
-            console.log(fullName, password, email, role, data, "<<<<<<<");
             localStorage.setItem("username", data.username);
             localStorage.setItem("token", data.token);
             
