@@ -1,3 +1,16 @@
+DROP TABLE IF EXISTS user_flashcards_review_history;
+DROP TABLE IF EXISTS user_flashcards;
+DROP TABLE IF EXISTS flashcards_review_history;
+DROP TABLE IF EXISTS flashcards;
+DROP TABLE IF EXISTS chat_messages;
+DROP TABLE IF EXISTS chats;
+DROP TABLE IF EXISTS ratings;
+DROP TABLE IF EXISTS qualifications;
+DROP TABLE IF EXISTS teachers;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS users;
+
+
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
