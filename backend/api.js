@@ -11,15 +11,19 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// Import user, chat and flashcard routes
+// Import user, chat, student and flashcard routes
 const userRoutes = require('./Routers/users')
 const flashcardsRouter = require('./Routers/flashcards')
-// const chatRoutes = require('./Routers/chats')
+const studentsRouter = require('./Routers/students')
 
 // Define API routes
 app.use('/api/user', userRoutes)
 app.use('/api/flashcard', flashcardsRouter)
-// app.use('/api/chat', chatRoutes)
-
+app.use('/api/student', studentsRouter)
 
 module.exports = app;
+
+
+
+
+// app.use('/api/chat', chatRoutes)
