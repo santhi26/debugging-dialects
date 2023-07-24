@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function RegistrationForm() {
     const [fullName, setFullName] = useState("");
@@ -24,12 +24,38 @@ export default function RegistrationForm() {
     }
 
     const handleSubmit  = (e) => {
-        //e.preventDefault();
-        console.log(fullName, email, password, confirmPassword);
+        e.preventDefault();
+        registerAPI()
+    }
+
+    const registerAPI = async() => {
+        try {
+            const options = {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: fullName,
+                    password: password,
+                    email: email
+            })}
+
+            const response = await fetch('http://localhost:3000/api/user/register', options);
+            const data = await response.json();
+            console.log(fullName, password, email);
+            localStorage.setItem("username", data.username);
+            localStorage.setItem("token", data.token);
+            
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
     
   return (
-    <div className="Form">
+    <form className="Form" onSubmit={handleSubmit}>
         <div className="fullName">
             <label className="form_label" htmlFor="fullName">Full Name </label>
             <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} name="" type="text" id="fullName" placeholder="Full Name" required/>       
@@ -46,11 +72,10 @@ export default function RegistrationForm() {
             <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
             <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>
         <div className="submit-button">
-            <button type="submit" onClick={()=>handleSubmit()} className="btn">Register</button>
+            <button type="submit" className="btn">Register</button>
         </div>
-        </div>
-        
-    </div>
+        </div>        
+    </form>
   )
 }
 
