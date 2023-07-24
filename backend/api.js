@@ -22,8 +22,3 @@ app.use('/api/flashcard', flashcardsRouter)
 app.use('/api/student', studentsRouter)
 
 module.exports = app;
-
-
-
-
-// app.use('/api/chat', chatRoutes)
