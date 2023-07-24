@@ -91,7 +91,7 @@ CREATE TABLE flashcards_review_history (
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     review_result review_result,
     next_review_date TIMESTAMP,
-    ease_factor REAL,
+    ease_factor REAL DEFAULT 2.5,
     repetitions INTEGER
 );
 
@@ -111,7 +111,7 @@ CREATE TABLE user_flashcards_review_history (
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     review_result review_result,
     next_review_date TIMESTAMP,
-    ease_factor REAL, 
+    ease_factor REAL DEFAULT 2.5, 
     repetitions INTEGER
 );
 

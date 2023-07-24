@@ -45,18 +45,30 @@ const Flashcard = {
   // Get a flashcard's review by card ID and user ID
   getReview: async (card_id, user_id) => {
     try {
-      const review = await db.query('SELECT * FROM flashcards_review_history WHERE card_id = $1 AND user_id = $2', [card_id, user_id]);
+      const review = await db.query(`
+        SELECT * 
+        FROM flashcards_review_history 
+        WHERE card_id = $1 AND user_id = $2 
+        ORDER BY review_id DESC
+        LIMIT 1
+      `, [card_id, user_id]);
 
       if (review.rows.length > 0) {
         return review.rows[0];
       } else {
-        return { error: "Flashcard review not found" };
+        // If there's no review history, return a default object
+        return {
+          card_id: card_id,
+          user_id: user_id,
+          ease_factor: 2.5, // Default ease factor
+        };
       }
     } catch (err) {
       console.error(err);
       return { error: err.message };
     }
   },
+
 
   // Update a flashcard's review by card ID, user ID, and review data
   updateReview: async (card_id, user_id, review) => {

@@ -1,5 +1,6 @@
 const Flashcard = require('../Models/flashcards');
 const Students = require('../Models/students');
+const sm2 = require('../utils/sm2');
 
 // Fetch a flashcard by its ID
 const getFlashcard = async (req, res) => {
@@ -47,7 +48,7 @@ const reviewFlashcard = async (req, res) => {
   if (flashcardReview.error) {
     res.status(500).json({ error: flashcardReview.error })
   } else {
-    const updatedReview = sm2.review(flashcardReview, reviewResult);
+    const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor}, reviewResult); 
     updatedReview.reviewResult = reviewResult;
     const result = await Flashcard.updateReview(card_id, user_id, updatedReview);
     
