@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {RegistrationForm, TeacherProfileForm, LoginForm, TeacherProfile} from './components'
 import './App.css'
-import { UserProvider } from './contexts/UserContext';
+import { UserProvider } from './contexts';
 
 function App() {
 
@@ -9,7 +9,6 @@ function App() {
     <>
      <UserProvider>
       <LoginForm />
-     <TeacherProfile />
     </UserProvider>
     </>
   )

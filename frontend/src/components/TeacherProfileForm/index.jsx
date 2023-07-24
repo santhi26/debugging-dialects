@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts';
 import { TeacherProfile } from '..';
 
 export default function TeacherProfileForm() {
