@@ -5,9 +5,15 @@ export default function RegistrationForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [role, setRole] =  useState("")
 
     const handleInputChange = (e) => {
-        const {id, value} = e.target
+        const {id, value, type, name} = e.target
+
+        if (type === "radio" && name === "role") {
+            setRole(value);
+        }        
+
         if(id === "fullName"){
             setFullName(value);
         }
@@ -21,6 +27,13 @@ export default function RegistrationForm() {
         if(id === "confirmPassword"){
             setConfirmPassword(value);
         }
+        if(id === "student"){
+            setRole(value);
+        }
+        if(id === "teacher"){
+            setRole(value);
+        }
+        
     }
 
     const handleSubmit  = (e) => {
@@ -39,12 +52,13 @@ export default function RegistrationForm() {
                 body: JSON.stringify({
                     username: fullName,
                     password: password,
-                    email: email
+                    email: email,
+                    role: role
             })}
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
             const data = await response.json();
-            console.log(fullName, password, email);
+            console.log(fullName, password, email, role, data, "<<<<<<<");
             localStorage.setItem("username", data.username);
             localStorage.setItem("token", data.token);
             
@@ -71,6 +85,13 @@ export default function RegistrationForm() {
         <div className="confirm-password">
             <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
             <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>
+        <div className="role" onChange={(e) => handleInputChange(e)}>
+            <p>I am a: </p>
+            <label htmlFor="student">Student</label>
+            <input type="radio" id="student" name="role" value="student" />
+            <label htmlFor="student">Teacher</label>           
+            <input type="radio" id="teacher" name="role" value="teacher" />
+        </div>    
         <div className="submit-button">
             <button type="submit" className="btn">Register</button>
         </div>
