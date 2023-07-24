@@ -9,13 +9,6 @@ body {
   height: 100vh;
 }
 
-.navBar {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .globeContainer {
   display: flex;
@@ -55,9 +48,20 @@ body {
 }
 
 .studentSection {
+  text-align: center;
+
   padding: 20px;
 }
 
+.pS {
+  text-align: left;
+}
+
+.pT {
+  text-align: right;
+}
+
 .teacherSection {
+  text-align: center;
   padding: 20px;
 }

@@ -1,12 +1,12 @@
 import React from 'react';
+import { RegistrationForm } from '../../components';
 
 
 
 export default function HomePage() {
     return (
         <>
-            <h1>fluentPal</h1>
-            <em>Learn a lanugage</em>
+            <RegistrationForm />
             
         </>
     )
