@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 export default function RegistrationForm() {
-    const [fullName, setFullName] = useState("");
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -14,8 +14,8 @@ export default function RegistrationForm() {
         if (type === "radio" && name === "role") {
             setRole(value);
         }
-        if(id === "fullName"){
-            setFullName(value);
+        if(id === "username"){
+            setUsername(value);
         }        
         if(id === "email"){
             setEmail(value);
@@ -48,7 +48,7 @@ export default function RegistrationForm() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    username: fullName,
+                    username: username,
                     password: password,
                     email: email,
                     role: role,
@@ -68,9 +68,9 @@ export default function RegistrationForm() {
     
   return (
     <form className="Form" onSubmit={handleSubmit}>
-        <div className="fullName">
-            <label className="form_label" htmlFor="fullName">Full Name </label>
-            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} name="" type="text" id="fullName" placeholder="Full Name" required/>       
+        <div className="username">
+            <label className="form_label" htmlFor="username">Username </label>
+            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
         </div>
         <div className="email">
             <label className="form_label" htmlFor="email">Email </label>
