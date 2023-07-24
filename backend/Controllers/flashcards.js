@@ -44,15 +44,19 @@ const reviewFlashcard = async (req, res) => {
   const card_id = req.params.id;
   const { user_id, reviewResult } = req.body;
 
-  const flashcardReview = await Flashcard.getReview(card_id, user_id);
+  let flashcardReview = await Flashcard.getReview(card_id, user_id);
 
   if (flashcardReview.error) {
     res.status(500).json({ error: flashcardReview.error })
   } else {
     const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor, repetitions: flashcardReview.repetitions}, reviewResult);
     updatedReview.reviewResult = reviewResult;
-    const result = await Flashcard.updateReview(card_id, user_id, updatedReview);
-    
+    let result;
+    if (flashcardReview.isNew) { // If the review record is new
+      result = await Flashcard.insertReview(card_id, user_id, updatedReview); // Perform INSERT operation
+    } else {
+      result = await Flashcard.updateReview(card_id, user_id, updatedReview); // Perform UPDATE operation
+    }
     if (result.error) {
       res.status(500).json({ error: result.error })
     } else {
@@ -60,6 +64,7 @@ const reviewFlashcard = async (req, res) => {
     }
   }
 }
+
 
 
 module.exports = {
