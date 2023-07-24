@@ -16,13 +16,8 @@ const review = (flashcard, reviewResult) => {
   easeFactor = Math.max(easeFactor, 1.3);
 
 // Update the repetition count
-let repetition = flashcard.repetitions;
-console.log(`Repetition: ${repetition}`); // Log the repetition value
-if (reviewResult === 'Easy' || reviewResult === 'Good') {
-  repetition += 1;
-} else if (reviewResult === 'Hard' || reviewResult === 'Wrong') {
-  repetition = 0;
-}
+let repetition = flashcard.repetitions + 1; // Increment the repetition count
+
 
 // Calculate the next review interval
 let interval;

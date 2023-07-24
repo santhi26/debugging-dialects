@@ -61,6 +61,7 @@ const Flashcard = {
           card_id: card_id,
           user_id: user_id,
           ease_factor: 2.5, // Default ease factor
+          repetitions: 0,
         };
       }
     } catch (err) {

@@ -48,7 +48,7 @@ const reviewFlashcard = async (req, res) => {
   if (flashcardReview.error) {
     res.status(500).json({ error: flashcardReview.error })
   } else {
-    const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor}, reviewResult); 
+    const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor, repetitions: flashcardReview.repetitions}, reviewResult);
     updatedReview.reviewResult = reviewResult;
     const result = await Flashcard.updateReview(card_id, user_id, updatedReview);
     
