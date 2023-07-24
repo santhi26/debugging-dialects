@@ -25,15 +25,26 @@ export default function TeacherProfileForm() {
 
     const handleSubmit  = (e) => {
         e.preventDefault();
-        registerAPI()
+        teacherProfileAPI()
     }
-
+    //WORK ON IMAGE UPLOAD WHEN HAVING THE ROUTE
     const handleImageChange = (e) => {
-        const file = e.target.files[0]; // Get the first selected file (if multiple files are allowed)
-        setImage(file);
+        const file = e.target.files[0]; 
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+          // When the reader finishes loading the file, convert it to a Base64 string
+          setImage(reader.result);
+        };
+    
+        if (file) {
+          // Start reading the file as a Data URL (Base64 encoded string)
+          reader.readAsDataURL(file);
+        }
+        
       };
 
-    const registerAPI = async() => {
+    const teacherProfileAPI = async() => {
         try {
             const options = {
                 method: "POST",
@@ -42,18 +53,15 @@ export default function TeacherProfileForm() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    username: username,
-                    password: password,
-                    email: email,
-                    role: role,
-                    joined_date: new Date().toISOString()
+                    teacher_name: fullName,
+                    teacher_profile_image: image,
+                    teacher_biography: biography,
+                    teacher_home_language: homeLanguage,
+                    qualifications: qualifications
             })}
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
-            const data = await response.json();
-            localStorage.setItem("username", data.username);
-            localStorage.setItem("token", data.token);
-            
+            const data = await response.json();            
             
         } catch (error) {
             console.log(error)
@@ -70,26 +78,25 @@ export default function TeacherProfileForm() {
         </div>
         <div className="homeLanguage">
             <label className="form_label" htmlFor="homeLanguage">Home Language </label>
-            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage"  id="homeLanguage" placeholder="homeLanguage" required/>
+            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage"  id="homeLanguage" placeholder="HomeLanguage" />
         </div>
         <div className="qualifications">
             <label className="form_label" htmlFor="qualifications">Qualifications </label>
-            <input className="form_input" value={qualifications} onChange = {(e) => handleInputChange(e)} type="password" id="qualifications" placeholder="qualifications" required/>
+            <textarea className="form_input" value={qualifications} onChange = {(e) => handleInputChange(e)} type="password" id="qualifications" placeholder="Qualifications" />
         </div> 
         <div className="biography">
-            <label className="form_label" htmlFor="biography"> Biography </label>
-            <input className="form_input" value={biography} onChange = {(e) => handleInputChange(e)} type="textarea" id="biography" placeholder="biography" />       
+            <label className="form_label" htmlFor="biography">Biography </label>
+            <textarea className="form_input" value={biography} onChange = {(e) => handleInputChange(e)} type="biography" id="biography" placeholder="Biography" />       
         </div>
         <div className="image">
           <label className="form_label" htmlFor="image">Upload Image</label>
           <input
             type="file"
             id="image"
-            accept="image/*" // Only allow image files
+            accept="image/*" 
             onChange={handleImageChange}
           />
-        </div>
-        
+        </div>        
         <div className="submit-button">
             <button type="submit" className="btn">Submit</button>
         </div>
