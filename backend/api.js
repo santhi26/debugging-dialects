@@ -1,7 +1,7 @@
 // Include required packages
 const express = require('express')
 const cors = require('cors')
-const db = require('./utils/db')
+const db = require('./database/db')
 require('dotenv').config()
 
 // Initialize Express application
@@ -11,25 +11,14 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// Import user, chat and flashcard routes
-const userRoutes = require('./routes/users')
-const flashcardRoutes = require('./routes/flashcards')
-const chatRoutes = require('./routes/chats')
+// Import user, chat, student and flashcard routes
+const userRoutes = require('./Routers/users')
+const flashcardsRouter = require('./Routers/flashcards')
+const studentsRouter = require('./Routers/students')
 
 // Define API routes
 app.use('/api/user', userRoutes)
-app.use('/api/flashcard', flashcardRoutes)
-app.use('/api/chat', chatRoutes)
+app.use('/api/flashcard', flashcardsRouter)
+app.use('/api/student', studentsRouter)
 
-
-app.get('/api/test-db', async (req, res) => {
-  try {
-    const result = await db.one('SELECT 1');
-    res.json(result);
-  } catch(err) {
-    console.log(err);
-    res.status(500).json({ error: 'Database connection error' });
-  }
-});
-
-module.exports = api;
+module.exports = app;
