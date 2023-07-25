@@ -1,57 +1,77 @@
-const review = (flashcard, userRating, sureness, userSettings) => {
-    // The SM-2 algorithm requires certain values to be adjustable.
-    // The ease factor begins at a certain value and decreases based on the user's performance
-    let easeFactor = flashcard.easeFactor;
-    
-    console.log("🚀 ~ file: sm2.js:4 ~ review ~ userSettings:", userSettings)
-    const { easyModifier, goodModifier, hardModifier, superhardModifier } = userSettings;
-  
-    // Update the ease factor
-    if (userRating === 'Easy') {
-      easeFactor += easyModifier;
-    } else if (userRating === 'Good') {
-      easeFactor += goodModifier;
-    } else if (userRating === 'Hard') {
-      easeFactor += hardModifier;
-    } else if (userRating === 'Superhard') {
-      easeFactor += superhardModifier;
-    }
-  
-    // Make sure the ease factor doesn't fall below a certain threshold
-    easeFactor = Math.max(easeFactor, 1.3);
-  
-    // Update the repetition count
-    let repetition = flashcard.repetitions;
-    if (userRating === 'Easy' || userRating === 'Good') {
-      repetition += 1;
-    } else if (userRating === 'Hard' || userRating === 'Superhard') {
-      repetition = 0;
-    }
-  
-    // Calculate the next review interval
-    let interval;
-    if (repetition === 1) {
-      interval = 1;
-    } else if (repetition === 2) {
-      interval = 6;
-    } else {
-      interval = Math.round((repetition - 1) * easeFactor);
-    }
-  
-    // Adjust the interval based on how sure the user was of their answer
-    // A lower sureness results in a smaller interval
-    interval = Math.round(interval * (sureness / 3));
-  
-    // Calculate the next review date
-    const now = new Date();
-    const nextReviewDate = calculateNextReviewDate(repetition, easeFactor);
+const review = (flashcard, reviewResult) => {
+  let easeFactor = flashcard.easeFactor;
 
-    // Return the results
-    return {
-      nextReviewDate,
-      newEaseFactor: easeFactor,
-      sureness
+  // Adjust the ease factor based on the user's rating
+  switch (reviewResult) {
+    case 'Easy':
+      easeFactor += 0.1;
+      break;
+    case 'Good':
+      easeFactor += 0;
+      break;
+    case 'Hard':
+      easeFactor -= 0.15;  // Adjusted for language learning
+      break;
+    case 'Wrong':
+      easeFactor -= 0.3;   // Adjusted for language learning
+      break;
+    default:
+      break;
+  }
+
+  // Ensure the ease factor doesn't fall below a certain threshold
+  easeFactor = Math.max(easeFactor, 1.3);
+
+  // Increment the repetition count
+  let repetition = flashcard.repetitions + 1;
+
+  // Calculate the next review interval in minutes
+  let interval;
+  if (repetition === 1) {
+    switch (reviewResult) {
+      case 'Easy':
+        interval = 24 * 60; // 1 day
+        break;
+      case 'Good':
+        interval = 15; // 15 minutes
+        break;
+      case 'Hard':
+        interval = 5; // 5 minutes
+        break;
+      case 'Wrong':
+        interval = 1; // 1 minute
+        break;
+      default:
+        break;
+    }
+  } else if (repetition === 2) {
+    interval = 6 * 24 * 60; // 6 days
+  } else {
+    interval = Math.min(Math.round((repetition - 1) * easeFactor * 24 * 60), 365 * 24 * 60); // Max interval of a year
+  }
+
+  // Calculate the next review date
+  const nextReviewDate = calculateNextReviewDate(interval);
+
+  return {
+    nextReviewDate,
+    newEaseFactor: easeFactor,
+    repetition
   };
 }
-  module.exports = { review };
-  
+
+const calculateNextReviewDate = (interval) => {
+  const now = new Date();
+  const nextReviewDate = new Date();
+
+  // If interval is more than a day, add days else add minutes
+  if (interval >= 24 * 60) {
+    nextReviewDate.setDate(now.getDate() + Math.round(interval / (24 * 60)));
+  } else {
+    nextReviewDate.setMinutes(now.getMinutes() + interval);
+  }
+
+  return nextReviewDate;
+}
+
+module.exports = { review };
