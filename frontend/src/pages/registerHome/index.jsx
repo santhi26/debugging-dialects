@@ -1,12 +1,12 @@
 import React from 'react';
-import { RegistrationForm } from '../../components';
+import { RegistrationFormTeacher } from '../../components';
 
 
 
 export default function HomePage() {
     return (
         <>
-            <RegistrationForm />
+            <RegistrationFormTeacher />
             
         </>
     )
