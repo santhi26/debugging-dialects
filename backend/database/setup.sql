@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS qualifications CASCADE;
 DROP TABLE IF EXISTS teachers CASCADE;
 DROP TABLE IF EXISTS students CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
+DROP TYPE IF EXISTS review_result;
 
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -90,8 +91,8 @@ CREATE TABLE flashcards_review_history (
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     review_result review_result,
     next_review_date TIMESTAMP,
-    ease_factor REAL,
-    repetitions INTEGER
+    ease_factor REAL DEFAULT 2.5,
+    repetitions INTEGER DEFAULT 0
 );
 
 CREATE TABLE user_flashcards (
@@ -110,8 +111,8 @@ CREATE TABLE user_flashcards_review_history (
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     review_result review_result,
     next_review_date TIMESTAMP,
-    ease_factor REAL, 
-    repetitions INTEGER
+    ease_factor REAL DEFAULT 2.5, 
+    repetitions INTEGER DEFAULT 0
 );
 
 CREATE TABLE user_flashcards_normal (
@@ -173,8 +174,7 @@ VALUES
 INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
 VALUES
     (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
-    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2),
-    (3, 2, 'Good', '2023-08-03 12:00:00', 2.7, 3);
+    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2);
 
 INSERT INTO user_flashcards (flashcard_id, user_id, front, back)
 VALUES

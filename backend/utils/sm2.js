@@ -1,42 +1,58 @@
 const review = (flashcard, reviewResult) => {
-  let easeFactor = 2.5; // The fixed ease factor value
+  let easeFactor = flashcard.easeFactor;
 
-  // Update the ease factor based on the user's rating
-  if (reviewResult === 'Easy') {
-    easeFactor += 0.1;
-  } else if (reviewResult === 'Good') {
-    easeFactor += 0;
-  } else if (reviewResult === 'Hard') {
-    easeFactor -= 0.2;
-  } else if (reviewResult === 'Wrong') {
-    easeFactor -= 0.5;
+  // Adjust the ease factor based on the user's rating
+  switch (reviewResult) {
+    case 'Easy':
+      easeFactor += 0.1;
+      break;
+    case 'Good':
+      easeFactor += 0;
+      break;
+    case 'Hard':
+      easeFactor -= 0.15;  // Adjusted for language learning
+      break;
+    case 'Wrong':
+      easeFactor -= 0.3;   // Adjusted for language learning
+      break;
+    default:
+      break;
   }
 
-  // Make sure the ease factor doesn't fall below a certain threshold
+  // Ensure the ease factor doesn't fall below a certain threshold
   easeFactor = Math.max(easeFactor, 1.3);
 
-  // Update the repetition count
-  let repetition = flashcard.repetitions;
-  if (reviewResult === 'Easy' || reviewResult === 'Good') {
-    repetition += 1;
-  } else if (reviewResult === 'Hard' || reviewResult === 'Wrong') {
-    repetition = 0;
-  }
+  // Increment the repetition count
+  let repetition = flashcard.repetitions + 1;
 
-  // Calculate the next review interval
+  // Calculate the next review interval in minutes
   let interval;
   if (repetition === 1) {
-    interval = 1;
+    switch (reviewResult) {
+      case 'Easy':
+        interval = 24 * 60; // 1 day
+        break;
+      case 'Good':
+        interval = 15; // 15 minutes
+        break;
+      case 'Hard':
+        interval = 5; // 5 minutes
+        break;
+      case 'Wrong':
+        interval = 1; // 1 minute
+        break;
+      default:
+        break;
+    }
   } else if (repetition === 2) {
-    interval = 6;
+    interval = 6 * 24 * 60; // 6 days
   } else {
-    interval = Math.round((repetition - 1) * easeFactor);
+    interval = Math.min(Math.round((repetition - 1) * easeFactor * 24 * 60), 365 * 24 * 60); // Max interval of a year
   }
 
   // Calculate the next review date
   const nextReviewDate = calculateNextReviewDate(interval);
 
-  // Return the results
   return {
     nextReviewDate,
     newEaseFactor: easeFactor,
@@ -46,7 +62,16 @@ const review = (flashcard, reviewResult) => {
 
 const calculateNextReviewDate = (interval) => {
   const now = new Date();
-  return new Date(now.setMinutes(now.getMinutes() + interval));
+  const nextReviewDate = new Date();
+
+  // If interval is more than a day, add days else add minutes
+  if (interval >= 24 * 60) {
+    nextReviewDate.setDate(now.getDate() + Math.round(interval / (24 * 60)));
+  } else {
+    nextReviewDate.setMinutes(now.getMinutes() + interval);
+  }
+
+  return nextReviewDate;
 }
 
 module.exports = { review };
