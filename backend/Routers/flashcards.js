@@ -16,7 +16,7 @@ router.get('/due/:userId', getDueFlashcards);
 router.post('/:id/review', reviewFlashcard)
 router.get('/:level/:language', getAllFlashcardsForLevelAndLanguage);
 router.post('/create', createFlashcard);
-router.post('/prompt', promptFlashcard);
+router.post('/prompt/:userId', promptFlashcard);
 
 
 module.exports = router;
