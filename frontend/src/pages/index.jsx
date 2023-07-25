@@ -7,3 +7,5 @@ export {default as studentPage} from './studentPage'
 export {default as teacherPage} from './teacherPage';
 export {default as login} from './login';
 export {default as about} from './about';
+export {default as createFlashCard} from './createFlashCard';
+export {default as updateProfileTeacher} from './updateProfileTeacher';
