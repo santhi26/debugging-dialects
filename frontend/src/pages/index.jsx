@@ -6,3 +6,4 @@ export {default as registerHome} from './registerHome'
 export {default as studentPage} from './studentPage'
 export {default as teacherPage} from './teacherPage';
 export {default as login} from './login';
+export {default as userFlashcardReview} from './userFlashcardReview';

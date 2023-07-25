@@ -17,6 +17,7 @@ function App() {
             <Route path="/student" element={<Pages.studentPage />} /> 
             <Route path="/teacher" element={<Pages.teacherPage />} /> 
             <Route path="/flashCard" element={<Pages.flashCard />} /> 
+            <Route path="/userflashcards" element={<Pages.userFlashcardReview />} /> 
             <Route path="/login" element={<Pages.login />} />
             <Route path="/message" element={<Pages.messagePage/>}/>
           </Route>
