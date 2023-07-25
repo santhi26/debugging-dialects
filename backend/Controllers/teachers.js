@@ -16,6 +16,20 @@ const createTeacher = async (req, res) => {
   }
 };
 
+const getTeacherDetails = async (req, res) => {
+  const id = parseInt(req.params.id, 10); // Make sure id is an integer
+  const teacher = await Teachers.getTeacherDetails(id);
+
+  if (teacher.error) {
+    res.status(500).json({ error: teacher.error });
+  } else if (!teacher) {
+    res.status(404).json({ error: 'Teacher not found' });
+  } else {
+    res.status(200).json(teacher);
+  }
+};
+
 module.exports = {
   createTeacher,
+  getTeacherDetails,
 };
