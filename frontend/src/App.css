@@ -65,3 +65,62 @@ body {
   text-align: center;
   padding: 20px;
 }
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.username,
+.email,
+.password,
+.confirm-password,
+.role {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form_label {
+  text-align: right;
+  margin-right: 10px;
+  flex: 1;
+  display: inline-block;
+  width: 120px; /* Adjust the width as needed */
+}
+
+.form_input {
+  flex: 2;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px; /* Adjust the width as needed */
+}
+
+.role label {
+  margin-right: 10px;
+}
+
+.role input {
+  margin-right: 5px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
