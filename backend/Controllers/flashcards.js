@@ -93,6 +93,7 @@ const createFlashcard = async (req, res) => {
   const { user_id, type, title, front, back } = req.body;
 
   const flashcard = await Flashcard.createUserFlashcard(user_id, type, title, front, back);
+  console.log("🚀 ~ file: flashcards.js:96 ~ createFlashcard ~ flashcard:", flashcard)
 
   if (flashcard.error) {
     return res.status(500).json({ error: flashcard.error });
@@ -102,18 +103,18 @@ const createFlashcard = async (req, res) => {
 }
 
 const promptFlashcard = async (req, res) => {
-  const userId = req.params.userId;
   const apiKey = aiApiKey; 
   const apiUrl = 'api.openai.com';
   const path = '/v1/chat/completions';
-  const prompt = req.body.prompt;
+
+  const userId = req.params.userId;
+  const userPrompt = req.body.prompt;
 
   const requestBody = JSON.stringify({
     model: 'gpt-3.5-turbo',
-    messages: [{ role: 'user', content: prompt }],
+    messages: [{ role: 'user', content: userPrompt }],
     temperature: 0.7,
   });
-  console.log("🚀 ~ file: flashcards.js:115 ~ promptFlashcard ~ requestBody:", requestBody)
 
   const options = {
     hostname: apiUrl,
@@ -130,11 +131,33 @@ const promptFlashcard = async (req, res) => {
     response.on('data', (chunk) => {
       data += chunk;
     });
-    response.on('end', () => {
-      console.log("🚀 ~ file: flashcards.js:134 ~ response.on ~ response:", data)
+    response.on('end', async () => {
       const response = JSON.parse(data);
-      const generatedContent = response.choices[0].message.content;
-      res.json({ generatedContent });
+      console.log("🚀 ~ file: flashcards.js:136 ~ response.on ~ response:", response)
+
+      let generatedContent;
+      try {
+        generatedContent = JSON.parse(response.choices[0].message.content);
+      } catch (error) {
+        return res.status(500).json({ error: 'Error parsing response from AI model.', details: error });
+      }
+      console.log("🚀 ~ file: flashcards.js:138 ~ response.on ~ generatedContent:", generatedContent)
+
+      const errors = [];
+      // Loop through the generatedContent array and create a new flashcard for each object
+      for (let flashcard of generatedContent) {
+        const flashcardResult = await Flashcard.createUserFlashcard(userId, 'normal', flashcard.front, flashcard.front, flashcard.back);
+        if (flashcardResult.error) {
+          errors.push(flashcardResult.error);
+        }
+      }
+
+      if (errors.length > 0) {
+        return res.status(500).json({ error: 'Error(s) occurred while creating flashcard(s).', details: errors });
+      }
+
+      // If everything went well, send a success response
+      res.status(201).json({ message: "Flashcards created successfully" });
     });
   });
 
@@ -145,6 +168,7 @@ const promptFlashcard = async (req, res) => {
   httpsRequest.write(requestBody);
   httpsRequest.end();
 };
+
 
 
 
