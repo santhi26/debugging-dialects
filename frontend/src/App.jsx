@@ -8,16 +8,18 @@ import { UserProvider } from './contexts';
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Header />} >
-          <Route index element={<Pages.homePage />} /> 
-          <Route path="/registerHome" element={<Pages.registerHome />} /> 
-          <Route path="/student" element={<Pages.studentPage />} /> 
-          <Route path="/teacher" element={<Pages.teacherPage />} /> 
-          <Route path="/flashCard" element={<Pages.flashCard />} /> 
-          <Route path="/login" element={<Pages.login />} />
-        </Route>
-      </Routes>
+     <UserProvider>
+        <Routes>
+          <Route path="/" element={<Header />} >
+            <Route index element={<Pages.homePage />} /> 
+            <Route path="/registerHome" element={<Pages.registerHome />} /> 
+            <Route path="/student" element={<Pages.studentPage />} /> 
+            <Route path="/teacher" element={<Pages.teacherPage />} /> 
+            <Route path="/flashCard" element={<Pages.flashCard />} /> 
+            <Route path="/login" element={<Pages.login />} />
+          </Route>
+        </Routes>
+     </UserProvider>
 
     </>
   )

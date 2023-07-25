@@ -1,12 +1,12 @@
 import React from 'react';
-import { Login } from '../../components';
+import { LoginForm } from '../../components';
 
 
 
 export default function HomePage() {
     return (
         <>
-        <Login />
+        <LoginForm />
             
         </>
     )
