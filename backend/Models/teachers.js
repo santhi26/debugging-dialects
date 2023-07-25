@@ -2,7 +2,16 @@ const db = require('../database/db');
 
 const Teachers = {
   createTeacher: async (data) => {
-    const { username, password, email, role, teacher_home_language, qualifications, teacher_biography } = data;
+    const { 
+      username, 
+      password, 
+      email, 
+      role, 
+      teacher_home_language, 
+      qualifications, 
+      teacher_biography,
+      teacher_profile_image 
+    } = data;
 
     try {
       const user = await db.query(
@@ -11,8 +20,8 @@ const Teachers = {
       );
 
       const teacher = await db.query(
-        'INSERT INTO teachers (teacher_id, teacher_name, teacher_home_language, qualifications, teacher_biography) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-        [user.rows[0].user_id, username, teacher_home_language, qualifications, teacher_biography]
+        'INSERT INTO teachers (teacher_id, teacher_name, teacher_home_language, qualifications, teacher_biography, teacher_profile_image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+        [user.rows[0].user_id, username, teacher_home_language, qualifications, teacher_biography, teacher_profile_image]
       );
 
       return { user: user.rows[0], teacher: teacher.rows[0] };
