@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetFlashCard} from '../../components';
+import { CreateFlashCard } from '../../components';
 
 
 
@@ -8,7 +8,7 @@ export default function flashCard() {
         <>
             <h1>fluentPal</h1>
             <em>Learn a lanugage</em>
-            <GetFlashCard />
+            <CreateFlashCard />
             
         </>
     )
