@@ -202,11 +202,11 @@ VALUES
     ('teacher_test', 'test', 'admin@example.com', 'teacher');
 
 -- Insert dummy student data (you can add more students as needed)
-INSERT INTO students (student_name, student_rating)
+INSERT INTO students (student_name, student_home_language)
 VALUES
-    ('Alice', 4),
-    ('Bob', 3),
-    ('Eve', 5);
+    ('Alice', 'Spanish'),
+    ('Bob', 'French'),
+    ('Eve', 'German');
 
 -- Insert dummy teacher data (you can add more teachers as needed)
 INSERT INTO teachers (teacher_name, teacher_profile_image, teacher_biography, teacher_rating, earnings, is_verified)
