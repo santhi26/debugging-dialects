@@ -15,10 +15,12 @@ app.use(express.json())
 const userRoutes = require('./Routers/users')
 const flashcardsRouter = require('./Routers/flashcards')
 const studentsRouter = require('./Routers/students')
+const teachersRouter = require('./Routers/teachers')
 
 // Define API routes
 app.use('/api/user', userRoutes)
 app.use('/api/flashcard', flashcardsRouter)
 app.use('/api/student', studentsRouter)
+app.use('/api/teacher', teachersRouter)
 
 module.exports = app;
