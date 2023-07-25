@@ -40,7 +40,7 @@ CREATE TABLE teachers (
     qualifications VARCHAR(255),
     teacher_rating INTEGER,
     earnings INTEGER,
-    is_verified BOOLEAN
+    is_verified BOOLEAN DEFAULT false
 );
 
 CREATE TABLE ratings (
