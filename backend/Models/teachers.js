@@ -1,4 +1,5 @@
 const db = require('../database/db');
+const {v4: uuidv4} = require("uuid");
 
 const Teachers = {
   createTeacher: async (data) => {
@@ -14,9 +15,10 @@ const Teachers = {
     } = data;
 
     try {
+      const token = uuidv4();
       const user = await db.query(
-        'INSERT INTO users (username, password, email, role) VALUES ($1, $2, $3, $4) RETURNING *',
-        [username, password, email, role]
+        'INSERT INTO users (username, password, token, email, role) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+        [username, password, token, email, role]
       );
 
       const teacher = await db.query(

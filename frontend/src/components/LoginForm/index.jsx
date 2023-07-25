@@ -42,7 +42,7 @@ export default function LoginForm() {
             const response = await fetch('http://localhost:3000/api/user/login', options);
             const data = await response.json();  
 
-            if(data.length > 1) {
+            if(data.username) {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);               
                 setContextUsername(data.username); 
@@ -51,7 +51,7 @@ export default function LoginForm() {
             } else {
                 console.log(data)
                 alert("wrong")
-            }            
+            }          
             
         } catch (error) {
             alert(error)
