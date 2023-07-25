@@ -102,6 +102,7 @@ const createFlashcard = async (req, res) => {
 }
 
 const promptFlashcard = async (req, res) => {
+  const userId = req.params.userId;
   const apiKey = aiApiKey; 
   const apiUrl = 'api.openai.com';
   const path = '/v1/chat/completions';
@@ -112,6 +113,7 @@ const promptFlashcard = async (req, res) => {
     messages: [{ role: 'user', content: prompt }],
     temperature: 0.7,
   });
+  console.log("🚀 ~ file: flashcards.js:115 ~ promptFlashcard ~ requestBody:", requestBody)
 
   const options = {
     hostname: apiUrl,
@@ -129,6 +131,7 @@ const promptFlashcard = async (req, res) => {
       data += chunk;
     });
     response.on('end', () => {
+      console.log("🚀 ~ file: flashcards.js:134 ~ response.on ~ response:", data)
       const response = JSON.parse(data);
       const generatedContent = response.choices[0].message.content;
       res.json({ generatedContent });

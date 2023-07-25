@@ -61,11 +61,11 @@ Content-Type: application/json
 
 ###
 # CREATE AN AI FLASHCARD
-POST http://localhost:3000/api/flashcard/prompt
+POST http://localhost:3000/api/flashcard/prompt/1
 Content-Type: application/json
 
 {
-  "What's the capital of London?"
+  "prompt": "What's the capital of London?"
 }
 ###
 
