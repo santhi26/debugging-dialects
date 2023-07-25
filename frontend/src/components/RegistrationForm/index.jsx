@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
+//import {useNavigate} from 'react-router-dom';
 
 export default function RegistrationForm() {
+
+    //const navigate = useNavigate() 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -56,13 +59,11 @@ export default function RegistrationForm() {
             })}
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
-            const data = await response.json();
-            localStorage.setItem("username", data.username);
-            localStorage.setItem("token", data.token);
-            
+            const data = await response.json();  
+            alert("registered!")        
             
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
     }
     
