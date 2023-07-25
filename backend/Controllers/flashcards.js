@@ -144,11 +144,14 @@ const promptFlashcard = async (req, res) => {
       console.log("🚀 ~ file: flashcards.js:138 ~ response.on ~ generatedContent:", generatedContent)
 
       const errors = [];
+      const createdFlashcards = [];
       // Loop through the generatedContent array and create a new flashcard for each object
       for (let flashcard of generatedContent) {
         const flashcardResult = await Flashcard.createUserFlashcard(userId, 'normal', flashcard.front, flashcard.front, flashcard.back);
         if (flashcardResult.error) {
           errors.push(flashcardResult.error);
+        } else {
+          createdFlashcards.push(flashcardResult);
         }
       }
 
@@ -156,8 +159,8 @@ const promptFlashcard = async (req, res) => {
         return res.status(500).json({ error: 'Error(s) occurred while creating flashcard(s).', details: errors });
       }
 
-      // If everything went well, send a success response
-      res.status(201).json({ message: "Flashcards created successfully" });
+      // If everything went well, send a success response with the created flashcards
+      res.status(201).json(createdFlashcards);
     });
   });
 
@@ -168,6 +171,7 @@ const promptFlashcard = async (req, res) => {
   httpsRequest.write(requestBody);
   httpsRequest.end();
 };
+
 
 
 
