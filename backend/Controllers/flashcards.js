@@ -24,11 +24,14 @@ const getDueFlashcards = async (req, res) => {
   // Fetch user's level
   const level = await Students.getLevel(userId);
 
-  if (!level || level.error) {
-    return res.status(500).json({ error: level.error });
+  // Fetch student's home language
+  const homeLanguage = await Students.getHomeLanguage(userId);
+
+  if (!level || level.error || !homeLanguage || homeLanguage.error) {
+    return res.status(500).json({ error: level.error || homeLanguage.error });
   }
 
-  const flashcards = await Flashcard.getDueFlashcards(userId, level);
+  const flashcards = await Flashcard.getDueFlashcards(userId, level, homeLanguage);
 
   if (flashcards.error) {
     return res.status(500).json({ error: flashcards.error });
@@ -65,10 +68,26 @@ const reviewFlashcard = async (req, res) => {
   }
 }
 
+const getAllFlashcardsForLevelAndLanguage = async (req, res) => {
+  const level = parseInt(req.params.level, 10);
+  const language = req.params.language;
+
+  const flashcards = await Flashcard.getAllByLevelAndLanguage(level, language);
+
+  if (flashcards.error) {
+    return res.status(500).json({ error: flashcards.error });
+  } else if (!flashcards) {
+    return res.status(404).json({ error: 'No flashcards found' });
+  } else {
+    return res.status(200).json({ flashcards: flashcards });
+  }
+}
+
 
 
 module.exports = {
   getFlashcard,
   getDueFlashcards,
   reviewFlashcard,
+  getAllFlashcardsForLevelAndLanguage
 };

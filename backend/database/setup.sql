@@ -127,8 +127,8 @@ CREATE TABLE user_flashcards_normal (
 INSERT INTO flashcards (type, level, language)
 VALUES
     ('Normal', 1, 'English'),
-    ('Normal', 2, 'Spanish'),
-    ('Normal', 3, 'French'),
+    ('Normal', 1, 'English'),
+    ('Normal', 1, 'English'),
     ('Normal', 4, 'German'),
     ('Normal', 5, 'English'),
     ('Normal', 6, 'Spanish'),
@@ -234,7 +234,7 @@ VALUES
 INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
 VALUES
     (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
-    (2, 1, 'Hard', '2023-08-02 12:00:00', 2.3, 2);
+    (2, 1, 'Hard', '2023-03-02 12:00:00', 2.3, 2);
 
 INSERT INTO user_flashcards (flashcard_id, user_id, front, back)
 VALUES

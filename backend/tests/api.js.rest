@@ -14,8 +14,13 @@ GET http://localhost:3000/api/flashcard/1
 ###
 
 ###
+# SEE FLASHCARDS FOR A LANGUAGE AND LEVEL
+GET http://localhost:3000/api/flashcard/7/French
+###
+
+###
 # SEE FLASHCARDS DUE
-GET http://localhost:3000/api/flashcard/due/1
+GET http://localhost:3000/api/flashcard/due/2
 ###
 
 ###
