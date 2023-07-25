@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
-//import {FlashCardList} from '../FlashCardList'
+import {FlashCardList} from '../'
 
 export default function GetFlashCard() {
   const { userID } = useContext(UserContext);
@@ -9,11 +9,10 @@ export default function GetFlashCard() {
 
   const flashCardsAPI = async() => {
 
-    const response = await fetch(`http://localhost:3000/api/flashcard/due/2`);
+    const response = await fetch(`http://localhost:3000/api/flashcard/due/1
+    `);
     const data = await response.json();
-    setFlashCards(data.dueFlashcards)
-    console.log(data.dueFlashcards);
-
+    setFlashCards(data.dueFlashcards)    
   }
 
   useEffect(() => {
