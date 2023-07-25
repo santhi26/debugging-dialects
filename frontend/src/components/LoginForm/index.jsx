@@ -6,6 +6,7 @@ export default function LoginForm() {
 
     const navigate = useNavigate() 
     const { setContextUsername } = useContext(UserContext);
+    const { setUserID } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -41,14 +42,16 @@ export default function LoginForm() {
             const response = await fetch('http://localhost:3000/api/user/login', options);
             const data = await response.json();  
 
-            if(data.length > 1) {
+            if(data.username) {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);               
-                setContextUsername(data.username);             
+                setContextUsername(data.username); 
+                setUserID(data.setUserID)            
                 data.role === "student" ? navigate("/student") : navigate("/teacher")
             } else {
+                console.log(data)
                 alert("wrong")
-            }            
+            }          
             
         } catch (error) {
             alert(error)
