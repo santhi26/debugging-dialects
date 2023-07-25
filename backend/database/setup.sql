@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS messages;
 DROP TABLE IF EXISTS flashcards_normal CASCADE;
 DROP TABLE IF EXISTS user_flashcards_normal CASCADE;
 DROP TABLE IF EXISTS user_flashcards_review_history CASCADE;
@@ -51,21 +52,12 @@ CREATE TABLE ratings (
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE chats (
-    chat_id SERIAL PRIMARY KEY,
-    student_id INTEGER REFERENCES students(student_id),
-    teacher_id INTEGER REFERENCES teachers(teacher_id),
-    started_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    total_words INTEGER
-);
-
-CREATE TABLE chat_messages (
-    message_id SERIAL PRIMARY KEY,
-    chat_id INTEGER REFERENCES chats(chat_id),
-    sender_id INTEGER REFERENCES users(user_id),
-    message TEXT,
-    word_count INTEGER,
-    send_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE messages (
+    message_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    sender_username VARCHAR(255) NOT NULL REFERENCES users(username),
+    recipient_username VARCHAR(255) NOT NULL REFERENCES users(username),
+    date_sent TIMESTAMPTZ DEFAULT 'NOW',
+    message VARCHAR(10000) NOT NULL
 );
 
 CREATE TABLE flashcards (
@@ -214,20 +206,6 @@ VALUES
     ('Michael', '', 'English teacher with experience in teaching conversational English.', 4.5, 1500, true),
     ('Sophia', '', 'Experienced English teacher offering tailored lessons.', 4.2, 1800, true),
     ('David', '', 'Passionate about teaching English to learners of all levels.', 4.8, 2000, false);
-
--- Insert dummy chat data (you can add more chats as needed)
-INSERT INTO chats (student_id, teacher_id, total_words)
-VALUES
-    (1, 1, 120),
-    (2, 3, 85),
-    (3, 2, 150);
-
--- Insert dummy chat messages data (you can add more messages as needed)
-INSERT INTO chat_messages (chat_id, sender_id, message, word_count)
-VALUES
-    (1, 1, 'Hi there!', 2),
-    (1, 1, 'How are you?', 3),
-    (2, 3, 'Hello!', 1);
 
 INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
 VALUES

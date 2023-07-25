@@ -18,6 +18,7 @@ function App() {
             <Route path="/teacher" element={<Pages.teacherPage />} /> 
             <Route path="/flashCard" element={<Pages.flashCard />} /> 
             <Route path="/login" element={<Pages.login />} />
+            <Route path="/message" element={<Pages.messagePage/>}/>
           </Route>
         </Routes>
      </UserProvider>    
