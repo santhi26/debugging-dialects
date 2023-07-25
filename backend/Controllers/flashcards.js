@@ -108,10 +108,8 @@ const promptFlashcard = async (req, res) => {
   const path = '/v1/chat/completions';
 
   const userId = req.params.userId;
-  const userPrompt = req.body.prompt;
   const cardCount = req.body.cardCount;
   const userLanguage = await Students.getHomeLanguage(userId);
-  console.log("🚀 ~ file: flashcards.js:114 ~ promptFlashcard ~ userLanguage:", userLanguage)
 
   const prompt = `I'm a piece of a software that helps people learn English by showing them flashcards. In order to make things easier for users I'm going to automate the process of creating flashcards by getting you to do it. I want you to create ${cardCount} flashcards. The front of the card of will have the word in their language. And the back of the flashcard will have the word in English. This partuclar users language is ${userLanguage}. It's important you format the flashcards properly. It needs to be an array of flashcards, with each flashcard being an object. There needs to be a title, front and back. The title and front should be the same. Make sure all words are capitalised. Formatted in JSON. Please don't show me anything other than the JSON. Don't speak back to me.`
 
@@ -177,6 +175,21 @@ const promptFlashcard = async (req, res) => {
   httpsRequest.end();
 };
 
+// Fetch all due user-created flashcards for a user by user's ID
+const getDueUserFlashcards = async (req, res) => {
+  const userId = parseInt(req.params.userId, 10)
+
+  const flashcards = await Flashcard.getDueUserFlashcards(userId);
+
+  if (flashcards.error) {
+    return res.status(500).json({ error: flashcards.error });
+  } else if (!flashcards || flashcards.length === 0) {
+    return res.status(404).json({ error: 'No due flashcards found' });
+  } else {
+    return res.status(200).json({ dueFlashcards: flashcards });
+  }
+}
+
 
 
 
@@ -191,4 +204,5 @@ module.exports = {
   getAllFlashcardsForLevelAndLanguage,
   createFlashcard,
   promptFlashcard,
+  getDueUserFlashcards
 };
