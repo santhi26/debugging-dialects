@@ -46,14 +46,23 @@ const getStudentHomeLanguage = async (req, res) => {
   }
 }
 
-module.exports = {
-  getStudentLevel,
-  getStudentHomeLanguage,  // Add this line
+const getStudentDetails = async (req, res) => {
+  const id = parseInt(req.params.id, 10); // Make sure id is an integer
+  const student = await Students.getStudentDetails(id);
+
+  if (student.error) {
+    res.status(500).json({ error: student.error });
+  } else if (!student) {
+    res.status(404).json({ error: 'Student not found' });
+  } else {
+    res.status(200).json(student);
+  }
 };
 
 
 module.exports = {
     getStudentLevel,
     createStudent,
-    getStudentHomeLanguage
+    getStudentHomeLanguage,
+    getStudentDetails
 };

@@ -53,6 +53,25 @@ const Students = {
       return { error: err.message };
     }
   },
+
+  getStudentDetails: async (id) => {
+    try {
+      const student = await db.query(
+        'SELECT student_name, student_home_language, student_rating, student_level FROM students WHERE student_id = $1', 
+        [id]
+      );
+
+      if (student.rows.length > 0) {
+        return student.rows[0];
+      } else {
+        return { error: "Student not found" };
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
+
   
 };
 
