@@ -44,7 +44,8 @@ export default function LoginForm() {
 
             if(data.username) {
                 localStorage.setItem("username", data.username);
-                localStorage.setItem("token", data.token);               
+                localStorage.setItem("token", data.token);    
+                localStorage.setItem("userID", data.user_id);            
                 setContextUsername(data.username); 
                 setUserID(data.user_id)            
                 data.role === "student" ? navigate("/student") : navigate("/flashcard")

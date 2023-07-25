@@ -11,7 +11,7 @@ export default function GetUserFlashcards({ userId }) {
     const fetchFlashCards = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/flashcard/usercards/due/4`
+          `http://localhost:3000/api/flashcard/usercards/due/${userId}}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

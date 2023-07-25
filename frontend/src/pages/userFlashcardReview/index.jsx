@@ -3,7 +3,8 @@ import { UserContext } from '../../contexts';
 import GetUserFlashcards from '../../components/GetUserFlashcards';
 
 export default function UserFlashcardReview() {
-  const { userID } = useContext(UserContext);
+  const userID = localStorage.getItem("userID");
+
 
   return (
     <>
