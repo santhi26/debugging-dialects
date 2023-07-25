@@ -1,12 +1,13 @@
 import React from 'react';
-import { RegistrationForm } from '../../components';
+import {Link} from 'react-router-dom';
 
 
 
 export default function HomePage() {
     return (
         <>
-            <RegistrationForm />
+            <button><Link to="/register" >Student</Link> </button>
+            <button><Link to="/register" >Student</Link> </button>
             
         </>
     )
