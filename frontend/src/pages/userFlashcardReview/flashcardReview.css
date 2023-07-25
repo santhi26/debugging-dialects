@@ -1,0 +1,378 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #EAE7DC;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+  }
+  
+  em {
+    font-style: italic;
+  }
+  
+  /* Main Container */
+  .flashcard-container {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    min-height: 100vh;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  /* Flashcard Styling */
+  .flashcard {
+    width: 300px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .flashcard:hover {
+    transform: scale(1.05);
+  }
+  
+  .flashcard.revealed {
+    transform: rotateY(180deg);
+  }
+  
+  /* Flashcard Buttons */
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Loading Animation */
+  .loading {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  
+  .loading div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    margin: 3px;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #007bff transparent transparent transparent;
+  }
+  
+  .loading div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  
+  .loading div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  
+  .loading div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+/* Flashcard Styling */
+.flip-card {
+    width: 450px;
+    height: 390px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 90%; /* Adjusted the height */
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+  
+  .flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    object-position: center center;
+  }
+  
+  .flip-card-back {
+    color: #2c2921;
+    transform: rotateY(180deg);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+  
+    /* Gradual gradient on reveal */
+    background: linear-gradient(to bottom, #fff 0%, #fff 30%, transparent);
+    transition: background 1s ease; /* Adjust the transition duration here */
+  }
+  
+  .flip-card.flipped .flip-card-back {
+    /* Show gradient immediately on click */
+    background: linear-gradient(to bottom, #fff 0%, #fff 30%, transparent);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .image-container::before,
+  .image-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    pointer-events: none;
+  }
+  
+  .image-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, #fff 0%, #fff 30%, transparent);
+    transition: background 1s ease; /* Adjust the transition duration here */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #D8C3AE;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #E98074;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+
+
+   .wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+  
+  
+  .wrapper .icon {
+    position: relative;
+    background: #8E8D8A;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #8E8D8A;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #8E8D8A;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .easy:hover,
+  .wrapper .easy:hover .tooltip,
+  .wrapper .easy:hover .tooltip::before {
+    background: #1ca81a;
+    color: #fff;
+  }
+  
+  .wrapper .good:hover,
+  .wrapper .good:hover .tooltip,
+  .wrapper .good:hover .tooltip::before {
+    background: #178b16;
+    color: #fff;
+  }
+  
+  .wrapper .hard:hover,
+  .wrapper .hard:hover .tooltip,
+  .wrapper .hard:hover .tooltip::before {
+    background: #114c10;
+    color: #fff;
+  }
+  
+  .wrapper .wrong:hover,
+  .wrapper .wrong:hover .tooltip,
+  .wrapper .wrong:hover .tooltip::before {
+    background: #E85A4F;
+    color: #fff;
+  }
+  
