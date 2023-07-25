@@ -1,17 +1,16 @@
 import React from 'react'
 import * as Pages from './pages';
 import {Routes, Route} from 'react-router-dom';
-import {Header} from './components';
+import {HeaderUser} from './components';
 import './App.css'
 import { UserProvider } from './contexts';
-import {TeacherProfile} from './components';
 
 function App() {
   return (
     <>
      <UserProvider>
         <Routes>
-          <Route path="/" element={<Header />} >
+          <Route path="/" element={<HeaderUser />} >
             <Route index element={<Pages.homePage />} /> 
             <Route path="/registerHome" element={<Pages.registerHome />} /> 
             <Route path="/student" element={<Pages.studentPage />} /> 

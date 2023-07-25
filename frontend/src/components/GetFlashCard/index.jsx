@@ -5,6 +5,7 @@ import {FlashCardList, FlashCard} from '../'
 
 export default function GetFlashCard() {
   const { userID } = useContext(UserContext);
+  console.log(userID)
   const [flashCards, setFlashCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
   

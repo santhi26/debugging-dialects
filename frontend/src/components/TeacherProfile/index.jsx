@@ -6,15 +6,15 @@ export default function TeacherProfile({data}) {
         teacher_biography,
         teacher_home_language,
         qualifications} = data
-            
+
   return (
     <>
       <div>Teacher Profile</div>
       <img src={teacher_profile_image} />
-      <p>{teacher_name}</p>
-      <p>{teacher_home_language}</p>
-      <p>{qualifications}</p>
-      <p>{teacher_biography}</p>    
+      <p>Name: {teacher_name}</p>
+      <p>Home Language: {teacher_home_language}</p>
+      <p>Qualifications: {qualifications}</p>
+      <p>Biography: {teacher_biography}</p>    
     </>
 
   )
