@@ -11,12 +11,17 @@ export default function GetFlashCard() {
   
   useEffect(() => {
     const flashCardsAPI = async() => {
-  
-      const response = await fetch(`http://localhost:3000/api/flashcard/due/2
-      `);
-      const data = await response.json();
-      setFlashCards(data.dueFlashcards);
-      setIsLoading(false); 
+      try {
+        const response = await fetch(`http://localhost:3000/api/flashcard/due/${userID}
+        `);
+        const data = await response.json();
+        console.log(data, userID)
+        setFlashCards(data.dueFlashcards);
+        setIsLoading(false); 
+        
+      } catch (error) {
+        console.log(error)
+      }
     }    
     flashCardsAPI()
   }, [])

@@ -14,6 +14,7 @@ export default function Header () {
                     <NavLink to="/" style={styles}>Home </NavLink>
                     <NavLink to="/registerHome" style={styles}>Register </NavLink>
                     <NavLink to="/Login" style={styles}>Login </NavLink>
+                    <NavLink to="/about" style={styles}>About </NavLink>
                     
                 </nav>
             </header>

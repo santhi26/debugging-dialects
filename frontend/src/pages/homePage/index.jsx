@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as Component from '../../components';
 
 
 export default function HomePage() {
@@ -24,6 +25,7 @@ export default function HomePage() {
                     <p className="pT">Earn money, with daily payouts</p>
                 </div>
             </div>
+            <Component.Footer />
         </div>
     )
 };

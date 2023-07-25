@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts';
-
+import * as Component from '../../components';
 import { socket } from '../../socket';
 
 
@@ -35,6 +35,9 @@ export default function messagePage() {
     return (
         <>
             <h1>Message Page</h1>
+            <Component.Logout />
+            <Component.Footer />
+            
             
         </>
     )
