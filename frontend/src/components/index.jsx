@@ -8,3 +8,6 @@ export {default as GetFlashCard} from './GetFlashCard'
 export {default as CreateFlashCard} from './CreateFlashCard'
 export {default as FlashCard} from './FlashCard'
 export {default as FlashCardList} from './FlashCardList'
+export {default as MessageBoard} from './MessageBoard';
+export {default as UserList} from './UserList';
+export {default as Message} from './Message';
