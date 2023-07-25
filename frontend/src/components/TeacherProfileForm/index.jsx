@@ -28,24 +28,14 @@ export default function TeacherProfileForm() {
 
     const handleSubmit  = (e) => {
         e.preventDefault();
-        teacherProfileAPI()
+        teacherProfileAPI();
     }
     //WORK ON IMAGE UPLOAD WHEN HAVING THE ROUTE
     const handleImageChange = (e) => {
         const file = e.target.files[0]; 
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-          // When the reader finishes loading the file, convert it to a Base64 string
-          setImage(reader.result);
-        };
-    
-        if (file) {
-          // Start reading the file as a Data URL (Base64 encoded string)
-          reader.readAsDataURL(file);
-        }
+        setImage(file);
         
-      };
+      }
 
     const teacherProfileAPI = async() => {
         try {
