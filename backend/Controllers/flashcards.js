@@ -1,6 +1,12 @@
 const Flashcard = require('../Models/flashcards');
 const Students = require('../Models/students');
 const sm2 = require('../utils/sm2');
+const https = require('https');
+require("dotenv").config()
+
+const aiApiKey = process.env.OPENAI_API_KEY;
+
+
 
 // Fetch a flashcard by its ID
 const getFlashcard = async (req, res) => {
@@ -95,6 +101,51 @@ const createFlashcard = async (req, res) => {
   }
 }
 
+const promptFlashcard = async (req, res) => {
+  const apiKey = aiApiKey; 
+  const apiUrl = 'api.openai.com';
+  const path = '/v1/chat/completions';
+  const prompt = req.body.prompt;
+
+  const requestBody = JSON.stringify({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: prompt }],
+    temperature: 0.7,
+  });
+
+  const options = {
+    hostname: apiUrl,
+    path: path,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+  };
+
+  const httpsRequest = https.request(options, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+    response.on('end', () => {
+      const response = JSON.parse(data);
+      const generatedContent = response.choices[0].message.content;
+      res.json({ generatedContent });
+    });
+  });
+
+  httpsRequest.on('error', (error) => {
+    res.status(500).json({ error: 'An error occurred while creating flashcard.', details: error });
+  });
+
+  httpsRequest.write(requestBody);
+  httpsRequest.end();
+};
+
+
+
+
 
 
 module.exports = {
@@ -103,4 +154,5 @@ module.exports = {
   reviewFlashcard,
   getAllFlashcardsForLevelAndLanguage,
   createFlashcard,
+  promptFlashcard,
 };
