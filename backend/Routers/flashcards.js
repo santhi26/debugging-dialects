@@ -9,7 +9,8 @@ const {
     getAllFlashcardsForLevelAndLanguage,
     createFlashcard,
     promptFlashcard,
-    getDueUserFlashcards
+    getDueUserFlashcards,
+    reviewUserFlashcard
 } = require('../Controllers/flashcards')
 
 router.get('/:id', getFlashcard)
@@ -19,6 +20,7 @@ router.get('/:level/:language', getAllFlashcardsForLevelAndLanguage);
 router.post('/create', createFlashcard);
 
 
+router.post('/usercards/:id/review', reviewUserFlashcard)
 router.post('/usercards/prompt/:userId', promptFlashcard);
 router.get('/usercards/due/:userId', getDueUserFlashcards);
 

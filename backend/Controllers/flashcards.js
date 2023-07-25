@@ -190,6 +190,31 @@ const getDueUserFlashcards = async (req, res) => {
   }
 }
 
+// For reviewing user flashcards
+const reviewUserFlashcard = async (req, res) => {
+  const card_id = req.params.id;
+  const { user_id, reviewResult } = req.body;
+
+  let flashcardReview = await Flashcard.getUserFlashcardReview(card_id, user_id);
+
+  if (flashcardReview.error) {
+    res.status(500).json({ error: flashcardReview.error })
+  } else {
+    const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor, repetitions: flashcardReview.repetitions}, reviewResult);
+    updatedReview.reviewResult = reviewResult;
+    let result;
+    if (flashcardReview.isNew) { // If the review record is new
+      result = await Flashcard.insertUserFlashcardReview(card_id, user_id, updatedReview); // Perform INSERT operation
+    } else {
+      result = await Flashcard.updateUserFlashcardReview(card_id, user_id, updatedReview); // Perform UPDATE operation
+    }
+    if (result.error) {
+      res.status(500).json({ error: result.error })
+    } else {
+      res.status(200).json({ review: result })
+    }
+  }
+}
 
 
 
@@ -204,5 +229,6 @@ module.exports = {
   getAllFlashcardsForLevelAndLanguage,
   createFlashcard,
   promptFlashcard,
-  getDueUserFlashcards
+  getDueUserFlashcards,
+  reviewUserFlashcard
 };
