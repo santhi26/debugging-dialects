@@ -7,6 +7,7 @@ export default function LoginForm() {
     const navigate = useNavigate() 
     const { setContextUsername } = useContext(UserContext);
     const { setUserID } = useContext(UserContext);
+    const { setRole } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -46,7 +47,8 @@ export default function LoginForm() {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);               
                 setContextUsername(data.username); 
-                setUserID(data.user_id)            
+                setUserID(data.user_id) 
+                setRole(data.role)           
                 data.role === "student" ? navigate("/student") : navigate("/teacher")
             } else {
                 console.log(data)

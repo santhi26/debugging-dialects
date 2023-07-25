@@ -1,5 +1,5 @@
 import {useState, useEffect, useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 import {TeacherProfile} from '../'
 
@@ -7,6 +7,8 @@ import {TeacherProfile} from '../'
 export default function searchTeacher() {
     const { userID } = useContext(UserContext);
     const [data, setData] = useState([])
+    const location = useLocation();
+
     const searchTeacherAPI = async() => {
         try {
             const response = await fetch(`http://localhost:3000/api/teacher/${userID}/details`);
@@ -24,6 +26,6 @@ export default function searchTeacher() {
     },[])
 
   return (
-    <TeacherProfile data={data} />
+    !location.pathname.includes('/updateTeacherProfile') && <TeacherProfile data={data} />
   )
 }
