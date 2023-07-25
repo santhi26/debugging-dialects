@@ -1,25 +1,26 @@
 import {useState, useEffect, useContext} from 'react';
-//import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 
 export default function LoginForm() {
 
-    //const navigate = useNavigate() 
+    const navigate = useNavigate() 
     const { setContextUsername } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
     
     const handleInputChange = (e) => {
-        const {id, value} = e.target
-
-        if(id === "username"){
-            setUsername(value);
-        }    
+        const {id, value} = e.target  
         
         if(id === "password"){
             setPassword(value);
         }
+        if(id === "student"){
+            setRole(value);
+        }
+        if(id === "teacher"){
+            setRole(value);
+        } 
     }
 
     const handleSubmit  = (e) => {
@@ -44,9 +45,9 @@ export default function LoginForm() {
             const data = await response.json();  
 
             localStorage.setItem("username", data.username);
-            localStorage.setItem("token", data.token);
-            //navigate("/home")    
-            setContextUsername(data.username);      
+            localStorage.setItem("token", data.token);               
+            setContextUsername(data.username);             
+            data.role === "student" ? navigate("/student") : navigate("/teacher") 
             
         } catch (error) {
             alert(error)
@@ -64,8 +65,7 @@ export default function LoginForm() {
                 <div className="password">
                     <label className="form_label" htmlFor="password">Password </label>
                     <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password" id="password" placeholder="Password" required/>
-                </div>
-                
+                </div>                
                 <div className="submit-button">
                     <button type="submit" className="btn">Login</button>
                 </div>                      
