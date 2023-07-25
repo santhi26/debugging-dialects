@@ -20,7 +20,7 @@ GET http://localhost:3000/api/flashcard/7/French
 
 ###
 # SEE FLASHCARDS DUE
-GET http://localhost:3000/api/flashcard/due/2
+GET http://localhost:3000/api/flashcard/due/1
 ###
 
 ###
@@ -44,6 +44,21 @@ Content-Type: application/json
   "reviewResult": "Good"
 }
 ###
+
+###
+# CREATE A FLASHCARD
+POST http://localhost:3000/api/flashcard/create
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "type": "Normal",
+  "title": "Test creation",
+  "front": "Test front",
+  "back": "Test back"
+}
+###
+
 
 ###
 # CREATE A NEW STUDENT

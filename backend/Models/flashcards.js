@@ -119,5 +119,34 @@ getAllByLevelAndLanguage: async (level, language) => {
 },
 
 
+
+// USER CREATED FLASHCARDS //
+
+createUserFlashcard: async (user_id, type, title, front, back) => {
+  try {
+    // Insert new record into user_flashcards
+    const flashcard = await db.query(
+      'INSERT INTO user_flashcards (user_id, type) VALUES ($1, $2) RETURNING flashcard_id', 
+      [user_id, type]
+    );
+
+    // If the flashcard was successfully created, insert details into user_flashcards_normal
+    if (flashcard.rows.length > 0) {
+      const flashcardId = flashcard.rows[0].flashcard_id;
+      const details = await db.query(
+        'INSERT INTO user_flashcards_normal (flashcard_id, title, front, back) VALUES ($1, $2, $3, $4) RETURNING *', 
+        [flashcardId, title, front, back]
+      );
+      return details.rows[0];
+    } else {
+      return { error: "Error creating flashcard" };
+    }
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+}
+
+
 };
 module.exports = Flashcard;

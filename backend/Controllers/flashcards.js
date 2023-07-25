@@ -83,11 +83,24 @@ const getAllFlashcardsForLevelAndLanguage = async (req, res) => {
   }
 }
 
+const createFlashcard = async (req, res) => {
+  const { user_id, type, title, front, back } = req.body;
+
+  const flashcard = await Flashcard.createUserFlashcard(user_id, type, title, front, back);
+
+  if (flashcard.error) {
+    return res.status(500).json({ error: flashcard.error });
+  } else {
+    return res.status(201).json({ flashcard: flashcard });
+  }
+}
+
 
 
 module.exports = {
   getFlashcard,
   getDueFlashcards,
   reviewFlashcard,
-  getAllFlashcardsForLevelAndLanguage
+  getAllFlashcardsForLevelAndLanguage,
+  createFlashcard,
 };
