@@ -1,13 +1,13 @@
 import React from 'react';
-import { RegistrationForm } from '../../components';
+import { RegistrationFormStudent } from '../../components';
 
 
 
 
-export default function reg() {
+export default function regStudent() {
     return (
         <>
-            <RegistrationForm />
+            <RegistrationFormStudent />
            
         </>
     )
