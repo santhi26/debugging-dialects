@@ -1,22 +1,20 @@
 import React, {useState, useEffect} from 'react';
-//import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
-export default function RegistrationForm() {
+export default function RegistrationFormStudent() {
 
-    //const navigate = useNavigate() 
+    const navigate = useNavigate() 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [role, setRole] =  useState("")
+    const [confirmPassword, setConfirmPassword] = useState("");   
+    const [fullName, setFullName] = useState("");
+    const [homeLanguage, setHomeLanguage] = useState("")
 
     
     const handleInputChange = (e) => {
-        const {id, value, type, name} = e.target
+        const {id, value} = e.target
 
-        if (type === "radio" && name === "role") {
-            setRole(value);
-        }
         if(id === "username"){
             setUsername(value);
         }        
@@ -28,13 +26,13 @@ export default function RegistrationForm() {
         }
         if(id === "confirmPassword"){
             setConfirmPassword(value);
-        }
-        if(id === "student"){
-            setRole(value);
-        }
-        if(id === "teacher"){
-            setRole(value);
         }        
+        if(id === "homeLanguage"){
+            setHomeLanguage(value);
+        }
+        if(id === "fullName"){
+            setFullName(value);
+        }           
     }
 
     const handleSubmit  = (e) => {
@@ -54,13 +52,15 @@ export default function RegistrationForm() {
                     username: username,
                     password: password,
                     email: email,
-                    role: role,
+                    role: "student",
+                    student_name: fullName,
+                    student_home_language: homeLanguage,
                     joined_date: new Date().toISOString()
             })}
 
-            const response = await fetch('http://localhost:3000/api/user/register', options);
+            const response = await fetch('http://localhost:3000/api/user/register/student', options);
             const data = await response.json();  
-            alert("registered!")        
+            navigate("/login");       
             
         } catch (error) {
             alert(error)
@@ -77,24 +77,25 @@ export default function RegistrationForm() {
             <label className="form_label" htmlFor="email">Email </label>
             <input className="form_input" value={email} onChange = {(e) => handleInputChange(e)} type="email" id="email" placeholder="Email" required/>       
         </div>
+        <div className="fullName">
+            <label className="form_label" htmlFor="fullName">Full Name </label>
+            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="fullName" id="fullName" placeholder="fullName" required/>       
+        </div>   
+        <div className="homeLanguage">
+            <label className="form_label" htmlFor="homeLanguage">Home Language </label>
+            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage" id="homeLanguage" placeholder="homeLanguage" required/>       
+        </div>      
         <div className="password">
             <label className="form_label" htmlFor="password">Password </label>
             <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password"  id="password" placeholder="Password" required/>
         </div>
         <div className="confirm-password">
             <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
-            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>
-        <div className="role" onChange={(e) => handleInputChange(e)}>
-            <p>I am a: </p>
-            <label htmlFor="student">Student</label>
-            <input type="radio" id="student" name="role" value="student" />
-            <label htmlFor="student">Teacher</label>           
-            <input type="radio" id="teacher" name="role" value="teacher" />
-        </div>    
+            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>         
+        </div>        
         <div className="submit-button">
             <button type="submit" className="btn">Register</button>
         </div>
-        </div>        
     </form>
   )
 }
