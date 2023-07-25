@@ -60,7 +60,7 @@ export default function RegistrationForm() {
 
             const response = await fetch('http://localhost:3000/api/user/register', options);
             const data = await response.json();  
-            //navigate("/login")          
+            alert("registered!")        
             
         } catch (error) {
             alert(error)
