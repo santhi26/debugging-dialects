@@ -3,7 +3,7 @@ import * as Pages from './pages';
 import {Routes, Route} from 'react-router-dom';
 import {Header} from './components';
 import './App.css'
-
+import { UserProvider } from './contexts';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path="/login" element={<Pages.login />} />
         </Route>
       </Routes>
+
     </>
   )
 }
