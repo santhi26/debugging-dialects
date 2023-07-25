@@ -37,6 +37,22 @@ const Students = {
       return { error: err.message };
     }
   },
+
+  getHomeLanguage: async (id) => {
+    try {
+      const student = await db.query('SELECT student_home_language FROM students WHERE student_id = $1', [id]);
+  
+      if (student.rows.length > 0) {
+        return student.rows[0].student_home_language;
+      } else {
+        return { error: "Student not found" };
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
+  
 };
 
 module.exports = Students;

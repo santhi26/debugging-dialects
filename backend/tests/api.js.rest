@@ -4,6 +4,11 @@ GET http://localhost:3000/api/student/1/level
 ###
 
 ###
+# GET A STUDENTS HOME LANGUAGE
+GET http://localhost:3000/api/student/1/language
+###
+
+###
 # GET A FLASHCARD
 GET http://localhost:3000/api/flashcard/1
 ###
