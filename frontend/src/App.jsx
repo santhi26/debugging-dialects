@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Pages from './pages';
 import {Routes, Route} from 'react-router-dom';
-import {HeaderUser} from './components';
+import {Header} from './components';
 import './App.css'
 import { UserProvider } from './contexts';
 
@@ -10,7 +10,7 @@ function App() {
     <>
      <UserProvider>
         <Routes>
-          <Route path="/" element={<HeaderUser />} >
+          <Route path="/" element={<Header />} >
             <Route index element={<Pages.homePage />} /> 
             <Route path="/registerHome" element={<Pages.registerHome />} /> 
             <Route path="/student" element={<Pages.studentPage />} /> 

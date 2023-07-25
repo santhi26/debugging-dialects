@@ -6,31 +6,31 @@ import { socket } from '../../socket';
 
 
 export default function messagePage() {
-    const {users, setUsers, messages, setMessages} = useContext(UserContext);
-    socket.connect();
-    const username = sessionStorage.getItem("username");
+    // const {users, setUsers, messages, setMessages} = useContext(UserContext);
+    // socket.connect();
+    // const username = sessionStorage.getItem("username");
 
-    useEffect(() => {
-        socket.emit("username", username);//can change username variable to be whatever variable holds the username (same for role);
+    // useEffect(() => {
+    //     socket.emit("username", username);//can change username variable to be whatever variable holds the username (same for role);
 
-        // socket.on('users', (user) => {
-        //     console.log(user);
-        //     setUsers(user);
-        // })
-    }, []);
+    //     // socket.on('users', (user) => {
+    //     //     console.log(user);
+    //     //     setUsers(user);
+    //     // })
+    // }, []);
 
-    useEffect(() => { //this is where we need to add all socket event listeners.
-        socket.on('users', (user) => {
-            setUsers(user);
-        })
-    }, [socket]);
-
-
+    // useEffect(() => { //this is where we need to add all socket event listeners.
+    //     socket.on('users', (user) => {
+    //         setUsers(user);
+    //     })
+    // }, [socket]);
 
 
-    useEffect(()=>{
-        console.log(users);
-    }, [users])
+
+
+    // useEffect(()=>{
+    //     console.log(users);
+    // }, [users])
 
     return (
         <>
