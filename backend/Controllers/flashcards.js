@@ -1,6 +1,12 @@
 const Flashcard = require('../Models/flashcards');
 const Students = require('../Models/students');
 const sm2 = require('../utils/sm2');
+const https = require('https');
+require("dotenv").config()
+
+const aiApiKey = process.env.OPENAI_API_KEY;
+
+
 
 // Fetch a flashcard by its ID
 const getFlashcard = async (req, res) => {
@@ -24,11 +30,14 @@ const getDueFlashcards = async (req, res) => {
   // Fetch user's level
   const level = await Students.getLevel(userId);
 
-  if (!level || level.error) {
-    return res.status(500).json({ error: level.error });
+  // Fetch student's home language
+  const homeLanguage = await Students.getHomeLanguage(userId);
+
+  if (!level || level.error || !homeLanguage || homeLanguage.error) {
+    return res.status(500).json({ error: level.error || homeLanguage.error });
   }
 
-  const flashcards = await Flashcard.getDueFlashcards(userId, level);
+  const flashcards = await Flashcard.getDueFlashcards(userId, level, homeLanguage);
 
   if (flashcards.error) {
     return res.status(500).json({ error: flashcards.error });
@@ -65,10 +74,88 @@ const reviewFlashcard = async (req, res) => {
   }
 }
 
+const getAllFlashcardsForLevelAndLanguage = async (req, res) => {
+  const level = parseInt(req.params.level, 10);
+  const language = req.params.language;
+
+  const flashcards = await Flashcard.getAllByLevelAndLanguage(level, language);
+
+  if (flashcards.error) {
+    return res.status(500).json({ error: flashcards.error });
+  } else if (!flashcards) {
+    return res.status(404).json({ error: 'No flashcards found' });
+  } else {
+    return res.status(200).json({ flashcards: flashcards });
+  }
+}
+
+const createFlashcard = async (req, res) => {
+  const { user_id, type, title, front, back } = req.body;
+
+  const flashcard = await Flashcard.createUserFlashcard(user_id, type, title, front, back);
+
+  if (flashcard.error) {
+    return res.status(500).json({ error: flashcard.error });
+  } else {
+    return res.status(201).json({ flashcard: flashcard });
+  }
+}
+
+const promptFlashcard = async (req, res) => {
+  const userId = req.params.userId;
+  const apiKey = aiApiKey; 
+  const apiUrl = 'api.openai.com';
+  const path = '/v1/chat/completions';
+  const prompt = req.body.prompt;
+
+  const requestBody = JSON.stringify({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: prompt }],
+    temperature: 0.7,
+  });
+  console.log("🚀 ~ file: flashcards.js:115 ~ promptFlashcard ~ requestBody:", requestBody)
+
+  const options = {
+    hostname: apiUrl,
+    path: path,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+  };
+
+  const httpsRequest = https.request(options, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+    response.on('end', () => {
+      console.log("🚀 ~ file: flashcards.js:134 ~ response.on ~ response:", data)
+      const response = JSON.parse(data);
+      const generatedContent = response.choices[0].message.content;
+      res.json({ generatedContent });
+    });
+  });
+
+  httpsRequest.on('error', (error) => {
+    res.status(500).json({ error: 'An error occurred while creating flashcard.', details: error });
+  });
+
+  httpsRequest.write(requestBody);
+  httpsRequest.end();
+};
+
+
+
+
 
 
 module.exports = {
   getFlashcard,
   getDueFlashcards,
   reviewFlashcard,
+  getAllFlashcardsForLevelAndLanguage,
+  createFlashcard,
+  promptFlashcard,
 };

@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import {Header} from './components';
 import './App.css'
 import { UserProvider } from './contexts';
+import {TeacherProfile} from './components';
 
 function App() {
   return (
@@ -20,8 +21,7 @@ function App() {
             <Route path="/message" element={<Pages.messagePage/>}/>
           </Route>
         </Routes>
-     </UserProvider>
-
+     </UserProvider>    
     </>
   )
 }
