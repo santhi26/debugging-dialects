@@ -1,4 +1,5 @@
 const db = require('../database/db');
+const bcrypt = require("bcrypt");
 
 const Students = {
   // Get a student's level by their ID

@@ -1,4 +1,6 @@
+const bcrypt = require("bcrypt");
 const Students = require('../Models/students');
+
 
 // Fetch a student's level by their ID
 const getStudentLevel = async (req, res) => {
@@ -17,7 +19,13 @@ const getStudentLevel = async (req, res) => {
 
 const createStudent = async (req, res) => {
   try {
-    const newStudent = await Students.createStudent(req.body);
+    const data = req.body;
+
+    const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
+    data["password"] = await bcrypt.hash(data["password"], salt);
+
+
+    const newStudent = await Students.createStudent(data);
     res.status(201).json(newStudent);
   } catch (err) {
     res.status(500).json({ error: err.message });
