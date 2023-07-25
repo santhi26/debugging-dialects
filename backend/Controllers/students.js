@@ -15,6 +15,16 @@ const getStudentLevel = async (req, res) => {
     }
 }
 
+const createStudent = async (req, res) => {
+  try {
+    const newStudent = await Students.createStudent(req.body);
+    res.status(201).json(newStudent);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
     getStudentLevel,
+    createStudent
 };
