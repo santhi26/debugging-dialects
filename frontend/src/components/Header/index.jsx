@@ -23,13 +23,14 @@ export default function Header() {
               <nav className="nav">
                 <NavLink to="/" style={styles}>Home </NavLink>
                 <NavLink to="/message" style={styles}>Chat </NavLink>
+                <NavLink to="/teacher/profile" style={styles}>Profile </NavLink>
                 <NavLink to="/about" style={styles}>About </NavLink>
               </nav>
             </header>
           ) : (
             <header>
               <nav>
-                <NavLink to="/" style={styles}>Home </NavLink>
+                <NavLink to="/student" style={styles}>Home </NavLink>
                 <NavLink to="/message" style={styles}>Chat </NavLink>
                 <NavLink to="student/flashcard" style={styles}>FlashCards </NavLink>
                 <NavLink to="/about" style={styles}>About </NavLink>

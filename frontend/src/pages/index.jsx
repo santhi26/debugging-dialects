@@ -9,3 +9,4 @@ export {default as login} from './login';
 export {default as about} from './about';
 export {default as createFlashCard} from './createFlashCard';
 export {default as updateProfileTeacher} from './updateProfileTeacher';
+export {default as teacherProfile} from './teacherProfile';
