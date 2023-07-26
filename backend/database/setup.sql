@@ -111,20 +111,21 @@ CREATE TABLE user_flashcards_normal (
     title VARCHAR(70),
     front TEXT,
     back TEXT,
+    image_url TEXT DEFAULT 'https://images.unsplash.com/photo-1508615070457-7baeba4003ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     PRIMARY KEY (flashcard_id, title)
 );
 
 INSERT INTO flashcards (type, level, language)
 VALUES
-    ('Normal', 1, 'English'),
-    ('Normal', 1, 'English'),
-    ('Normal', 1, 'English'),
-    ('Normal', 4, 'German'),
-    ('Normal', 5, 'English'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 2, 'Spanish'),
+    ('Normal', 3, 'Spanish'),
+    ('Normal', 4, 'Spanish'),
+    ('Normal', 5, 'Spanish'),
     ('Normal', 6, 'Spanish'),
-    ('Normal', 7, 'French'),
-    ('Normal', 8, 'German'),
-    ('Normal', 9, 'English'),
+    ('Normal', 7, 'Spanish'),
     ('Normal', 10, 'Spanish'),
     ('Normal', 11, 'French'),
     ('Normal', 12, 'German'),
@@ -197,8 +198,8 @@ VALUES
 INSERT INTO students (student_name, student_home_language)
 VALUES
     ('Alice', 'Spanish'),
-    ('Bob', 'French'),
-    ('Eve', 'German');
+    ('Bob', 'Spanish'),
+    ('Eve', 'Spanish');
 
 -- Insert dummy teacher data (you can add more teachers as needed)
 INSERT INTO teachers (teacher_name, teacher_profile_image, teacher_biography, teacher_rating, earnings, is_verified)
@@ -207,7 +208,3 @@ VALUES
     ('Sophia', '', 'Experienced English teacher offering tailored lessons.', 4.2, 1800, true),
     ('David', '', 'Passionate about teaching English to learners of all levels.', 4.8, 2000, false);
 
-INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
-VALUES
-    (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
-    (2, 1, 'Hard', '2023-03-02 12:00:00', 2.3, 2);

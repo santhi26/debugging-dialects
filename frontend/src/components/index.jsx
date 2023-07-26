@@ -17,3 +17,7 @@ export {default as ReviewFlashCard} from './ReviewFlashCard'
 export {default as Greetings} from './Greetings'
 export {default as Logout} from './Logout'
 export {default as Footer} from './Footer'
+export {default as SearchStudent} from './SearchStudent'
+export {default as StudentLevel} from './StudentLevel'
+export {default as StarRating} from './Rating'
+

@@ -295,11 +295,11 @@ body {
   
   .wrapper .icon {
     position: relative;
-    background: #8E8D8A;
+    background: #D8C3AE;
     border-radius: 50%;
     margin: 10px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     font-size: 18px;
     display: flex;
     justify-content: center;
@@ -313,7 +313,7 @@ body {
   .wrapper .tooltip {
     position: absolute;
     top: 0;
-    font-size: 14px;
+    font-size: 16px;
     background: #8E8D8A;
     color: #fff;
     padding: 5px 8px;
