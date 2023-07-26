@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+main{
+  display:flex;
+}
+
 .container {
   display: grid;
   grid-template-rows: 300px 1fr 1fr;
@@ -188,4 +192,28 @@ body {
   height: 40px;
   background-color: aqua;
   border-radius: 20px;
+}
+
+.flashcard{
+  display: flex;
+  flex-direction: column;
+  flex:0.8;
+  border-style: solid;
+  border-radius: 5px;
+  margin:10%;
+  height: 100%;
+  align-items: flex-start;
+  background-color: aqua;
+  
+}
+
+.flashcard-question,
+.flashcard-answer{
+  margin:1%;
+  padding: 0;
+  height:100%;
+}
+
+h3{
+  margin: 0;
 }

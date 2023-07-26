@@ -8,7 +8,7 @@ export default function Header () {
             <header>
                 <nav>
                     <NavLink to="/" style={styles}>Home</NavLink>
-                    <NavLink to="/registerHome" style={styles}>Register</NavLink>
+                    <NavLink to="/flashCard" style={styles}>flashCards</NavLink>
                     <NavLink to="/Login" style={styles}>Login</NavLink>   
                 </nav>
             </header>

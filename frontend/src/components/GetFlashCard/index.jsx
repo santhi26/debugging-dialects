@@ -9,9 +9,10 @@ export default function GetFlashCard() {
 
   const flashCardsAPI = async() => {
 
-    const response = await fetch(`http://localhost:3000/api/flashcard/due/1
+    const response = await fetch(`http://localhost:3000/api/flashcard/due/2
     `);
     const data = await response.json();
+    console.log(data)
     setFlashCards(data.dueFlashcards)    
   }
 
