@@ -36,6 +36,7 @@ const createStudent = async (req, res) => {
 const getStudentHomeLanguage = async (req, res) => {
   const id = parseInt(req.params.id, 10); // Make sure id is an integer
   const student = await Students.getHomeLanguage(id);
+  console.log("🚀 ~ file: students.js:39 ~ getStudentHomeLanguage ~ student:", student)
 
   if (student.error) {
     res.status(500).json({ error: student.error });
@@ -58,6 +59,8 @@ const getStudentDetails = async (req, res) => {
     res.status(200).json(student);
   }
 };
+
+
 
 
 module.exports = {

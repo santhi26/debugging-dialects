@@ -8,13 +8,20 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "test",
-    "coverage": "jest --coverage"
+    "test": "jest",
+    "coverage": "vitest run --coverage"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
+    "react-tooltip": "^5.18.1",
     "socket.io-client": "^4.7.1"
   },
   "devDependencies": {
@@ -27,7 +34,6 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "@vitest/coverage-v8": "^0.33.0",
-    "babel-jest": "^29.6.1",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
