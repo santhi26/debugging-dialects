@@ -126,3 +126,16 @@ Content-Type: application/json
   "teacher_profile_image": "https://avatars.githubusercontent.com/u/2827932?v=4"
 }
 ###
+
+###
+# UPDATE A TEACHER'S DETAILS
+PUT http://localhost:3000/api/teacher/1/update
+Content-Type: application/json
+
+{
+  "teacher_name": "updated_teacher",
+  "teacher_profile_image": "https://avatars.githubusercontent.com/u/2827932?v=4",
+  "teacher_biography": "Updated biography, I have now been teaching for 15 years",
+  "qualifications": "Updated qualifications, now a PhD in English Literature"
+}
+###
