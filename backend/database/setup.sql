@@ -116,15 +116,15 @@ CREATE TABLE user_flashcards_normal (
 
 INSERT INTO flashcards (type, level, language)
 VALUES
-    ('Normal', 1, 'English'),
-    ('Normal', 1, 'English'),
-    ('Normal', 1, 'English'),
-    ('Normal', 4, 'German'),
-    ('Normal', 5, 'English'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 1, 'Spanish'),
+    ('Normal', 2, 'Spanish'),
+    ('Normal', 3, 'Spanish'),
+    ('Normal', 4, 'Spanish'),
+    ('Normal', 5, 'Spanish'),
     ('Normal', 6, 'Spanish'),
-    ('Normal', 7, 'French'),
-    ('Normal', 8, 'German'),
-    ('Normal', 9, 'English'),
+    ('Normal', 7, 'Spanish'),
     ('Normal', 10, 'Spanish'),
     ('Normal', 11, 'French'),
     ('Normal', 12, 'German'),
