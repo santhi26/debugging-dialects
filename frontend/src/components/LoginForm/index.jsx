@@ -1,11 +1,14 @@
 import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
+import { Link } from 'react-router-dom';
 
 export default function LoginForm() {
 
     const navigate = useNavigate() 
     const { setContextUsername } = useContext(UserContext);
+    const { setUserID } = useContext(UserContext);
+    const { setRole } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -41,14 +44,17 @@ export default function LoginForm() {
             const response = await fetch('http://localhost:3000/api/user/login', options);
             const data = await response.json();  
 
-            if(data.length > 1) {
+            if(data.username) {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);               
-                setContextUsername(data.username);             
+                setContextUsername(data.username); 
+                setUserID(data.user_id) 
+                setRole(data.role)           
                 data.role === "student" ? navigate("/student") : navigate("/teacher")
             } else {
+                console.log(data)
                 alert("wrong")
-            }            
+            }          
             
         } catch (error) {
             alert(error)
@@ -58,7 +64,9 @@ export default function LoginForm() {
     return (
         <>
             <form className="Form" onSubmit={handleSubmit}>
-                <p>Login</p>
+                <h1>FluentPal</h1>
+                <h2>Login</h2>
+                <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                 <div className="username">
                     <label className="form_label" htmlFor="username">Username </label>
                     <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       

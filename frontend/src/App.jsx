@@ -4,7 +4,6 @@ import {Routes, Route} from 'react-router-dom';
 import {Header} from './components';
 import './App.css'
 import { UserProvider } from './contexts';
-import {TeacherProfile} from './components';
 
 function App() {
   return (
@@ -14,10 +13,17 @@ function App() {
           <Route path="/" element={<Header />} >
             <Route index element={<Pages.homePage />} /> 
             <Route path="/registerHome" element={<Pages.registerHome />} /> 
+            <Route path="/register" element={<Pages.register />} /> 
+            <Route path="/registerTeacher" element={<Pages.registerTeacher />} /> 
             <Route path="/student" element={<Pages.studentPage />} /> 
             <Route path="/teacher" element={<Pages.teacherPage />} /> 
-            <Route path="/flashCard" element={<Pages.flashCard />} /> 
+            <Route path="/teacher/profile" element={<Pages.teacherProfile />} /> 
+            <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} /> 
+            <Route path="student/flashCard" element={<Pages.flashCard />} /> 
             <Route path="/login" element={<Pages.login />} />
+            <Route path="/message" element={<Pages.messagePage/>}/>
+            <Route path="/about" element={<Pages.about/>}/>
+            <Route path="/createFlashCard" element={<Pages.about/>}/>
           </Route>
         </Routes>
      </UserProvider>    

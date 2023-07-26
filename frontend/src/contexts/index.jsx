@@ -4,11 +4,13 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [contextUsername, setContextUsername] = useState("");
-  const [messages, setMessages] = useState("");
-  const [users, setUsers] = useState("")
+  const [messages, setMessages] = useState([{sender_username:"", recipient_username:"", date_sent:"", message:""}]);
+  const [users, setUsers] = useState([{username:"", user_id:"", role:"student", is_online:false}]);
+  const [userID, setUserID] = useState("")
+  const [role, setRole] = useState("")
 
   return (
-    <UserContext.Provider value={{ contextUsername, setContextUsername, messages, setMessages, users, setUsers }}>
+    <UserContext.Provider value={{ contextUsername, setContextUsername, messages, setMessages, users, setUsers, userID, setUserID, role, setRole }}>
       {children}
     </UserContext.Provider>
   );

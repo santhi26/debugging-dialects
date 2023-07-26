@@ -1,6 +1,21 @@
 ###
+# GET A STUDENTS DETAILS
+GET http://localhost:3000/api/student/1/details
+###
+
+###
+# GET A TEACHERS DETAILS
+GET http://localhost:3000/api/teacher/1/details
+###
+
+###
 # GET A STUDENTS LEVEL
 GET http://localhost:3000/api/student/1/level
+###
+
+###
+# GET A STUDENTS HOME LANGUAGE
+GET http://localhost:3000/api/student/1/language
 ###
 
 ###
@@ -9,8 +24,18 @@ GET http://localhost:3000/api/flashcard/1
 ###
 
 ###
+# SEE FLASHCARDS FOR A LANGUAGE AND LEVEL
+GET http://localhost:3000/api/flashcard/7/French
+###
+
+###
 # SEE FLASHCARDS DUE
 GET http://localhost:3000/api/flashcard/due/1
+###
+
+###
+# SEE USER FLASHCARDS DUE
+GET http://localhost:3000/api/flashcard/usercards/due/1
 ###
 
 ###
@@ -34,6 +59,31 @@ Content-Type: application/json
   "reviewResult": "Good"
 }
 ###
+
+###
+# CREATE A FLASHCARD
+POST http://localhost:3000/api/flashcard/create
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "type": "Normal",
+  "title": "Test creation",
+  "front": "Test front",
+  "back": "Test back"
+}
+###
+
+###
+# CREATE AN AI FLASHCARD
+POST http://localhost:3000/api/flashcard/usercards/prompt/1
+Content-Type: application/json
+
+{
+  "cardCount": 4
+}
+###
+
 
 ###
 # CREATE A NEW STUDENT
