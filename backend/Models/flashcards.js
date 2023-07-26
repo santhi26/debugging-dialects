@@ -34,6 +34,7 @@ getDueFlashcards: async (userId, level, homeLanguage) => {
              OR flashcards_review_history.next_review_date IS NULL)
       ORDER BY flashcards_review_history.next_review_date DESC
     `, [level, userId, homeLanguage]);
+    console.log("🚀 ~ file: flashcards.js:37 ~ getDueFlashcards: ~ result:", result)
     
     return result.rows;
   } catch (err) {
@@ -226,6 +227,43 @@ updateUserFlashcardReview: async (card_id, user_id, review) => {
 },
 
 
+
+checkAllFlashcardsReviewed: async (userId, level, homeLanguage) => {
+  try {
+    const result = await db.query(
+      `SELECT 
+        (SELECT COUNT(*) FROM flashcards WHERE level = $1 AND language = $2) AS total_flashcards,
+        (SELECT COUNT(DISTINCT frh.card_id) FROM flashcards_review_history frh JOIN flashcards fc ON frh.card_id = fc.flashcard_id WHERE frh.user_id = $3 AND fc.level = $1 AND fc.language = $2) AS reviewed_flashcards`,
+      [level, homeLanguage, userId]
+    );
+    console.log("🚀 ~ file: flashcards.js:243 ~ checkAllFlashcardsReviewed: ~ result:", result)
+
+    return result.rows[0].total_flashcards === result.rows[0].reviewed_flashcards;
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
+
+
+// Update the student's level in the students table
+updateLevel: async (userId, newLevel) => {
+  try {
+    const result = await db.query(
+      'UPDATE students SET student_level = $1 WHERE student_id = $2 RETURNING *',
+      [newLevel, userId]
+    );
+
+    if (result.rows.length > 0) {
+      return result.rows[0];
+    } else {
+      return { error: 'Failed to update student level' };
+    }
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
 
 
 };

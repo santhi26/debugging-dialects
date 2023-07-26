@@ -40,7 +40,7 @@ GET http://localhost:3000/api/flashcard/usercards/due/1
 
 ###
 # MARK A FLASHCARD AS REVIEWED
-POST http://localhost:3000/api/flashcard/3/review
+POST http://localhost:3000/api/flashcard/5/review
 Content-Type: application/json
 
 {

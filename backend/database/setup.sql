@@ -197,8 +197,8 @@ VALUES
 INSERT INTO students (student_name, student_home_language)
 VALUES
     ('Alice', 'Spanish'),
-    ('Bob', 'French'),
-    ('Eve', 'German');
+    ('Bob', 'Spanish'),
+    ('Eve', 'Spanish');
 
 -- Insert dummy teacher data (you can add more teachers as needed)
 INSERT INTO teachers (teacher_name, teacher_profile_image, teacher_biography, teacher_rating, earnings, is_verified)
@@ -207,7 +207,3 @@ VALUES
     ('Sophia', '', 'Experienced English teacher offering tailored lessons.', 4.2, 1800, true),
     ('David', '', 'Passionate about teaching English to learners of all levels.', 4.8, 2000, false);
 
-INSERT INTO flashcards_review_history (card_id, user_id, review_result, next_review_date, ease_factor, repetitions)
-VALUES
-    (1, 1, 'Easy', '2023-08-01 12:00:00', 2.5, 1),
-    (2, 1, 'Hard', '2023-03-02 12:00:00', 2.3, 2);
