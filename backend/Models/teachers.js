@@ -36,7 +36,7 @@ const Teachers = {
   getTeacherDetails: async (id) => {
     try {
       const teacher = await db.query(
-        'SELECT teacher_name, teacher_profile_image, teacher_biography, qualifications FROM teachers WHERE teacher_id = $1', 
+        'SELECT teacher_name, teacher_profile_image, teacher_biography, teacher_home_language, qualifications, teacher_rating, earnings, is_verified FROM teachers WHERE teacher_id = $1', 
         [id]
       );
   
@@ -50,6 +50,34 @@ const Teachers = {
       return { error: err.message };
     }
   },
+
+  updateTeacherDetails: async (id, data) => {
+    const { 
+      teacher_name, 
+      teacher_profile_image, 
+      teacher_biography, 
+      qualifications
+    } = data;
+  
+    try {
+      const updatedTeacher = await db.query(
+        `UPDATE teachers 
+         SET teacher_name = $1, teacher_profile_image = $2, teacher_biography = $3, qualifications = $4 
+         WHERE teacher_id = $5 RETURNING *`,
+        [teacher_name, teacher_profile_image, teacher_biography, qualifications, id]
+      );
+  
+      if (updatedTeacher.rows.length > 0) {
+        return updatedTeacher.rows[0];
+      } else {
+        return { error: "Teacher not found" };
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
+  
   
 };
 

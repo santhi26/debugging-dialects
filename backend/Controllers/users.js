@@ -20,12 +20,12 @@ async function register(req, res) {
 async function login(req, res) {
     try {
         const data = req.body;
-        console.log("🚀 ~ file: users.js:23 ~ login ~ data:", data)
+        // console.log("🚀 ~ file: users.js:23 ~ login ~ data:", data)
 
         const user = await User.getOneByUsername(data.username);
-        console.log("🚀 ~ file: users.js:26 ~ login ~ user:", user)
+        // console.log("🚀 ~ file: users.js:26 ~ login ~ user:", user)
         const authenticated = await bcrypt.compare(data.password, user["password"]);
-        console.log("🚀 ~ file: users.js:28 ~ login ~ authenticated:", authenticated)
+        // console.log("🚀 ~ file: users.js:28 ~ login ~ authenticated:", authenticated)
 
         if (!authenticated) {
             throw new Error("Incorrect credentials.")

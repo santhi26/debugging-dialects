@@ -25,7 +25,7 @@ function App() {
             <Route path="/login" element={<Pages.login />} />
             <Route path="/message" element={<Pages.messagePage/>}/>
             <Route path="/about" element={<Pages.about/>}/>
-            <Route path="/createFlashCard" element={<Pages.about/>}/>
+            <Route path="/createFlashCard" element={<Pages.createFlashCard/>}/>
           </Route>
         </Routes>
      </UserProvider>    
