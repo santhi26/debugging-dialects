@@ -3,7 +3,7 @@ import { UserContext } from '../../contexts';
 import { TeacherProfile } from '..';
 
 export default function TeacherProfileForm() {
-    const { contextUsername } = useContext(UserContext);
+    const { userID } = useContext(UserContext);
     const [fullName, setFullName] = useState("");
     const [biography, setBiography] = useState("");
     const [homeLanguage, setHomeLanguage] = useState("");
@@ -40,7 +40,7 @@ export default function TeacherProfileForm() {
     const teacherProfileAPI = async() => {
         try {
             const options = {
-                method: "POST",
+                method: "UPDATE",
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ export default function TeacherProfileForm() {
                     qualifications: qualifications
             })}
 
-            const response = await fetch('http://localhost:3000/api/user/register', options);
+            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/update`, options);
             await response.json();  
                       
             
@@ -64,7 +64,7 @@ export default function TeacherProfileForm() {
 
     const searchTeacherAPI = async() => {
         try {
-            const response = await fetch(`http://localhost:3000/api/TEACHER/${contextUsername}`);
+            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/details`);
             const result = await response.json(); 
             setData(result);           
             
