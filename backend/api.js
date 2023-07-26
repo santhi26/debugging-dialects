@@ -45,24 +45,53 @@ io.on("connection", socket => {
     console.log(`${socket.id} has connected.`);
     socket.join(socket.id);
     let user;
+    let messages;
     socket.on("username", async (username) => { //only needs username, rest of data can be gathered from db...
+        console.log(`Incoming username: ${username}`);
+
         socket.username = username;
         if (users.filter(acc => acc.username == username).length > 0) {
             users.forEach(acc => {
                 if (acc.username === username) {
                     acc.user_id = socket.id;
                     acc.is_online = true;
+
+                    user = new User(username, socket.id, acc.role, true);
                 }
             })
         } else {
-            const response = await db.query('SELECT * FROM users WHERE username = $1;', [username]);
-            user = new User(username, socket.id, response.rows[0].role, true);
-            users.push(user);
+            try {
+                const userResponse = await db.query('SELECT * FROM users WHERE username = $1;', [username]);
+                user = new User(username, socket.id, userResponse.rows[0].role, true);
+                users.push(user);
+            } catch(err) {
+                console.log({'error': err});
+            }
         }
         // socket.emit('users', users); //this sends the updated user list to all users. suboptimal but acceptable
         console.log(users);
-        io.to(socket.id).emit('users', users);
+        // io.to(socket.id).emit('users', users);
+        io.emit("users", users);
 
+        //here we are going to retrieve all messages where the user is either a sender or recipient and send an array of all messages to the user.
+        try {
+            const messageResponse = await db.query('SELECT * FROM messages WHERE sender_username = $1 OR recipient_username = $1;', [username]);
+            messages = messageResponse.rows
+        } catch(err) {
+            console.log({'error': err});
+        }
+        io.to(socket.id).emit('messages', messages);
+        // console.log(messages);
+    });
+
+
+    socket.on('new_message', async (msg)=>{
+        console.log(msg);
+        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message) VALUES ($1, $2, $3);', [msg.sender_username, msg.recipient_username, msg.message]);
+
+        // socket.to(socket.id).to(msg.recipient_id).emit('new_message', msg);
+        io.to(socket.id).emit("new_message", msg);
+        io.to(msg.recipient_id).emit("new_message", msg);
     })
 
     socket.on("disconnect", ()=>{
@@ -73,8 +102,9 @@ io.on("connection", socket => {
                 acc.is_online = false;
             }
         })
+        console.log(users)
         // would then need to send this info to all users.
-
+        io.emit("users", users);
     })
 })
 

@@ -26,18 +26,22 @@ const getFlashcard = async (req, res) => {
 // Fetch all due flashcards for a user by user's ID
 const getDueFlashcards = async (req, res) => {
   const userId = parseInt(req.params.userId, 10)
+  console.log("🚀 ~ file: flashcards.js:29 ~ getDueFlashcards ~ userId:", userId)
 
   // Fetch user's level
   const level = await Students.getLevel(userId);
+  console.log("🚀 ~ file: flashcards.js:33 ~ getDueFlashcards ~ level:", level)
 
   // Fetch student's home language
   const homeLanguage = await Students.getHomeLanguage(userId);
+  console.log("🚀 ~ file: flashcards.js:37 ~ getDueFlashcards ~ homeLanguage:", homeLanguage)
 
   if (!level || level.error || !homeLanguage || homeLanguage.error) {
     return res.status(500).json({ error: level.error || homeLanguage.error });
   }
 
   const flashcards = await Flashcard.getDueFlashcards(userId, level, homeLanguage);
+  console.log("🚀 ~ file: flashcards.js:44 ~ getDueFlashcards ~ flashcards:", flashcards)
 
   if (flashcards.error) {
     return res.status(500).json({ error: flashcards.error });
@@ -190,6 +194,31 @@ const getDueUserFlashcards = async (req, res) => {
   }
 }
 
+// For reviewing user flashcards
+const reviewUserFlashcard = async (req, res) => {
+  const card_id = req.params.id;
+  const { user_id, reviewResult } = req.body;
+
+  let flashcardReview = await Flashcard.getUserFlashcardReview(card_id, user_id);
+
+  if (flashcardReview.error) {
+    res.status(500).json({ error: flashcardReview.error })
+  } else {
+    const updatedReview = sm2.review({...flashcardReview, easeFactor: flashcardReview.ease_factor, repetitions: flashcardReview.repetitions}, reviewResult);
+    updatedReview.reviewResult = reviewResult;
+    let result;
+    if (flashcardReview.isNew) { // If the review record is new
+      result = await Flashcard.insertUserFlashcardReview(card_id, user_id, updatedReview); // Perform INSERT operation
+    } else {
+      result = await Flashcard.updateUserFlashcardReview(card_id, user_id, updatedReview); // Perform UPDATE operation
+    }
+    if (result.error) {
+      res.status(500).json({ error: result.error })
+    } else {
+      res.status(200).json({ review: result })
+    }
+  }
+}
 
 
 
@@ -204,5 +233,6 @@ module.exports = {
   getAllFlashcardsForLevelAndLanguage,
   createFlashcard,
   promptFlashcard,
-  getDueUserFlashcards
+  getDueUserFlashcards,
+  reviewUserFlashcard
 };
