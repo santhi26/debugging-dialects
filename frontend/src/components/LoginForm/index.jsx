@@ -51,8 +51,9 @@ export default function LoginForm() {
                 localStorage.setItem("userID", data.user_id);            
                 setContextUsername(data.username); 
                 setUserID(data.user_id) 
-                setRole(data.role)                       
-                data.role === "student" ? (navigate("/student"), setLevel(data.student_level)) : navigate("/teacher");                
+                setRole(data.role)  
+                console.log(data.role)                     
+                data.role === "student" ? navigate("/student") : navigate("/teacher");                
 
             } else {
                 alert("Incorrect Credentials")
