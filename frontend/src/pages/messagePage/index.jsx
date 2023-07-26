@@ -17,7 +17,7 @@ export default function messagePage() {
     socket.connect();
 
     //
-    console.log(contextUsername);
+    // console.log(contextUsername);
     const username = contextUsername;
 
     //upon loading the page, the username is sent to the server
@@ -76,10 +76,10 @@ export default function messagePage() {
     //     console.log(users);
     // }, [users])
 
-    useEffect(()=>{
-        console.log('Messages');
-        console.log(messages);
-    }, [messages])
+    // useEffect(()=>{
+    //     console.log('Messages');
+    //     console.log(messages);
+    // }, [messages])
 
     return (
         <main className='message-page'>
