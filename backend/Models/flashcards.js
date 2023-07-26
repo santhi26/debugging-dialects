@@ -148,8 +148,8 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     }
 
     // If 'front' does not contain any whitespace, get the definition from Free Dictionary API
-    let thedefinition = 'null';
-    let audio = 'null';
+    let thedefinition = null;
+    let audio = null;
 
     if (!/\s/.test(front)) {
       const dictionaryResponse = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${front}`);
