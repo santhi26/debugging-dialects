@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect, beforeEach} from 'vitest';
-import '@testing-library/jest-dom/extend-expect'; 
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 import Message from './Message';
