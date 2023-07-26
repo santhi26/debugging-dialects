@@ -10,7 +10,6 @@ export default function studentPage() {
             <button className="studentbtn"><Link to="/message">Chat</Link></button>
             <button className="studentbtn"><Link to="/student/flashCard">FlashCards</Link></button>
             <Component.SearchStudent />
-            <Component.StarRating />
             </div>
         </>
       )    
