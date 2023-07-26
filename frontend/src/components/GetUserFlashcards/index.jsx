@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
+
 
 export default function GetUserFlashcards({ userId }) {
   console.log("🚀 ~ file: index.jsx:4 ~ GetUserFlashcards ~ userId:", userId);
   const [flashCards, setFlashCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [definition, setDefinition] = useState('');
 
   useEffect(() => {
     const fetchFlashCards = async () => {
@@ -54,17 +58,42 @@ export default function GetUserFlashcards({ userId }) {
     }
   };
 
+  const fetchDefinition = async (word) => {
+    try {
+      // Replace this with your actual API call to the Free Dictionary API
+      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+      const data = await response.json();
+      console.log("🚀 ~ file: index.jsx:65 ~ fetchDefinition ~ data:", data)
+      
+      // This assumes that the definition is in the form data[0].meanings[0].definitions[0].definition
+      // You might need to adjust this depending on the actual response structure
+      setDefinition(data[0].meanings[0].definitions[0].definition);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   if (!currentCard) {
     return <p className="loading">Loading...</p>;
   }
 
- return (
+return (
     <div>
+      <ReactTooltip place="top" type="dark" effect="float" />
       <div className={`flip-card ${showAnswer ? "flipped" : ""}`}>
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <div className="card-content">
-             <h3 className="front-heading">{currentCard.front}</h3>
+              {/* Add data-tip with a unique identifier for the tooltip */}
+              <h3
+                className="front-heading"
+                data-tip={`definition-${currentCard.front}`}
+                onMouseEnter={() => fetchDefinition(currentCard.front)}
+                onClick={() => fetchDefinition(currentCard.front)}
+              >
+                {currentCard.front}
+              </h3>
+
               <div className="image-container">
                 <img
                   src={currentCard.image_url}
@@ -73,8 +102,8 @@ export default function GetUserFlashcards({ userId }) {
             </div>
           </div>
           <div className="flip-card-back">
-          <h3 className="front-heading">{currentCard.front}</h3>
-          <h3 className="back-heading">{currentCard.back}</h3>
+            <h3 className="front-heading">{currentCard.front}</h3>
+            <h3 className="back-heading">{currentCard.back}</h3>
             <div className="button-container">
           <ul className="wrapper">
             <li className="icon easy" onClick={() => handleAnswer("Easy")}>
