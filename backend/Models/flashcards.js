@@ -147,13 +147,19 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
       return "https://images.unsplash.com/photo-1508615070457-7baeba4003ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
     }
 
-    // Get definition from Free Dictionary API
-    const dictionaryResponse = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${front}`);
-    const thedefinition = dictionaryResponse.data[0].meanings[0].definitions[0].definition;
-    console.log("🚀 ~ file: flashcards.js:153 ~ createUserFlashcard: ~ thedefinition:", thedefinition)
-    const audio = dictionaryResponse.data[0].phonetics[1].audio;
-    console.log("🚀 ~ file: flashcards.js:155 ~ createUserFlashcard: ~ audio:", audio)
-    
+    // If 'front' does not contain any whitespace, get the definition from Free Dictionary API
+    let thedefinition = 'null';
+    let audio = 'null';
+
+    if (!/\s/.test(front)) {
+      const dictionaryResponse = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${front}`);
+      thedefinition = dictionaryResponse.data[0]?.meanings[0]?.definitions[0]?.definition;
+      console.log("🚀 ~ file: flashcards.js:153 ~ createUserFlashcard: ~ thedefinition:", thedefinition);
+      audio = dictionaryResponse.data[0]?.phonetics[1]?.audio || 'null';
+      console.log("🚀 ~ file: flashcards.js:155 ~ createUserFlashcard: ~ audio:", audio);
+  }
+  
+
     // Insert new record into user_flashcards
     const flashcard = await db.query(
       'INSERT INTO user_flashcards (user_id, type) VALUES ($1, $2) RETURNING flashcard_id', 
