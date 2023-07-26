@@ -117,7 +117,7 @@ CREATE TABLE user_flashcards_normal (
 INSERT INTO flashcards (type, level, language)
 VALUES
     ('Normal', 1, 'English'),
-    ('Normal', 1, 'English'),
+    ('Normal', 1, 'Spanish'),
     ('Normal', 1, 'Spanish'),
     ('Normal', 4, 'German'),
     ('Normal', 5, 'English'),
