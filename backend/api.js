@@ -87,7 +87,7 @@ io.on("connection", socket => {
 
     socket.on('new_message', async (msg)=>{
         console.log(msg);
-        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message) VALUES ($1, $2, $3);', [msg.sender_username, msg.recipient_username, msg.message]);
+        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message, date_sent) VALUES ($1, $2, $3, $4);', [msg.sender_username, msg.recipient_username, msg.message, msg.send_date]);
 
         // socket.to(socket.id).to(msg.recipient_id).emit('new_message', msg);
         io.to(socket.id).emit("new_message", msg);

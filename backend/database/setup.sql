@@ -56,7 +56,7 @@ CREATE TABLE messages (
     message_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     sender_username VARCHAR(255) NOT NULL REFERENCES users(username),
     recipient_username VARCHAR(255) NOT NULL REFERENCES users(username),
-    date_sent TIMESTAMPTZ DEFAULT 'NOW',
+    date_sent TIMESTAMPTZ NOT NULL,
     message VARCHAR(10000) NOT NULL
 );
 

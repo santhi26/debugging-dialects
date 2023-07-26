@@ -53,7 +53,8 @@ export default function messagePage() {
     function sendMessage(e) {
         e.preventDefault();
         const recipient_id = users.filter(acc => acc.username === recipient)[0].user_id
-        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id});
+        const datetime = new Date();
+        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id, send_date:datetime});
     }
     
 
