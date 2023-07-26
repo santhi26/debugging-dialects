@@ -25,7 +25,7 @@ const getFlashcard = async (req, res) => {
 
 // Fetch all due flashcards for a user by user's ID
 const getDueFlashcards = async (req, res) => {
-  const userId = parseInt(req.params.userId, 10)
+  const userId = parseInt(req.params.userId, 10);
   console.log("🚀 ~ file: flashcards.js:29 ~ getDueFlashcards ~ userId:", userId)
 
   // Fetch user's level
@@ -48,9 +48,37 @@ const getDueFlashcards = async (req, res) => {
   } else if (!flashcards) {
     return res.status(404).json({ error: 'No due flashcards found' });
   } else {
-    return res.status(200).json({ dueFlashcards: flashcards });
+    // Check if the user has reviewed all flashcards of their current level
+    const allFlashcardsReviewed = await Flashcard.checkAllFlashcardsReviewed(userId, level, homeLanguage);
+    console.log("🚀 ~ file: flashcards.js:53 ~ getDueFlashcards ~ allFlashcardsReviewed:", allFlashcardsReviewed)
+
+    if (allFlashcardsReviewed) {
+      // If all flashcards are reviewed, update the student's level
+      const updatedLevel = await Flashcard.updateLevel(userId, level + 1);
+      console.log("🚀 ~ file: flashcards.js:58 ~ getDueFlashcards ~ updatedLevel:", updatedLevel)
+
+      if (updatedLevel.error) {
+        return res.status(500).json({ error: updatedLevel.error });
+      } else {
+        // Fetch the due flashcards again for the updated level
+        const updatedFlashcards = await Flashcard.getDueFlashcards(userId, level + 1, homeLanguage);
+        console.log("🚀 ~ file: flashcards.js:63 ~ getDueFlashcards ~ updatedFlashcards:", updatedFlashcards)
+
+        if (updatedFlashcards.error) {
+          return res.status(500).json({ error: updatedFlashcards.error });
+        } else if (!updatedFlashcards) {
+          return res.status(404).json({ error: 'No due flashcards found for the updated level' });
+        } else {
+          return res.status(200).json({ dueFlashcards: updatedFlashcards });
+        }
+      }
+    } else {
+      return res.status(200).json({ dueFlashcards: flashcards });
+    }
   }
-}
+};
+
+
 
 // For reviewing flashcards
 const reviewFlashcard = async (req, res) => {
@@ -115,7 +143,7 @@ const promptFlashcard = async (req, res) => {
   const cardCount = req.body.cardCount;
   const userLanguage = await Students.getHomeLanguage(userId);
 
-  const prompt = `I'm a piece of a software that helps people learn English by showing them flashcards. In order to make things easier for users I'm going to automate the process of creating flashcards by getting you to do it. I want you to create ${cardCount} flashcards. The front of the card of will have the word in their language. And the back of the flashcard will have the word in English. This partuclar users language is ${userLanguage}. It's important you format the flashcards properly. It needs to be an array of flashcards, with each flashcard being an object. There needs to be a title, front and back. The title and front should be the same. Make sure all words are capitalised. Formatted in JSON. Please don't show me anything other than the JSON. Don't speak back to me.`
+  const prompt = `I'm a piece of a software that helps people learn English by showing them flashcards. In order to make things easier for users I'm going to automate the process of creating flashcards by getting you to do it. I want you to create ${cardCount} flashcards. The front of the card of will have the word in English. And the back of the flashcard will have that same word but translated into ${userLanguage}. It's important you format the flashcards properly. It needs to be an array of flashcards, with each flashcard being an object. There needs to be a title, front and back. The title and front should be the same. Make sure all words are capitalised. Formatted in JSON. Please don't show me anything other than the JSON. Don't speak back to me.`
 
   const requestBody = JSON.stringify({
     model: 'gpt-3.5-turbo',

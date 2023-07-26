@@ -1,15 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { UserContext } from '../../contexts';
 import { TeacherProfile } from '..';
+import {useNavigate} from 'react-router-dom';
 
 export default function TeacherProfileForm() {
-    const { contextUsername } = useContext(UserContext);
+    const { userID } = useContext(UserContext);
     const [fullName, setFullName] = useState("");
     const [biography, setBiography] = useState("");
     const [homeLanguage, setHomeLanguage] = useState("");
     const [qualifications, setQualifications] = useState("");
     const [image, setImage] =  useState("")
-    const [data, setData] = useState([]);  
+    const [data, setData] = useState([]);
+    const navigate = useNavigate()  
 
     
     const handleInputChange = (e) => {
@@ -35,12 +37,13 @@ export default function TeacherProfileForm() {
     const handleSubmit  = (e) => {
         e.preventDefault();
         teacherProfileAPI();
+        navigate("/teacher/profile")
     }
 
     const teacherProfileAPI = async() => {
         try {
             const options = {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -53,18 +56,18 @@ export default function TeacherProfileForm() {
                     qualifications: qualifications
             })}
 
-            const response = await fetch('http://localhost:3000/api/user/register', options);
+            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/update`, options);
             await response.json();  
                       
             
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
     }
 
     const searchTeacherAPI = async() => {
         try {
-            const response = await fetch(`http://localhost:3000/api/TEACHER/${contextUsername}`);
+            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/details`);
             const result = await response.json(); 
             setData(result);           
             
