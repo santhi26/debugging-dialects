@@ -2,7 +2,8 @@ import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 
-const Flashcard = ({ question, answer }) => {
+const Flashcard = ({ question, answer, nextAnswer }) => {
+
   const [showAnswer, setShowAnswer] = useState(false);
   const toggleAnswer = () => {
     setShowAnswer(!showAnswer);
