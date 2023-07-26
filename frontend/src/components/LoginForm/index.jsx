@@ -9,6 +9,7 @@ export default function LoginForm() {
     const { setContextUsername } = useContext(UserContext);
     const { setUserID } = useContext(UserContext);
     const { setRole } = useContext(UserContext);
+    const {setLevel} = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -51,7 +52,8 @@ export default function LoginForm() {
                 setContextUsername(data.username); 
                 setUserID(data.user_id) 
                 setRole(data.role)           
-                data.role === "student" ? navigate("/student") : navigate("/teacher")
+                data.role === "student" ? (navigate("/student"), setLevel(data.level)) : navigate("/teacher");
+
             } else {
                 console.log(data)
                 alert("wrong")

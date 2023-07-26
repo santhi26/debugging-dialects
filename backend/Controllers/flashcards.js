@@ -26,18 +26,22 @@ const getFlashcard = async (req, res) => {
 // Fetch all due flashcards for a user by user's ID
 const getDueFlashcards = async (req, res) => {
   const userId = parseInt(req.params.userId, 10)
+  console.log("🚀 ~ file: flashcards.js:29 ~ getDueFlashcards ~ userId:", userId)
 
   // Fetch user's level
   const level = await Students.getLevel(userId);
+  console.log("🚀 ~ file: flashcards.js:33 ~ getDueFlashcards ~ level:", level)
 
   // Fetch student's home language
   const homeLanguage = await Students.getHomeLanguage(userId);
+  console.log("🚀 ~ file: flashcards.js:37 ~ getDueFlashcards ~ homeLanguage:", homeLanguage)
 
   if (!level || level.error || !homeLanguage || homeLanguage.error) {
     return res.status(500).json({ error: level.error || homeLanguage.error });
   }
 
   const flashcards = await Flashcard.getDueFlashcards(userId, level, homeLanguage);
+  console.log("🚀 ~ file: flashcards.js:44 ~ getDueFlashcards ~ flashcards:", flashcards)
 
   if (flashcards.error) {
     return res.status(500).json({ error: flashcards.error });
