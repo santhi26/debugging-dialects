@@ -147,6 +147,13 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
       return "https://images.unsplash.com/photo-1508615070457-7baeba4003ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
     }
 
+    // Get definition from Free Dictionary API
+    const dictionaryResponse = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${front}`);
+    const thedefinition = dictionaryResponse.data[0].meanings[0].definitions[0].definition;
+    console.log("🚀 ~ file: flashcards.js:153 ~ createUserFlashcard: ~ thedefinition:", thedefinition)
+    const audio = dictionaryResponse.data[0].phonetics[1].audio;
+    console.log("🚀 ~ file: flashcards.js:155 ~ createUserFlashcard: ~ audio:", audio)
+    
     // Insert new record into user_flashcards
     const flashcard = await db.query(
       'INSERT INTO user_flashcards (user_id, type) VALUES ($1, $2) RETURNING flashcard_id', 
@@ -157,8 +164,8 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     if (flashcard.rows.length > 0) {
       const flashcardId = flashcard.rows[0].flashcard_id;
       const details = await db.query(
-        'INSERT INTO user_flashcards_normal (flashcard_id, title, front, back, image_url) VALUES ($1, $2, $3, $4, $5) RETURNING *', 
-        [flashcardId, title, front, back, imageUrl]
+        'INSERT INTO user_flashcards_normal (flashcard_id, title, front, back, image_url, thedefinition, audio) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', 
+        [flashcardId, title, front, back, imageUrl, thedefinition, audio]
       );
       return details.rows[0];
     } else {
@@ -169,6 +176,7 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     return { error: err.message };
   }
 },
+
 
 
 // Get all due user-created flashcards for a user by user's ID
