@@ -61,6 +61,17 @@ Content-Type: application/json
 ###
 
 ###
+# MARK A USER FLASHCARD AS REVIEWED
+POST http://localhost:3000/api/flashcard/usercards/3/review
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "reviewResult": "Good"
+}
+###
+
+###
 # CREATE A FLASHCARD
 POST http://localhost:3000/api/flashcard/create
 Content-Type: application/json
@@ -76,7 +87,7 @@ Content-Type: application/json
 
 ###
 # CREATE AN AI FLASHCARD
-POST http://localhost:3000/api/flashcard/usercards/prompt/1
+POST http://localhost:3000/api/flashcard/usercards/prompt/4
 Content-Type: application/json
 
 {

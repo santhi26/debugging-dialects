@@ -1,12 +1,13 @@
 import React from 'react';
+import { RegistrationFormStudent } from '../../components';
 
 
 
-export default function HomePage() {
+
+export default function regStudent() {
     return (
         <>
-            <h1>fluentPal</h1>
-            <em>Learn a lanugage</em>
+            <RegistrationFormStudent />
            
         </>
     )
