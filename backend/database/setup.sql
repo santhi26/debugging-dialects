@@ -111,6 +111,7 @@ CREATE TABLE user_flashcards_normal (
     title VARCHAR(70),
     front TEXT,
     back TEXT,
+    image_url TEXT DEFAULT 'https://images.unsplash.com/photo-1508615070457-7baeba4003ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     PRIMARY KEY (flashcard_id, title)
 );
 

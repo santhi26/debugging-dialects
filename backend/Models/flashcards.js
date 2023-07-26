@@ -1,5 +1,7 @@
 const db = require('../database/db');
 const sm2 = require('../utils/sm2');
+const axios = require('axios');
+
 const Flashcard = {
   // Get a flashcard by its ID
   getById: async (id) => {
@@ -125,6 +127,10 @@ getAllByLevelAndLanguage: async (level, language) => {
 
 createUserFlashcard: async (user_id, type, title, front, back) => {
   try {
+    // Get image from Unsplash API
+    const response = await axios.get(`https://api.unsplash.com/search/photos?query=${front}&client_id=v0it_gXig5EtdYHikddbBZntTGmSBQjmWSsR6L5rOMQ`);
+    const imageUrl = response.data.results[0].urls.small; // Get the URL of the first image
+
     // Insert new record into user_flashcards
     const flashcard = await db.query(
       'INSERT INTO user_flashcards (user_id, type) VALUES ($1, $2) RETURNING flashcard_id', 
@@ -135,8 +141,8 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     if (flashcard.rows.length > 0) {
       const flashcardId = flashcard.rows[0].flashcard_id;
       const details = await db.query(
-        'INSERT INTO user_flashcards_normal (flashcard_id, title, front, back) VALUES ($1, $2, $3, $4) RETURNING *', 
-        [flashcardId, title, front, back]
+        'INSERT INTO user_flashcards_normal (flashcard_id, title, front, back, image_url) VALUES ($1, $2, $3, $4, $5) RETURNING *', 
+        [flashcardId, title, front, back, imageUrl]
       );
       return details.rows[0];
     } else {
