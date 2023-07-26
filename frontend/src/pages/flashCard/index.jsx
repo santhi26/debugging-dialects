@@ -13,7 +13,7 @@ export default function flashCard() {
             <em>Learn a lanugage</em>
             <Component.Greetings />
             <Component.GetFlashCard/>
-            <button onCLick={() => navigate("/createFlashCard")}>Create FlashCard</button>
+            <button onClick={() => navigate("/createFlashCard")}>Create FlashCard</button>
             <Component.Logout />
             <Component.Footer />
             
