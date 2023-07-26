@@ -7,22 +7,21 @@ export default function Header() {
   const { contextUsername, role } = useContext(UserContext);
 
   return (
-    <main>
+    <>
       {contextUsername === "" ? (
         <header>
-          <nav>
+          <nav className="nav">
             <NavLink to="/" style={styles}>Home </NavLink>
-            <NavLink to="/registerHome" style={styles}>Register </NavLink>
-            <NavLink to="/Login" style={styles}>Login </NavLink>
-            <NavLink to="/about" style={styles}>About </NavLink>
+            <NavLink to="/Login" style={styles} className="log">Login </NavLink>
+            <NavLink to="/about" style={styles} className="about">About </NavLink>
           </nav>
         </header>
       ) : (
         <>
           {role === "teacher" ? (
             <header>
-              <nav>
-                <NavLink to="/teacher" style={styles}>Home </NavLink>
+              <nav className="nav">
+                <NavLink to="/" style={styles}>Home </NavLink>
                 <NavLink to="/message" style={styles}>Chat </NavLink>
                 <NavLink to="/teacher/profile" style={styles}>Profile </NavLink>
                 <NavLink to="/about" style={styles}>About </NavLink>
@@ -41,6 +40,6 @@ export default function Header() {
         </>
       )}
       <Outlet />
-    </main>
+    </>
   );
 }

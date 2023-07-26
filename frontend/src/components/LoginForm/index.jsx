@@ -1,6 +1,7 @@
 import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
+import { Link } from 'react-router-dom';
 
 export default function LoginForm() {
 
@@ -63,7 +64,9 @@ export default function LoginForm() {
     return (
         <>
             <form className="Form" onSubmit={handleSubmit}>
-                <p>Login</p>
+                <h1>FluentPal</h1>
+                <h2>Login</h2>
+                <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                 <div className="username">
                     <label className="form_label" htmlFor="username">Username </label>
                     <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       

@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
-export default function HomePage() {
+export default function studentPage() {
     return (
         <>
-            <Component.Greetings />
-            <h1>fluentPal</h1>
-            <em>Learn a lanugage</em>        
-            <Component.Logout />
+            <div className="studentPage">
+            <button className="studentbtn"><Link to="/message">Chat</Link></button>
+            <button className="studentbtn"><Link to="/student/flashCard">FlashCards</Link></button>
+            </div>
         </>
       )    
 };
