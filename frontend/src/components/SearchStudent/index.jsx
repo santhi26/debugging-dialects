@@ -1,31 +1,33 @@
 import {useState, useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import { UserContext } from '../../contexts';
-import {TeacherProfile} from '../'
+import {TeacherProfile, StudentLevel} from '../'
 
 
-export default function searchTeacher() {
+export default function SearchStudent() {
     const { userID } = useContext(UserContext);
+    const { level, setLevel } = useContext(UserContext);
     const [data, setData] = useState([])
     const location = useLocation();
 
-    const searchTeacherAPI = async() => {
-        try {
-            const response = await fetch(`http://localhost:3000/api/student/${userID}/details`);
-            const result = await response.json();
-            console.log(result, "<<<<<<") 
-            setData(result);           
-            
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+    
     useEffect(() =>{
-      searchTeacherAPI()
+        const searchStudentAPI = async() => {
+            try {
+                const response = await fetch(`http://localhost:3000/api/student/${userID}/details`);
+                const result = await response.json();
+                setData(result);   
+                setLevel(result.student_level);
+                      
+                
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        searchStudentAPI()
     },[])
-
+    console.log(level, "LEVEL", )  
   return (
-    !location.pathname.includes('/updateTeacherProfile') && <TeacherProfile data={data} />
+    <StudentLevel />
   )
 }
