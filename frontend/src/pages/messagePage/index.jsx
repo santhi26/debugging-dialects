@@ -9,7 +9,6 @@ import { socket } from '../../socket';
 export default function messagePage() {
     //imports global variables used across app
     const {users, setUsers, messages, setMessages, contextUsername} = useContext(UserContext);
-    const [newMessage, setNewMessage] = useState("");
     const [textInput, setTextInput] = useState("");
     const [recipient, setRecipient] = useState("");
     const [displayMessages, setDisplayMessages] = useState([{}]);
@@ -31,6 +30,7 @@ export default function messagePage() {
         //listens for server sending list of all users.
         socket.on('users', (user) => {
             setUsers(user);
+            
         })
 
         //listens for server sending list of all messages for user.
@@ -39,11 +39,13 @@ export default function messagePage() {
         })
 
         socket.on("new_message", msg => {
-            console.log(msg);
             setMessages((messages)=>[...messages, msg]);
         })
 
-
+        return () => {
+            socket.disconnect();
+            socket.off();
+        }
     }, [socket]);
 
     function handleInput(e) {
@@ -54,7 +56,7 @@ export default function messagePage() {
         e.preventDefault();
         const recipient_id = users.filter(acc => acc.username === recipient)[0].user_id
         const datetime = new Date();
-        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id, send_date:datetime});
+        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id, date_sent:datetime});
     }
     
 
@@ -70,9 +72,9 @@ export default function messagePage() {
 
 
     //used for dev testing, can be deleted for production.
-    useEffect(()=>{
-        console.log(users);
-    }, [users])
+    // useEffect(()=>{
+    //     console.log(users);
+    // }, [users])
 
     useEffect(()=>{
         console.log('Messages');

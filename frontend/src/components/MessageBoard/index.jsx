@@ -1,17 +1,21 @@
 import {Message} from '../../components';
 import { UserContext } from '../../contexts';
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 
 export default function MessageBoard({messages, recipient}) {
     const {users} = useContext(UserContext);
     const [userRole, setUserRole] = useState("");
+    const isInitialMount = useRef(true)
 
 
     useEffect(()=>{
-        const temp = users.filter(acc => acc.username === recipient)
-        if (temp) {
-            console.log("temp", temp);
-            setUserRole(temp[0].role);
+        if (isInitialMount.current){
+            isInitialMount.current = false;
+        } else {
+            const temp = users.filter(acc => acc.username === recipient)
+            if (temp) {
+                setUserRole(temp[0].role);
+            }
         }
     },[recipient])
 
@@ -21,12 +25,13 @@ export default function MessageBoard({messages, recipient}) {
             {recipient && userRole ? (
                 <h3>{recipient}, {userRole[0].toUpperCase() + userRole.slice(1)}</h3>
             ):""}
-            
-            <ul>
-                {messages.map(msg => (
-                    <Message msg={msg}/>
-                ))}
-            </ul>
+            <div className='message-list'>
+                <ul>
+                    {messages.map(msg => (
+                        <Message msg={msg}/>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

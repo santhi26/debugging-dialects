@@ -112,8 +112,14 @@ main{
   border:2px solid blue;
 }
 
-.message-board ul {
+.message-list {
+  overflow: auto;
+  height: 80vh;
+  position: relative;
+  top: 20px;
   padding:5px;
+
+
 }
 
 #message-form {

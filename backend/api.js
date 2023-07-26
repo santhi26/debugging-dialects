@@ -43,6 +43,7 @@ let users = [];
 //Needs to first check db for user and their messages, if doesn't exist
 io.on("connection", socket => {
     console.log(`${socket.id} has connected.`);
+    console.log(`All socket connections`, Object.keys(io.engine.clients))
     socket.join(socket.id);
     let user;
     let messages;
@@ -77,6 +78,7 @@ io.on("connection", socket => {
         try {
             const messageResponse = await db.query('SELECT * FROM messages WHERE sender_username = $1 OR recipient_username = $1;', [username]);
             messages = messageResponse.rows
+            console.log(messages);
         } catch(err) {
             console.log({'error': err});
         }
@@ -87,7 +89,7 @@ io.on("connection", socket => {
 
     socket.on('new_message', async (msg)=>{
         console.log(msg);
-        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message, date_sent) VALUES ($1, $2, $3, $4);', [msg.sender_username, msg.recipient_username, msg.message, msg.send_date]);
+        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message, date_sent) VALUES ($1, $2, $3, $4);', [msg.sender_username, msg.recipient_username, msg.message, msg.date_sent]);
 
         // socket.to(socket.id).to(msg.recipient_id).emit('new_message', msg);
         io.to(socket.id).emit("new_message", msg);
