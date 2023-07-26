@@ -1,12 +1,14 @@
 import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
+import { Link } from 'react-router-dom';
 
 export default function LoginForm() {
 
     const navigate = useNavigate() 
     const { setContextUsername } = useContext(UserContext);
     const { setUserID } = useContext(UserContext);
+    const { setRole } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -44,9 +46,11 @@ export default function LoginForm() {
 
             if(data.username) {
                 localStorage.setItem("username", data.username);
-                localStorage.setItem("token", data.token);               
+                localStorage.setItem("token", data.token);    
+                localStorage.setItem("userID", data.user_id);            
                 setContextUsername(data.username); 
-                setUserID(data.setUserID)            
+                setUserID(data.user_id) 
+                setRole(data.role)           
                 data.role === "student" ? navigate("/student") : navigate("/teacher")
             } else {
                 console.log(data)
@@ -61,7 +65,9 @@ export default function LoginForm() {
     return (
         <>
             <form className="Form" onSubmit={handleSubmit}>
-                <p>Login</p>
+                <h1>FluentPal</h1>
+                <h2>Login</h2>
+                <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                 <div className="username">
                     <label className="form_label" htmlFor="username">Username </label>
                     <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
