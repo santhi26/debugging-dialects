@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { UserContext } from '../../contexts';
 import { TeacherProfile } from '..';
+import {useNavigate} from 'react-router-dom';
 
 export default function TeacherProfileForm() {
     const { userID } = useContext(UserContext);
@@ -9,7 +10,8 @@ export default function TeacherProfileForm() {
     const [homeLanguage, setHomeLanguage] = useState("");
     const [qualifications, setQualifications] = useState("");
     const [image, setImage] =  useState("")
-    const [data, setData] = useState([]);  
+    const [data, setData] = useState([]);
+    const navigate = useNavigate()  
 
     
     const handleInputChange = (e) => {
@@ -35,12 +37,13 @@ export default function TeacherProfileForm() {
     const handleSubmit  = (e) => {
         e.preventDefault();
         teacherProfileAPI();
+        navigate("/teacher/profile")
     }
 
     const teacherProfileAPI = async() => {
         try {
             const options = {
-                method: "UPDATE",
+                method: "PUT",
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -58,7 +61,7 @@ export default function TeacherProfileForm() {
                       
             
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
     }
 
