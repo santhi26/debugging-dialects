@@ -128,8 +128,21 @@ getAllByLevelAndLanguage: async (level, language) => {
 createUserFlashcard: async (user_id, type, title, front, back) => {
   try {
     // Get image from Unsplash API
-    const response = await axios.get(`https://api.unsplash.com/search/photos?query=${front}&client_id=v0it_gXig5EtdYHikddbBZntTGmSBQjmWSsR6L5rOMQ`);
-    const imageUrl = response.data.results[0].urls.small; // Get the URL of the first image
+    const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=10&query=${front}&client_id=v0it_gXig5EtdYHikddbBZntTGmSBQjmWSsR6L5rOMQ`);
+
+    let imageUrl = null;
+    // Iterate over each result until an image with a 3:2 aspect ratio is found
+    for(let result of response.data.results){
+      const aspectRatio = result.width / result.height;
+      if(Math.abs(aspectRatio - (3/2)) < 0.01) {  // Allow a small tolerance
+        imageUrl = result.urls.small;
+        break;
+      }
+    }
+
+    if (!imageUrl) {
+      return "https://images.unsplash.com/photo-1508615070457-7baeba4003ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+    }
 
     // Insert new record into user_flashcards
     const flashcard = await db.query(
@@ -153,6 +166,7 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     return { error: err.message };
   }
 },
+
 
 // Get all due user-created flashcards for a user by user's ID
 getDueUserFlashcards: async (userId) => {
