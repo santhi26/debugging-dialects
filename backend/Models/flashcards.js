@@ -171,8 +171,59 @@ getDueUserFlashcards: async (userId) => {
   }
 },
 
+// Get a user flashcard's review by card ID and user ID
+getUserFlashcardReview: async (card_id, user_id) => {
+  try {
+    const review = await db.query(`
+      SELECT * 
+      FROM user_flashcards_review_history 
+      WHERE card_id = $1 AND user_id = $2 
+      ORDER BY review_id DESC
+      LIMIT 1
+    `, [card_id, user_id]);
+    if (review.rows.length > 0) {
+      return review.rows[0];
+    } else {
+      // If there's no review history, return a default object and flag as new
+      return {
+        isNew: true, // Flag indicating that this is a new review record
+        card_id: card_id,
+        user_id: user_id,
+        ease_factor: 2.5, // Default ease factor
+        repetitions: 0,
+      };
+    }
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
 
+insertUserFlashcardReview: async (card_id, user_id, review) => {
+  try {
+    const result = await db.query(
+      'INSERT INTO user_flashcards_review_history (next_review_date, ease_factor, repetitions, review_result, card_id, user_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', 
+      [review.nextReviewDate.toISOString(), review.newEaseFactor, review.repetition, review.reviewResult, card_id, user_id]
+    );
+    return result.rows[0];
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
 
+updateUserFlashcardReview: async (card_id, user_id, review) => {
+  try {
+    const result = await db.query(
+      'UPDATE user_flashcards_review_history SET next_review_date = $1, ease_factor = $2, repetitions = $3, review_result = $4 WHERE card_id = $5 AND user_id = $6 RETURNING *', 
+      [review.nextReviewDate, review.newEaseFactor, review.repetition, review.reviewResult, card_id, user_id]
+    );
+    return result.rows[0];
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
 
 
 

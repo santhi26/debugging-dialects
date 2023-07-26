@@ -6,6 +6,7 @@ export {default as registerHome} from './registerHome';export {default as regist
 export {default as studentPage} from './studentPage';
 export {default as teacherPage} from './teacherPage';
 export {default as login} from './login';
+export {default as userFlashcardReview} from './userFlashcardReview';
 export {default as about} from './about';
 export {default as createFlashCard} from './createFlashCard';
 export {default as updateProfileTeacher} from './updateProfileTeacher';
