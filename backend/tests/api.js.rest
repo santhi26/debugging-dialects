@@ -87,11 +87,11 @@ Content-Type: application/json
 
 ###
 # CREATE AN AI FLASHCARD
-POST http://localhost:3000/api/flashcard/usercards/prompt/1
+POST http://localhost:3000/api/flashcard/usercards/prompt/4
 Content-Type: application/json
 
 {
-  "cardCount": 5
+  "cardCount": 10
 }
 ###
 
