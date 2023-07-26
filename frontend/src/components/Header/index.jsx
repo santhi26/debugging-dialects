@@ -24,7 +24,7 @@ export default function Header() {
               <nav>
                 <NavLink to="/teacher" style={styles}>Home </NavLink>
                 <NavLink to="/message" style={styles}>Chat </NavLink>
-                <NavLink to="/updateTeacherProfile" style={styles}>Profile </NavLink>
+                <NavLink to="/teacher/profile" style={styles}>Profile </NavLink>
                 <NavLink to="/about" style={styles}>About </NavLink>
               </nav>
             </header>
