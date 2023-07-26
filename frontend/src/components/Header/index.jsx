@@ -21,7 +21,7 @@ export default function Header() {
           {role === "teacher" ? (
             <header>
               <nav className="nav">
-                <NavLink to="/" style={styles}>Home </NavLink>
+                <NavLink to="/teacher" style={styles}>Home </NavLink>
                 <NavLink to="/message" style={styles}>Chat </NavLink>
                 <NavLink to="/teacher/profile" style={styles}>Profile </NavLink>
                 <NavLink to="/about" style={styles}>About </NavLink>
