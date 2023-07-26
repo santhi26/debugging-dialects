@@ -10,6 +10,9 @@ main{
 
 .nav{
   display:flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  align-items: center;
   height: 30px;
   background-color: aqua;
 }

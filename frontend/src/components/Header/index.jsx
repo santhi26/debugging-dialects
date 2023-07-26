@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { UserContext } from '../../contexts';
-const styles = ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' });
+const styles = ({ isActive }) => ({ textDecoration: isActive ? 'bold' : 'none' });
 
 export default function Header() {
   const { contextUsername, role } = useContext(UserContext);
@@ -11,7 +11,7 @@ export default function Header() {
       {contextUsername === "" ? (
         <header>
           <nav className="nav">
-            <NavLink to="/" style={styles}>Home </NavLink>
+            <NavLink to="/" style={styles}>FluentPal </NavLink>
             <NavLink to="/Login" style={styles} className="log">Login </NavLink>
             <NavLink to="/about" style={styles} className="about">About </NavLink>
           </nav>
