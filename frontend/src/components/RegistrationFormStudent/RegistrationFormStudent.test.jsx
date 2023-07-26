@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import RegistrationFormStudent from './RegistrationFormStudent';
+import RegistrationFormStudent from './index.jsx';
 
 describe('RegistrationFormStudent', () => {
   it('renders the form fields', () => {
