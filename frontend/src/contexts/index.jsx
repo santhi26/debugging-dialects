@@ -8,9 +8,10 @@ const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([{username:"", user_id:"", role:"student", is_online:false}]);
   const [userID, setUserID] = useState("")
   const [role, setRole] = useState("")
+  const [level, setLevel] = useState("")
 
   return (
-    <UserContext.Provider value={{ contextUsername, setContextUsername, messages, setMessages, users, setUsers, userID, setUserID, role, setRole }}>
+    <UserContext.Provider value={{ contextUsername, setContextUsername, messages, setMessages, users, setUsers, userID, setUserID, role, setRole, level, setLevel }}>
       {children}
     </UserContext.Provider>
   );

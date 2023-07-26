@@ -82,6 +82,45 @@ main{
   padding: 20px;
 }
 
+main .message-page {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-list {
+  display:flex;
+  flex-direction: column;
+  float: left;
+  border:2px solid red;
+}
+
+.user-list ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-panel {
+  width:80%;
+}
+
+.message-board {
+  display: flex;
+  flex-direction: column;
+  border:2px solid blue;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom:0;
+  width:100%;
+}
+
+.message {
+  border:2px solid black;
+}
 .Form {
   display: flex;
   flex-direction: column;
