@@ -1,6 +1,9 @@
 const db = require('../database/db');
 const sm2 = require('../utils/sm2');
 const axios = require('axios');
+require("dotenv").config()
+
+const UNSPLASH_KEY = process.env.UNSPLASH_KEY;
 
 const Flashcard = {
   // Get a flashcard by its ID
@@ -128,7 +131,7 @@ getAllByLevelAndLanguage: async (level, language) => {
 createUserFlashcard: async (user_id, type, title, front, back) => {
   try {
     // Get image from Unsplash API
-    const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=10&query=${front}&client_id=v0it_gXig5EtdYHikddbBZntTGmSBQjmWSsR6L5rOMQ`);
+    const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=20&query=${front}&client_id=${UNSPLASH_KEY}`);
 
     let imageUrl = null;
     // Iterate over each result until an image with a 3:2 aspect ratio is found
