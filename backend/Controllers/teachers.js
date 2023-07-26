@@ -29,7 +29,21 @@ const getTeacherDetails = async (req, res) => {
   }
 };
 
+const updateTeacherDetails = async (req, res) => {
+  const id = parseInt(req.params.id, 10); // Make sure id is an integer
+  const data = req.body;
+  const updatedTeacher = await Teachers.updateTeacherDetails(id, data);
+
+  if (updatedTeacher.error) {
+    res.status(500).json({ error: updatedTeacher.error });
+  } else {
+    res.status(200).json(updatedTeacher);
+  }
+};
+
+
 module.exports = {
   createTeacher,
   getTeacherDetails,
+  updateTeacherDetails,
 };
