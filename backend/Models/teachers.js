@@ -36,7 +36,7 @@ const Teachers = {
   getTeacherDetails: async (id) => {
     try {
       const teacher = await db.query(
-        'SELECT teacher_name, teacher_profile_image, teacher_biography, qualifications FROM teachers WHERE teacher_id = $1', 
+        'SELECT teacher_name, teacher_profile_image, teacher_biography, teacher_home_language, qualifications, teacher_rating, earnings, is_verified FROM teachers WHERE teacher_id = $1', 
         [id]
       );
   
