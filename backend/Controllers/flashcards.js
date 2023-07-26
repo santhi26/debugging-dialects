@@ -143,7 +143,7 @@ const promptFlashcard = async (req, res) => {
   const cardCount = req.body.cardCount;
   const userLanguage = await Students.getHomeLanguage(userId);
 
-  const prompt = `I'm a piece of a software that helps people learn English by showing them flashcards. In order to make things easier for users I'm going to automate the process of creating flashcards by getting you to do it. I want you to create ${cardCount} flashcards. The front of the card of will have the word in English. And the back of the flashcard will have the word in ${userLanguage}. It's important you format the flashcards properly. It needs to be an array of flashcards, with each flashcard being an object. There needs to be a title, front and back. The title and front should be the same. Make sure all words are capitalised. Formatted in JSON. Please don't show me anything other than the JSON. Don't speak back to me.`
+  const prompt = `I'm a piece of a software that helps people learn English by showing them flashcards. In order to make things easier for users I'm going to automate the process of creating flashcards by getting you to do it. I want you to create ${cardCount} flashcards. The front of the card of will have the word in English. And the back of the flashcard will have that same word but translated into ${userLanguage}. It's important you format the flashcards properly. It needs to be an array of flashcards, with each flashcard being an object. There needs to be a title, front and back. The title and front should be the same. Make sure all words are capitalised. Formatted in JSON. Please don't show me anything other than the JSON. Don't speak back to me.`
 
   const requestBody = JSON.stringify({
     model: 'gpt-3.5-turbo',

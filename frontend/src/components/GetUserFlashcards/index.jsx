@@ -67,7 +67,7 @@ export default function GetUserFlashcards({ userId }) {
              <h3 className="front-heading">{currentCard.front}</h3>
               <div className="image-container">
                 <img
-                  src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                  src={currentCard.image_url}
                 />
               </div>
             </div>

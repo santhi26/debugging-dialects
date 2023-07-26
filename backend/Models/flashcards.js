@@ -184,7 +184,8 @@ getDueUserFlashcards: async (userId) => {
       LEFT JOIN flashcards_review_history ON user_flashcards.flashcard_id = flashcards_review_history.card_id
         AND flashcards_review_history.user_id = $1
       WHERE (flashcards_review_history.next_review_date <= CURRENT_DATE 
-             OR flashcards_review_history.next_review_date IS NULL)
+             OR flashcards_review_history.next_review_date IS NULL) 
+        AND user_flashcards.user_id = $1
       ORDER BY flashcards_review_history.next_review_date DESC
     `, [userId]);
     
@@ -194,6 +195,7 @@ getDueUserFlashcards: async (userId) => {
     return { error: err.message };
   }
 },
+
 
 // Get a user flashcard's review by card ID and user ID
 getUserFlashcardReview: async (card_id, user_id) => {
