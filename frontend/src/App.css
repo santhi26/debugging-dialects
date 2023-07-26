@@ -1,12 +1,24 @@
 body {
   margin: 0;
   padding: 0;
+  font-family:  'Lucida Sans Unicode';
 }
 
 main{
   display:flex;
 }
 
+.nav{
+  display:flex;
+  height: 30px;
+  background-color: aqua;
+}
+
+.log,
+.about{
+  
+  align-content: right;
+}
 .container {
   display: grid;
   grid-template-rows: 300px 1fr 1fr;
@@ -23,8 +35,8 @@ main{
 
 .globe {
   background: url(https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img5720.jpg) center/cover no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,4 +228,18 @@ main{
 
 h3{
   margin: 0;
+}
+
+.studentPage{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.studentbtn{
+  margin: 10%;
+  flex:0.5;
+  height: 200px;
+  border-radius: 6px;
+  background-color: aqua;
 }

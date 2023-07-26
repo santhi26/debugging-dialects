@@ -32,6 +32,25 @@ const Teachers = {
       return { error: err.message };
     }
   },
+
+  getTeacherDetails: async (id) => {
+    try {
+      const teacher = await db.query(
+        'SELECT teacher_name, teacher_profile_image, teacher_biography, qualifications FROM teachers WHERE teacher_id = $1', 
+        [id]
+      );
+  
+      if (teacher.rows.length > 0) {
+        return teacher.rows[0];
+      } else {
+        return { error: "Teacher not found" };
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: err.message };
+    }
+  },
+  
 };
 
 module.exports = Teachers;

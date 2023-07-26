@@ -1,4 +1,14 @@
 ###
+# GET A STUDENTS DETAILS
+GET http://localhost:3000/api/student/1/details
+###
+
+###
+# GET A TEACHERS DETAILS
+GET http://localhost:3000/api/teacher/1/details
+###
+
+###
 # GET A STUDENTS LEVEL
 GET http://localhost:3000/api/student/1/level
 ###
@@ -21,6 +31,11 @@ GET http://localhost:3000/api/flashcard/7/French
 ###
 # SEE FLASHCARDS DUE
 GET http://localhost:3000/api/flashcard/due/1
+###
+
+###
+# SEE USER FLASHCARDS DUE
+GET http://localhost:3000/api/flashcard/usercards/due/1
 ###
 
 ###
@@ -61,11 +76,11 @@ Content-Type: application/json
 
 ###
 # CREATE AN AI FLASHCARD
-POST http://localhost:3000/api/flashcard/prompt
+POST http://localhost:3000/api/flashcard/usercards/prompt/1
 Content-Type: application/json
 
 {
-  "What's the capital of London?"
+  "cardCount": 4
 }
 ###
 

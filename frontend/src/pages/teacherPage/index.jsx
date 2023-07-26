@@ -1,13 +1,15 @@
-import React from 'react';
+import {TeacherProfile, SearchTeacher, Greetings, Logout} from '../../components'
+import {useState, useEffect, useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
+import { UserContext } from '../../contexts';
 
+export default function searchTeacher() {
 
-
-export default function teacherPage() {
-    return (
-        <>
-            <h1>fluentPal</h1>
-            <em>Learn a lanugage</em>
-           
-        </>
-    )
-};
+  return (
+    <>
+        <Greetings />
+        <SearchTeacher />
+        <Logout />
+    </>
+  )
+}

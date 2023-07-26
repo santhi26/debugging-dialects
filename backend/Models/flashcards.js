@@ -145,7 +145,36 @@ createUserFlashcard: async (user_id, type, title, front, back) => {
     console.error(err);
     return { error: err.message };
   }
-}
+},
+
+// Get all due user-created flashcards for a user by user's ID
+getDueUserFlashcards: async (userId) => {
+  try {
+    const result = await db.query(`
+      SELECT 
+        user_flashcards.*,
+        user_flashcards_normal.*,
+        flashcards_review_history.next_review_date
+      FROM user_flashcards 
+      LEFT JOIN user_flashcards_normal ON user_flashcards.flashcard_id = user_flashcards_normal.flashcard_id
+      LEFT JOIN flashcards_review_history ON user_flashcards.flashcard_id = flashcards_review_history.card_id
+        AND flashcards_review_history.user_id = $1
+      WHERE (flashcards_review_history.next_review_date <= CURRENT_DATE 
+             OR flashcards_review_history.next_review_date IS NULL)
+      ORDER BY flashcards_review_history.next_review_date DESC
+    `, [userId]);
+    
+    return result.rows;
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
+  }
+},
+
+
+
+
+
 
 
 };
