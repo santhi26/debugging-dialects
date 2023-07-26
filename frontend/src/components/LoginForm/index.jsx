@@ -9,6 +9,7 @@ export default function LoginForm() {
     const { setContextUsername } = useContext(UserContext);
     const { setUserID } = useContext(UserContext);
     const { setRole } = useContext(UserContext);
+    const {setLevel} = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -50,11 +51,12 @@ export default function LoginForm() {
                 localStorage.setItem("userID", data.user_id);            
                 setContextUsername(data.username); 
                 setUserID(data.user_id) 
-                setRole(data.role)           
-                data.role === "student" ? navigate("/student") : navigate("/teacher")
+                setRole(data.role)  
+                console.log(data.role)                     
+                data.role === "student" ? navigate("/student") : navigate("/teacher");                
+
             } else {
-                console.log(data)
-                alert("wrong")
+                alert("Incorrect Credentials")
             }          
             
         } catch (error) {
