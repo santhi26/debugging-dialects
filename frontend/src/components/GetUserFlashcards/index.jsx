@@ -6,6 +6,8 @@ export default function GetUserFlashcards({ userId }) {
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [noCardsLeft, setNoCardsLeft] = useState(false);
+  const [audioElement, setAudioElement] = useState(null);
+
 
   useEffect(() => {
     const fetchFlashCards = async () => {
@@ -26,6 +28,15 @@ export default function GetUserFlashcards({ userId }) {
 
     fetchFlashCards();
   }, [userId]);
+
+  useEffect(() => {
+    return () => {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+    };
+  }, [audioElement]);
 
   const handleAnswer = async (reviewResult) => {
     try {
@@ -56,9 +67,17 @@ export default function GetUserFlashcards({ userId }) {
     }
   };
 
+  
+
   const handleRevealAnswer = () => {
     setShowAnswer(true);
+    const audio = new Audio(currentCard.audio); // Assuming `audio` property in `currentCard` holds the URL for the audio file
+    setAudioElement(audio);
+    audio.play();
   };
+
+  
+  
 
   if (!currentCard) {
     return <p className="loading">Loading...</p>;
@@ -104,7 +123,7 @@ export default function GetUserFlashcards({ userId }) {
           <div className="flip-card-back">
           <h3 className="front-heading">{currentCard.front}</h3>
           <h3 className="back-heading">{currentCard.back}</h3>
-          <p>{currentCard.definition}</p>
+          <p>{currentCard.thedefinition}</p>
             <div className="button-container">
           <ul className="wrapper">
             <li className="icon easy" onClick={() => handleAnswer("Easy")}>
