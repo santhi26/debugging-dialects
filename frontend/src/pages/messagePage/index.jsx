@@ -83,11 +83,9 @@ export default function messagePage() {
 
     return (
         <>
-                <div class="general wf-section">
-                    <div class="overview fluentcontent wf-section">
-                        <div class="content-wrapper-m-copy center content-section-title">
-                            <div class="w-richtext">
-                                <div class="w-embed">
+                <div class="general-chat wf-section">
+                    <div class="overview-chat fluentchatcontent wf-section">
+                    <center><h1 class="pagetitle">Real-time chat</h1></center>
                                     <main className='message-page'>
                                         <UserList setRecipient={setRecipient}/>
                                         <div className='message-panel'>
@@ -97,9 +95,8 @@ export default function messagePage() {
                                             </form>
                                         </div>
                                     </main>
-                                    </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </>

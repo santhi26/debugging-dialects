@@ -10,7 +10,7 @@ export default function HomePage() {
                     <div class="w-layout-blockcontainer nh-hero-header w-container">
                         <h1 class="nh-hero-headline force-quincy">English.<br/> Learn it now.<br/>Via AI <em>&</em> Teachers.</h1>
                         <h2 class="nh-hero-sub">Chat online to some of the worlds best English teachers and then use lovingly crafted flashcards to really hone your skills. We have ready-made ones, AI-generated ones and even let you make your own!</h2>
-                        <br/><br/>
+                        <a href="https://twitter.com/RewindAI/timelines/1603483782039887878" class="cta-btn fluentcontentbtn w-button">Sign up now!</a>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ export default function GetUserFlashcards({ userId }) {
   const [flashCards, setFlashCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [noCardsLeft, setNoCardsLeft] = useState(false);
 
   useEffect(() => {
     const fetchFlashCards = async () => {
@@ -48,7 +49,7 @@ export default function GetUserFlashcards({ userId }) {
         setCurrentCard(flashCards[nextCardIndex]);
         setShowAnswer(false);
       } else {
-        alert("You have finished reviewing all due flashcards");
+        setNoCardsLeft(true);  // Set noCardsLeft to true when there are no more cards
       }
     } catch (error) {
       console.error(error);
@@ -61,6 +62,28 @@ export default function GetUserFlashcards({ userId }) {
 
   if (!currentCard) {
     return <p className="loading">Loading...</p>;
+  }
+
+
+  if (noCardsLeft) {
+    return (
+      <div>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="card-content">
+             <h3 className="front-heading">Well done!</h3>
+             <br/><br/>
+             <p>You've reviewed all your cards for the day.</p>
+             <p>Hungry for me? Use our AI to make some!</p>
+              <div className="image-container">
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
  return (

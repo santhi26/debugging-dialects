@@ -640,9 +640,9 @@ background-attachment: fixed;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding: .7rem 1.55rem .7rem;
+  padding: .6rem 0.9rem .6rem;
   font-family: Greycliff, sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.1;
   transition: all .15s ease-out;
@@ -1780,18 +1780,70 @@ input.w-button {
 /* CHAT */
 
 
+
+.general-chat {
+  width: auto;
+  object-fit: fill;
+  display: block;
+  position: relative;
+  font-family: 'Greycliff', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.overview-chat {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  padding-left: 48px;
+  padding-right: 48px;
+  display: block;
+}
+
+.cta-btn.fluentcontentbtn {
+  max-width: 150px;
+  min-width: auto;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
+
+
+
 .message-page {
-  display:flex;
-  justify-content: space-between;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffffc6;
+  width: 800px;
+  height: 500px;
+  border-radius: 25px;
 }
 
 .user-list {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  float: left;
-  border:2px solid red;
-  width: 15%;
+  border-right: 1px solid #b2b2b2;
+  width: 30%;
+  height: 100%;
+  padding: 21px 18px 0 18px;
+}
+
+.user-list h2 {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.cta-btn.fluentchatcontentbtn {
+  font-size: 16px;
+  max-width: 150px;
+  min-width: auto;
+  margin-top: -10px;
+  text-align: center;
+  display: block;
+  padding: 6px 0 6px 0;
 }
 
 .user-list ul {
@@ -1800,51 +1852,110 @@ input.w-button {
 }
 
 .message-panel {
-  width:80%;
-  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 10px;
 }
 
 .message-board {
-  display: flex;
-  flex-direction: column;
-  border:2px solid blue;
+  flex: 1;
+  overflow-y: scroll;
+  padding: 10px;
 }
 
+.message-board h3 {
+font-size: 20px;
+}
+
+.message-board h6 {
+  font-size: 14px;
+  line-height: 0px;
+  margin-top: 10px;
+  text-align: right;
+}
+  
+.message-board p {
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 0px;
+  margin-top: 10px;
+}
+
+
 .message-list {
-  overflow: auto;
-  height: 80vh;
   position: relative;
-  top: 20px;
-  padding:5px;
-
-
 }
 
 #message-form {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  bottom:0;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #b2b2b2;
+  background-color: #fff;
+  padding: 10px;
+}
+
+#message-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #b2b2b2;
+  margin-right: 10px;
+}
+
+#message-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #E98074;
+  color: #fff;
+  cursor: pointer;
 }
 
 .message {
-  border:2px solid black;
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin-left: 0;
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-.message h6, .message p {
-  margin-right: 5px;
-  margin-left:5px;
+.message.user {
+  margin-left: auto;
+  background-color: #E98074;
+  color: #fff;
 }
 
-.user{
+.message.user p {
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 0px;
+  margin-top: 10px;
+}
+
+.message-board h6 {
+  font-size: 14px;
+  line-height: 0px;
+  margin-top: 10px;
   text-align: right;
-  float: right;
 }
 
-.other {
-  text-align: left;
+
+
+.message.other {
+  align-self: flex-start;
+  background-color: #EAE7DC;
+  color: #101010;
 }
+
+.message.other p {
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 0px;
+  margin-top: 10px;
+}
+
+

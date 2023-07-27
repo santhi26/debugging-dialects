@@ -46,7 +46,8 @@ export default function LoginForm() {
             if(data.username) {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);    
-                localStorage.setItem("userID", data.user_id);            
+                localStorage.setItem("userID", data.user_id);
+                localStorage.setItem("role", data.role);                 
                 setContextUsername(data.username); 
                 setUserID(data.user_id);
                 setRole(data.role); 
