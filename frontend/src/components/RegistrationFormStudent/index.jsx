@@ -68,35 +68,42 @@ export default function RegistrationFormStudent() {
     }
     
   return (
-    <form className="Form" onSubmit={handleSubmit}>
-        <div className="username">
-            <label className="form_label" htmlFor="username">Username </label>
-            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
-        </div>
-        <div className="email">
-            <label className="form_label" htmlFor="email">Email </label>
-            <input className="form_input" value={email} onChange = {(e) => handleInputChange(e)} type="email" id="email" placeholder="Email" required/>       
-        </div>
-        <div className="fullName">
-            <label className="form_label" htmlFor="fullName">Full Name </label>
-            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="fullName" id="fullName" placeholder="fullName" required/>       
-        </div>   
-        <div className="homeLanguage">
-            <label className="form_label" htmlFor="homeLanguage">Home Language </label>
-            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage" id="homeLanguage" placeholder="homeLanguage" required/>       
-        </div>      
-        <div className="password">
-            <label className="form_label" htmlFor="password">Password </label>
-            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password"  id="password" placeholder="Password" required/>
-        </div>
-        <div className="confirm-password">
-            <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
-            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>         
-        </div>        
-        <div className="submit-button">
-            <button type="submit" className="btn">Register</button>
-        </div>
-    </form>
-  )
+    <>
+        <div className="nh-hero wf-section">
+            <div className="nh-hero-header-wrap">
+                <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
+                    <form className="Form" onSubmit={handleSubmit}>
+                        <div className="username">
+                            <label className="form_label" htmlFor="username">Username </label>
+                            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
+                        </div>
+                        <div className="email">
+                            <label className="form_label" htmlFor="email">Email </label>
+                            <input className="form_input" value={email} onChange = {(e) => handleInputChange(e)} type="email" id="email" placeholder="Email" required/>       
+                        </div>
+                        <div className="fullName">
+                            <label className="form_label" htmlFor="fullName">Full Name </label>
+                            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="fullName" id="fullName" placeholder="fullName" required/>       
+                        </div>   
+                        <div className="homeLanguage">
+                            <label className="form_label" htmlFor="homeLanguage">Home Language </label>
+                            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage" id="homeLanguage" placeholder="homeLanguage" required/>       
+                        </div>      
+                        <div className="password">
+                            <label className="form_label" htmlFor="password">Password </label>
+                            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password"  id="password" placeholder="Password" required/>
+                        </div>
+                        <div className="confirm-password">
+                            <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
+                            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>         
+                        </div>        
+                        <div className="submit-button">
+                            <button type="submit" className="btn">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </>
+    )
 }
 

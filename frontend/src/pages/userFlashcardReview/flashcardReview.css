@@ -1,20 +1,4 @@
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #EAE7DC;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin: 0.5em 0;
-  }
-  
-  em {
-    font-style: italic;
-  }
-  
+
   /* Main Container */
   .flashcard-container {
     display: grid;
@@ -117,13 +101,14 @@ body {
 
 /* Flashcard Styling */
 .flip-card {
-    width: 450px;
-    height: 390px;
+    width: 400px;
+    height: 320px;
     perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 68px;
   }
   
   .flip-card-inner {
@@ -375,3 +360,17 @@ body {
     background: #E85A4F;
     color: #fff;
   }
+
+
+.front-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.back-heading {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-style: italic;
+}

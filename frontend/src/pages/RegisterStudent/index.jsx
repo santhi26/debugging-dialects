@@ -4,7 +4,7 @@ import { RegistrationFormStudent } from '../../components';
 
 
 
-export default function regStudent() {
+export default function RegisterStudent() {
     return (
         <>
             <RegistrationFormStudent />

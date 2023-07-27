@@ -7,9 +7,15 @@ export default function UserFlashcardReview() {
   const userID = localStorage.getItem("userID");
 
   return (
-    <div className="flashcard-container">
-      <h1>fluentPal</h1>
-      <GetUserFlashcards userId={userID} />
-    </div>
-  );
+    <>
+        <div className="nh-hero wf-section">
+            <div className="nh-hero-header-wrap">
+                <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
+                    <div className="flashcard-container">
+                      <GetUserFlashcards userId={userID} />
+                    </div>
+                    </div>
+                </div>
+    </>
+)
 }
