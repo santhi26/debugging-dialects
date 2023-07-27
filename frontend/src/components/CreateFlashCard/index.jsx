@@ -63,6 +63,12 @@ const handleSubmit  = (e) => {
 
   return (
     <>
+        <div class="general wf-section">
+            <div class="overview fluentcontent wf-section">
+                <div class="content-wrapper-m-copy center content-section-title">
+                    <div class="w-richtext">
+                        <div class="w-embed">
+                            <h2 class="pagetitle">Create a flashcard</h2>
         <form className="Form" onSubmit={handleSubmit}>
             <div className="title">
                 <label className="form_label" htmlFor="title">Title </label>
@@ -84,6 +90,12 @@ const handleSubmit  = (e) => {
                 <button type="submit" className="btn">Submit</button>
             </div>
         </form>
-    </>
-  )
+        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
+

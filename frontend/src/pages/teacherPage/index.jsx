@@ -5,12 +5,21 @@ import { UserContext } from '../../contexts';
 
 export default function searchTeacher() {
 
-  return (
+return (
     <>
-        <Component.Greetings />
-        <h1>fluentPal</h1>
-        <em>Learn a lanugage</em>        
-        <Component.Logout />
-    </>
-  )
+            <div class="general wf-section">
+                <div class="overview fluentcontent wf-section">
+                    <div class="content-wrapper-m-copy center content-section-title">
+                        <div class="w-richtext">
+                            <div class="w-embed">
+                                <h2 class="pagetitle">Teacher dashboard</h2>
+                                <Component.Greetings />      
+                                <Component.Logout />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
