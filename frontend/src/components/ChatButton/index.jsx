@@ -2,8 +2,7 @@ import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 
-export default function ChatButton() {
-    const {setContextUsername} = useContext(UserContext);
+export default function ChatButton() {    
     const navigate = useNavigate()
 
     const handleClick = () => {
