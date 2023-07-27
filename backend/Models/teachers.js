@@ -61,7 +61,7 @@ const Teachers = {
       );
   
       if (teacher.rows.length > 0) {
-        return teacher.rows[0];
+        return teacher.rows;
       } else {
         return { error: "Teacher not found" };
       }
