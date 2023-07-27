@@ -10,7 +10,7 @@ export default function HomePage() {
                     <div class="w-layout-blockcontainer nh-hero-header w-container">
                         <h1 class="nh-hero-headline force-quincy">English.<br/> Learn it now.<br/>Via AI <em>&</em> Teachers.</h1>
                         <h2 class="nh-hero-sub">Chat online to some of the worlds best English teachers and then use lovingly crafted flashcards to really hone your skills. We have ready-made ones, AI-generated ones and even let you make your own!</h2>
-                        <br/><br/>
+                        <a href="/register" class="cta-btn fluentcontentbtn w-button">Supercharge your learning with AI</a>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@ export default function HomePage() {
                         <div id="w-node-_1b22c488-7d69-553b-e7bd-4359dd6ca000-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title">Chat and learn</div>
                             <div class="nh-section-grid-item-desc">Talk in realtime to English teachers. And let our AI-generated flashcards help you learn new words and phrases.</div>
-                            <a href="#" class="nh-section-item-button w-inline-block">
+                            <a href="/student/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start learning...</div>
                             </a>
                         </div>
@@ -64,7 +64,7 @@ export default function HomePage() {
                         <div id="w-node-_09c4110e-2975-3b26-ca10-ba09c30f8eff-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title benefittitle">Teacher? Earn money from home.</div>
                             <div class="nh-section-grid-item-desc benefitdesc">Get a quick and easy new income stream by teaching when <em>you</em> choose.</div>
-                            <a href="#" class="nh-section-item-button w-inline-block">
+                            <a href="/teacher/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start teaching...</div>
                             </a>
                         </div>

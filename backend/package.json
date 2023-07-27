@@ -16,7 +16,8 @@
     "setup-db": "node ./database/setup-db.js",
     "dev": "nodemon server.js",
     "test": "jest __tests__ --watchAll --detectOpenHandles",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "setup-test-db": "node ./database/setup-test-db.js"
   },
   "name": "backend",
   "version": "1.0.0",

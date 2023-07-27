@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../contexts';
-import GetUserFlashcards from '../../components/GetUserFlashcards';
+import GetFlashcards from '../../components/GetFlashcards';
 import '../userFlashcardReview/flashcardReview.css';
 
 export default function UserFlashcardReview() {
@@ -13,9 +13,9 @@ return (
 
 
 
-                                <center><h2 class="pagetitle">Review your flashcards</h2></center>
+                                <center><h2 class="pagetitle">Review flashcards</h2></center>
                                   <div className="flashcard-container">
-                                    <GetUserFlashcards userId={userID} />
+                                    <GetFlashcards userId={userID} />
                                   </div>
 
 
