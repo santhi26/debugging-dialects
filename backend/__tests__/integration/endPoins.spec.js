@@ -94,8 +94,7 @@ describe('Project endpoints', () => {
 
     test('Should create a new flashcard', async() => {
         const newFlashCard = {
-            user_id: 1, 
-            flashcard_id: 1,
+            user_id: 1,
             type: "Normal", 
             title: "My flashcard", 
             front: "testing", 
