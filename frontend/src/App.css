@@ -2330,6 +2330,28 @@ font-size: 20px;
   line-height: 1.25;
 }
 
+.nh-step-title a {
+  color: #5b4e47;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.nh-step-title a:hover {
+  color: #d04e3a;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
 .nh-step-desc {
   color: rgba(122, 110, 104, .8);
   letter-spacing: -.05px;

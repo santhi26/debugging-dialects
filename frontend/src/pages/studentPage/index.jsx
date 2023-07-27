@@ -23,23 +23,23 @@ export default function studentPage() {
     </div>
     <div class="nh-hiw-steps">
       <div class="nh-hiw-step">
-        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bc67270b3b039b770e3afe_hiw-step-1.svg" loading="lazy" height="60" width="60" alt="" />
+        <a href="/message"><img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/chat.png" loading="lazy" height="60" width="60" alt="" /></a>
         <div class="nh-hiw-text">
-          <div class="nh-step-title">Chat</div>
+          <div class="nh-step-title"><a href="/message">Chat</a></div>
           <div class="nh-step-desc">Head to the chat page to see the currently online teachers.</div>
         </div>
       </div>
       <div class="nh-hiw-step">
-        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bc67270a57a73047295cf7_hiw-step-2.svg" loading="lazy" width="60" height="60" alt="" />
+      <a href="/student/flashcards"><img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/book.png" loading="lazy" width="60" height="60" alt="" /></a>
         <div class="nh-hiw-text">
-          <div class="nh-step-title">Flashcards</div>
-          <div class="nh-step-desc">Turn it all into a private, browsable and searchable database.</div>
+          <div class="nh-step-title"><a href="/student/flashcards">Flashcards</a></div>
+          <div class="nh-step-desc">Hone your skills by revising ready-made on your own flashcards.</div>
         </div>
       </div>
       <div class="nh-hiw-step">
-        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bc67273f9cb6f9723cce5c_hiw-step-3.svg" loading="lazy" width="60" height="60" alt="" />
+      <a href="/student/account"><img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/account.png" loading="lazy" width="60" height="60" alt="" /></a>
         <div class="nh-hiw-text">
-          <div class="nh-step-title">Account</div>
+          <div class="nh-step-title"><a href="/student/account">Account</a></div>
           <div class="nh-step-desc">Update your details. Cancel your subscription. Delete your account.</div>
         </div>
       </div>
