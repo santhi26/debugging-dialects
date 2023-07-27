@@ -1962,3 +1962,150 @@ font-size: 20px;
 }
 
 
+
+
+
+/* SIGN UP PAGE */
+
+.pack-containers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 61px;
+}
+
+.pack-container {
+  position: relative;
+  display: flex;
+  min-width: 260px;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: #3f4e42;
+  border: 1px solid #869d8a;
+  padding: 1.6rem;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.header {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.975rem;
+  line-height: 0rem;
+  color: #ffffff;
+  font-family: Quincy, sans-serif;
+  font-weight: 500;
+}
+
+.price-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-family: Greycliff, sans-serif;
+}
+
+.price-container span:first-child {
+  margin-top: 10px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.price-container span:last-child {
+  align-self: flex-end;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -30px;
+}
+
+.list span {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background-color: rgba(255, 255, 255, 0.185);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list span svg {
+  height: 12px;
+  width: 12px;
+}
+
+.list p {
+  display: block;
+  font-family: Greycliff, sans-serif;
+  line-height: 5px;
+}
+
+
+
+
+.cta-signbtn {
+  min-width: 150px;
+  color: #484c67;
+  letter-spacing: -.01em;
+  text-shadow: 0 1px rgba(255, 255, 255, .81);
+  background-color: #fff;
+  background-image: linear-gradient(#fefefe 43%, #f0f2fa);
+  border: 1px solid rgba(180, 188, 201, .53);
+  border-radius: 40px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 13px 28px 15px;
+  font-family: Greycliff, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all .15s cubic-bezier(.215, .61, .355, 1), transform .3s;
+  box-shadow: 0 1px 2px rgba(205, 210, 225, .39)
+}
+
+.cta-signbtn:hover {
+  color: #d04e3a;
+  border-color: #b4bcc9;
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(205, 210, 225, .74)
+}
+
+
+.cta-signbtn.fluentsigncontentbtn {
+  max-width: 150px;
+  min-width: auto;
+  text-align: center;
+  font-size: 19px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 50px;
+  padding: 5px 21px 5px 21px;
+}
