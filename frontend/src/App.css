@@ -1048,7 +1048,7 @@ background-attachment: fixed;
 }
 
 .nh-section-inset.testimonialsection {
-  background-color: #ece9f2;
+  background-color: #ebeaee;
 }
 
 .nh-section-inset.privacysection {
@@ -1238,7 +1238,7 @@ background-attachment: fixed;
   font-family: Quincy, sans-serif;
   font-size: 3.75rem;
   font-weight: 700;
-  line-height: 1.1
+  line-height: 1.1;
 }
 
 .nh-sectiontitle.overcometitle {
@@ -1246,13 +1246,9 @@ background-attachment: fixed;
 }
 
 .nh-sectiontitle.testimonialtitle {
-  color: #5a5268
-}
-
-.nh-sectiontitle.downloadtitle {
-  color: #4b4741;
-  margin-bottom: 2rem;
-  font-size: 5.5rem
+  color: #5a5268;
+  margin-top: -50px;
+  font-size: 3.33rem
 }
 
 .nh-bottom-testimonials-wrap {

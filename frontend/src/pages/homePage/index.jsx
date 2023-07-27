@@ -20,7 +20,7 @@ export default function HomePage() {
                         <div id="w-node-_1b22c488-7d69-553b-e7bd-4359dd6ca000-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title">Chat and learn</div>
                             <div class="nh-section-grid-item-desc">Talk in realtime to English teachers. And let our AI-generated flashcards help you learn new words and phrases.</div>
-                            <a href="/student/register" class="nh-section-item-button w-inline-block">
+                            <a href="/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start learning...</div>
                             </a>
                         </div>
@@ -64,7 +64,7 @@ export default function HomePage() {
                         <div id="w-node-_09c4110e-2975-3b26-ca10-ba09c30f8eff-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title benefittitle">Teacher? Earn money from home.</div>
                             <div class="nh-section-grid-item-desc benefitdesc">Get a quick and easy new income stream by teaching when <em>you</em> choose.</div>
-                            <a href="/teacher/register" class="nh-section-item-button w-inline-block">
+                            <a href="/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start teaching...</div>
                             </a>
                         </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
             <section class="nh-section-inset testimonialsection wf-section">
                 <div class="w-layout-blockcontainer nh-wrap sectionverticalpadding w-container">
                     <div class="nh-title-wrap wider-title-wrap">
-                        <div class="nh-sectiontitle testimonialtitle">We're great. But don't take just our word for it...</div>
+                        <div class="nh-sectiontitle testimonialtitle">Don't take just our word for it...</div>
                     </div>
                     <div class="nh-bottom-testimonials-wrap">
                         <div id="w-node-_5ba1ead9-6220-f643-f969-356542c0e98d-db6ab9e5" class="nh-bottom-testimonial">
