@@ -138,6 +138,9 @@
     position: relative;
   }
 
+.flip-card-back p {
+  font-size: 15px;
+}
 
   
   .flip-card-front {
@@ -372,8 +375,8 @@
 }
 
 .back-heading {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-bottom: -10px;
   font-size: 26px;
   font-style: italic;
 }

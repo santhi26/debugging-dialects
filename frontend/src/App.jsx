@@ -18,6 +18,7 @@ function App() {
           <Route path="/teacher/register" element={<Pages.registerTeacher />} />
           <Route path="/student/dashboard" element={<Pages.studentPage />} />
           <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
+          <Route path="/student/flashcards/" element={<Pages.FlashcardDash />} />
           <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
           <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
           <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />

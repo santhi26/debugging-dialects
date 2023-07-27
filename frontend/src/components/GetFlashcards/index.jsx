@@ -93,8 +93,8 @@ export default function GetUserFlashcards({ userId }) {
             <div className="card-content">
              <h3 className="front-heading">Well done!</h3>
              <br/><br/>
-             <p>You've reviewed all your cards for the day.</p>
-             <p>Hungry for me? Use our AI to make some!</p>
+             <p>You've reviewed all your cards for the day!</p>
+             <p>Hungry for more? Use our AI to make some!</p>
               <div className="image-container">
               </div>
             </div>
