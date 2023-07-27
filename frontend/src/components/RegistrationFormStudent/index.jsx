@@ -69,9 +69,12 @@ export default function RegistrationFormStudent() {
     
   return (
     <>
-        <div className="nh-hero wf-section">
-            <div className="nh-hero-header-wrap">
-                <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
+            <div class="general wf-section">
+                <div class="overview fluentcontent wf-section">
+                    <div class="content-wrapper-m-copy center content-section-title">
+                        <div class="w-richtext">
+                            <div class="w-embed">
+                                <h2 class="pagetitle">Student register</h2>
                     <form className="Form" onSubmit={handleSubmit}>
                         <div className="username">
                             <label className="form_label" htmlFor="username">Username </label>
@@ -101,9 +104,11 @@ export default function RegistrationFormStudent() {
                             <button type="submit" className="btn">Register</button>
                         </div>
                     </form>
+                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
     )
 }
-

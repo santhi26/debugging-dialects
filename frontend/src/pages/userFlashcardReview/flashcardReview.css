@@ -1,6 +1,7 @@
 
   /* Main Container */
   .flashcard-container {
+    margin-top: 200px;
     display: grid;
     grid-template-rows: 80px 1fr;
     min-height: 100vh;
@@ -38,7 +39,7 @@
   .button-container {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 4rem;
   }
   
   .button {

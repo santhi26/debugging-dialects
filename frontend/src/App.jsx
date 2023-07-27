@@ -14,12 +14,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages.homePage />} />
           <Route path="/registerHome" element={<Pages.RegisterHome />} />
-          <Route path="/register" element={<Pages.RegisterStudent />} />
-          <Route path="/registerTeacher" element={<Pages.registerTeacher />} />
-          <Route path="/student" element={<Pages.studentPage />} />
-          <Route path="/teacher" element={<Pages.teacherPage />} />
+          <Route path="/student/register" element={<Pages.RegisterStudent />} />
+          <Route path="/teacher/register" element={<Pages.registerTeacher />} />
+          <Route path="/student/dashboard" element={<Pages.studentPage />} />
+          <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
           <Route path="/flashCard" element={<Pages.flashCard />} />
-          <Route path="/userflashcards" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/your-flashcards" element={<Pages.userFlashcardReview />} />
           <Route path="/teacher/profile" element={<Pages.teacherProfile />} />
           <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} />
           <Route path="student/flashCard" element={<Pages.flashCard />} />

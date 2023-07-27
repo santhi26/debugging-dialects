@@ -51,7 +51,7 @@ export default function LoginForm() {
                 setUserID(data.user_id);
                 setRole(data.role); 
                 console.log(data.role);                  
-                data.role === "student" ? navigate("/student") : navigate("/teacher");                
+                data.role === "student" ? navigate("/student/dashboard") : navigate("/teacher/dashboard");                
             } else {
                 alert("Incorrect Credentials");
             }          
