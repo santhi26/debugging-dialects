@@ -1,4 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<coverage generated="1690475490123" clover="3.2.0">
+  <project timestamp="1690475490124" name="All files">
+    <metrics statements="545" coveredstatements="176" conditionals="128" coveredconditionals="9" methods="58" coveredmethods="11" elements="731" coveredelements="196" complexity="0" loc="545" ncloc="545" packages="8" files="17" classes="17"/>
+    <package name="backend">
+      <metrics statements="55" coveredstatements="53" conditionals="8" coveredconditionals="7" methods="7" coveredmethods="7"/>
+      <file name="api.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/api.js">
+        <metrics statements="55" coveredstatements="53" conditionals="8" coveredconditionals="7" methods="7" coveredmethods="7"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="48" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="58" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="3" type="stmt"/>
+        <line num="60" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="82" count="4" type="stmt"/>
+        <line num="83" count="4" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="89" count="3" type="stmt"/>
+        <line num="94" count="5" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="103" count="5" type="stmt"/>
+        <line num="105" count="5" type="stmt"/>
+        <line num="106" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="108" count="4" type="stmt"/>
+        <line num="113" count="5" type="stmt"/>
+        <line num="124" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.Controllers">
+      <metrics statements="212" coveredstatements="46" conditionals="72" coveredconditionals="2" methods="21" coveredmethods="2"/>
+      <file name="flashcards.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Controllers/flashcards.js">
+        <metrics statements="132" coveredstatements="15" conditionals="52" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+=======
 <coverage generated="1690472056279" clover="3.2.0">
   <project timestamp="1690472056279" name="All files">
     <metrics statements="512" coveredstatements="182" conditionals="108" coveredconditionals="7" methods="55" coveredmethods="13" elements="675" coveredelements="202" complexity="0" loc="512" ncloc="512" packages="5" files="15" classes="15"/>
@@ -78,6 +155,7 @@
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -85,7 +163,11 @@
         <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="27" count="2" type="stmt"/>
+=======
         <line num="27" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
@@ -115,7 +197,11 @@
         <line num="70" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="84" count="2" type="stmt"/>
+=======
         <line num="84" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="85" count="0" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
@@ -129,7 +215,11 @@
         <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="102" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="109" count="2" type="stmt"/>
+=======
         <line num="109" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="110" count="0" type="stmt"/>
         <line num="111" count="0" type="stmt"/>
         <line num="113" count="0" type="stmt"/>
@@ -138,6 +228,16 @@
         <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="118" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="124" count="2" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="130" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="137" count="2" type="stmt"/>
+=======
         <line num="124" count="1" type="stmt"/>
         <line num="125" count="1" type="stmt"/>
         <line num="127" count="1" type="stmt"/>
@@ -146,6 +246,7 @@
         <line num="131" count="1" type="stmt"/>
         <line num="133" count="0" type="stmt"/>
         <line num="137" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="138" count="0" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
@@ -180,7 +281,11 @@
         <line num="203" count="0" type="stmt"/>
         <line num="206" count="0" type="stmt"/>
         <line num="207" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="211" count="2" type="stmt"/>
+=======
         <line num="211" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="212" count="0" type="stmt"/>
         <line num="214" count="0" type="stmt"/>
         <line num="216" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -188,7 +293,11 @@
         <line num="218" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="219" count="0" type="stmt"/>
         <line num="221" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="226" count="2" type="stmt"/>
+=======
         <line num="226" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="227" count="0" type="stmt"/>
         <line num="228" count="0" type="stmt"/>
         <line num="230" count="0" type="stmt"/>
@@ -202,6 +311,15 @@
         <line num="243" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="244" count="0" type="stmt"/>
         <line num="246" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="257" count="2" type="stmt"/>
+      </file>
+      <file name="students.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Controllers/students.js">
+        <metrics statements="36" coveredstatements="7" conditionals="12" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+=======
         <line num="257" count="1" type="stmt"/>
       </file>
       <file name="students.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Controllers/students.js">
@@ -209,6 +327,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -216,6 +335,17 @@
         <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+=======
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
@@ -225,6 +355,7 @@
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
@@ -233,6 +364,31 @@
         <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="44" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+      </file>
+      <file name="teachers.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Controllers/teachers.js">
+        <metrics statements="26" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+=======
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
@@ -256,6 +412,7 @@
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -263,6 +420,52 @@
         <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+      </file>
+      <file name="users.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Controllers/users.js">
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.Models">
+      <metrics statements="188" coveredstatements="25" conditionals="32" coveredconditionals="0" methods="24" coveredmethods="1"/>
+      <file name="Users.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Models/Users.js">
+        <metrics statements="24" coveredstatements="10" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+=======
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
@@ -307,6 +510,7 @@
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="18" count="0" type="stmt"/>
@@ -321,6 +525,18 @@
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="flashcards.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Models/flashcards.js">
+        <metrics statements="103" coveredstatements="7" conditionals="18" coveredconditionals="0" methods="13" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+=======
         <line num="41" count="1" type="stmt"/>
       </file>
       <file name="flashcards.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Models/flashcards.js">
@@ -331,6 +547,7 @@
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -366,8 +583,13 @@
         <line num="120" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="132" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+=======
         <line num="132" count="1" type="stmt"/>
         <line num="134" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="136" count="0" type="stmt"/>
         <line num="138" count="0" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
@@ -377,6 +599,65 @@
         <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="147" count="0" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="152" count="0" type="stmt"/>
+        <line num="154" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="158" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="159" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="170" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="171" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="178" count="0" type="stmt"/>
+        <line num="181" count="0" type="stmt"/>
+        <line num="182" count="0" type="stmt"/>
+        <line num="190" count="0" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="208" count="0" type="stmt"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="216" count="0" type="stmt"/>
+        <line num="217" count="0" type="stmt"/>
+        <line num="224" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="228" count="0" type="stmt"/>
+        <line num="237" count="0" type="stmt"/>
+        <line num="238" count="0" type="stmt"/>
+        <line num="243" count="0" type="stmt"/>
+        <line num="244" count="0" type="stmt"/>
+        <line num="248" count="0" type="stmt"/>
+        <line num="250" count="0" type="stmt"/>
+        <line num="251" count="0" type="stmt"/>
+        <line num="256" count="0" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+        <line num="261" count="0" type="stmt"/>
+        <line num="263" count="0" type="stmt"/>
+        <line num="264" count="0" type="stmt"/>
+        <line num="271" count="0" type="stmt"/>
+        <line num="272" count="0" type="stmt"/>
+        <line num="278" count="0" type="stmt"/>
+        <line num="280" count="0" type="stmt"/>
+        <line num="282" count="0" type="stmt"/>
+        <line num="283" count="0" type="stmt"/>
+        <line num="290" count="0" type="stmt"/>
+        <line num="291" count="0" type="stmt"/>
+        <line num="296" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="297" count="0" type="stmt"/>
+        <line num="299" count="0" type="stmt"/>
+        <line num="302" count="0" type="stmt"/>
+        <line num="303" count="0" type="stmt"/>
+        <line num="309" count="2" type="stmt"/>
+      </file>
+      <file name="students.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Models/students.js">
+        <metrics statements="32" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+=======
         <line num="157" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="158" count="0" type="stmt"/>
         <line num="159" count="0" type="stmt"/>
@@ -426,6 +707,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -433,11 +715,19 @@
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+=======
         <line num="22" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
@@ -447,6 +737,30 @@
         <line num="49" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+      </file>
+      <file name="teachers.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Models/teachers.js">
+        <metrics statements="29" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+=======
         <line num="58" count="1" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
         <line num="64" count="1" type="cond" truecount="1" falsecount="1"/>
@@ -469,6 +783,7 @@
         <line num="25" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
@@ -478,6 +793,17 @@
         <line num="48" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
+<<<<<<< HEAD
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+=======
         <line num="62" count="1" type="stmt"/>
         <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
@@ -487,10 +813,138 @@
         <line num="78" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
       </file>
     </package>
     <package name="backend.Routers">
       <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
+      <file name="flashcards.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Routers/flashcards.js">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+      </file>
+      <file name="students.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Routers/students.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="teachers.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Routers/teachers.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="users.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/Routers/users.js">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.SocketClasses">
+      <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="User.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/SocketClasses/User.js">
+        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.database">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="db.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/database/db.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.test_data">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="user_data.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/test_data/user_data.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="backend.utils">
+      <metrics statements="38" coveredstatements="3" conditionals="16" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="sm2.js" path="/Users/oliverthomas/Desktop/LFA/LAP-3/debugging-dialects/backend/utils/sm2.js">
+        <metrics statements="38" coveredstatements="3" conditionals="16" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+=======
       <file name="flashcards.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Routers/flashcards.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -572,6 +1026,7 @@
         <line num="176" count="5" type="stmt"/>
         <line num="178" count="0" type="stmt"/>
         <line num="181" count="1" type="stmt"/>
+>>>>>>> 888bc757cbe94260cfbb8a883b920d944e586739
       </file>
     </package>
   </project>
