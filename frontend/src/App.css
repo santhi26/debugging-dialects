@@ -247,6 +247,14 @@ background-attachment: fixed;
   background-color: #f6f4ef
 }
 
+.pagetitle {
+  font-size: 40px;
+  font-family: Greycliff, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #4c4656;
+}
+
 .get-fluentpal-modal-bg {
   background-color: rgba(46, 6, 107, .4);
   position: fixed;
@@ -2146,4 +2154,61 @@ font-size: 20px;
 .text-span {
   font-weight: 700;
   font-size: 1.3rem;
+}
+
+
+
+
+/* STUDENT REGISTER */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px;
+  gap: 10px;  
+}
+
+.form_input, .form-select {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.submit-button {
+  text-align: center;
+  max-width: 50px;
+}
+
+.btn {
+  min-width: 150px;
+  color: #484c67;
+  letter-spacing: -.01em;
+  text-shadow: 0 1px rgba(255, 255, 255, .81);
+  background-color: #fff;
+  background-image: linear-gradient(#fefefe 43%, #f0f2fa);
+  border: 1px solid rgba(180, 188, 201, .53);
+  border-radius: 40px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 13px 28px 15px;
+  font-family: Greycliff, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all .15s cubic-bezier(.215, .61, .355, 1), transform .3s;
+  box-shadow: 0 1px 2px rgba(205, 210, 225, .39)
+}
+
+.btn:hover {
+  color: #d04e3a;
+  border-color: #b4bcc9;
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(205, 210, 225, .74)
 }
