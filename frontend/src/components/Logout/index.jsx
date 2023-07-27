@@ -7,8 +7,20 @@ export default function Logout() {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        setContextUsername("")
-        navigate("/")
+        // Remove items from local storage
+        localStorage.removeItem('username');
+        localStorage.removeItem('role');
+        localStorage.removeItem('token');
+        localStorage.removeItem('userID');
+
+        // Clear context values
+        setContextUsername("");
+        setRole("");
+        setToken("");
+        setUserID("");
+
+        // Navigate back to home
+        navigate("/");
     }
 
   return (

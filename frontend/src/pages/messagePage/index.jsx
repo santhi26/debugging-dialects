@@ -82,16 +82,23 @@ export default function messagePage() {
     // }, [messages])
 
     return (
-        <main className='message-page'>
-            {/* <h1>Message Page</h1> */}
-            <UserList setRecipient={setRecipient}/>
-            <div className='message-panel'>
-            <MessageBoard messages={displayMessages} recipient={recipient}/>
-                <form id='message-form'>
-                    <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
-                </form>
+        <>
+                <div class="general-chat wf-section">
+                    <div class="overview-chat fluentchatcontent wf-section">
+                    <center><h1 class="pagetitle">Real-time chat</h1></center>
+                                    <main className='message-page'>
+                                        <UserList setRecipient={setRecipient}/>
+                                        <div className='message-panel'>
+                                        <MessageBoard messages={displayMessages} recipient={recipient}/>
+                                            <form id='message-form'>
+                                                <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
+                                            </form>
+                                        </div>
+                                    </main>
+
+
+                </div>
             </div>
-            
-        </main>
+        </>
     )
-};
+}

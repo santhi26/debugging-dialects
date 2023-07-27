@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default function GetUserFlashcards({ userId }) {
-  console.log("🚀 ~ file: index.jsx:4 ~ GetUserFlashcards ~ userId:", userId);
+export default function GetFlashcards({ userId }) {
+  console.log("🚀 ~ file: index.jsx:4 ~ GetFlashcards ~ userId:", userId);
   const [flashCards, setFlashCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
