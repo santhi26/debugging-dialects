@@ -2136,12 +2136,14 @@ font-size: 20px;
   letter-spacing: -.5px;
   margin-bottom: 1.65rem;
   font-family: Greycliff, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  line-height: 1.5
+  line-height: 1.5;
+  color: #313440;
 }
 
 
 .text-span {
-  font-weight: 700
+  font-weight: 700;
+  font-size: 1.3rem;
 }

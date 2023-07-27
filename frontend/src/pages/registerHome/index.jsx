@@ -119,7 +119,7 @@ export default function RegisterHome() {
                     </li>
                   </ul>
                 </div>
-                <a href="/student/register" className="cta-signbtn fluentsigncontentbtn w-button">Get earning</a>
+                <a href="/teacher/register" className="cta-signbtn fluentsigncontentbtn w-button">Get earning</a>
               </div>
             </div>
           </div>
