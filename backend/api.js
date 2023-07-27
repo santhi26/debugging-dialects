@@ -46,7 +46,7 @@ io.on("connection", socket => {
     // console.log(`${socket.id} has connected.`);
     // console.log(`All socket connections`, Object.keys(io.engine.clients))
     if (process.env.NODE_ENV === 'test') {
-        users = require('./__tests__/test_data/user_data');
+        users = require('./test_data/user_data');
     }
     socket.join(socket.id);
     let user;

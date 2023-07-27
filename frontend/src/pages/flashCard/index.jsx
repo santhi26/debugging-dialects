@@ -9,14 +9,15 @@ export default function flashCard() {
 
     return (
         <>
-            <h1>fluentPal</h1>
-            <em>Learn a lanugage</em>
-            <Component.Greetings />
-            <Component.GetFlashCard/>
-            <button onClick={() => navigate("/createFlashCard")}>Create FlashCard</button>
-            <Component.Logout />
-            <Component.Footer />
-            
-        </>
-    )
-};
+            <div className="nh-hero wf-section">
+                <div className="nh-hero-header-wrap">
+                    <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
+                        <Component.Greetings />
+                        <Component.GetFlashCard/>
+                        <button onClick={() => navigate("/createFlashCard")}>Create FlashCard</button>
+                        <Component.Logout />
+                        </div>
+                </div>
+    </>
+)
+}

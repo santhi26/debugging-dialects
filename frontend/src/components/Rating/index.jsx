@@ -1,36 +1,20 @@
 import { useState } from 'react';
 
-function getRatingDescription(rating) {
-  switch (rating) {
-    case 1:
-      return 'Poor';
-    case 2:
-      return 'Nothing special';
-    case 3:
-      return 'Average';
-    case 4:
-      return 'Very good';
-    case 5:
-      return 'Excellent';
-    default:
-      return 'None';
-  }
-}
-
 export default function StarRating() {
   const [rating, setRating] = useState(3);
-  const [hoveredRating, setHoveredRating] = useState(1);
+  const [hoveredRating, setHoveredRating] = useState(3);
 
   const handleMouseEnter = (value) => {
     setHoveredRating(value);
   };
 
   const handleMouseLeave = () => {
-    setHoveredRating(0);
+    setHoveredRating(3);
   };
 
   const handleRatingClick = (value) => {
     setRating(value);
+    setHoveredRating(value)
   };
 
   return (
@@ -51,10 +35,7 @@ export default function StarRating() {
           </span>
         ))}
       </div>
-      <div>
-        <div>{`Selected: ${getRatingDescription(rating)}`}</div>
-        <div>{`${getRatingDescription(hoveredRating)}`}</div>
-      </div>
+     
     </div>
   );
 }
