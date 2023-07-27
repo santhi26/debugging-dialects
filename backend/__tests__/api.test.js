@@ -1,5 +1,5 @@
 const request = require("supertest")
-const server = require("../api")
+const {server} = require("../api")
 const db = require("../database/db")
 
 describe('API', () => {
