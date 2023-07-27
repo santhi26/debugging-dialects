@@ -15,7 +15,7 @@
     "start": "node server.js",
     "setup-db": "node ./database/setup-db.js",
     "dev": "nodemon server.js",
-    "test": "jest __tests__ --watchAll --detectOpenHandles",
+    "test": "jest __tests__/SocketClasses --watchAll --detectOpenHandles",
     "coverage": "jest --coverage",
     "setup-test-db": "node ./database/setup-test-db.js"
   },
