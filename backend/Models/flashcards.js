@@ -202,8 +202,10 @@ getDueUserFlashcards: async (userId) => {
         AND user_flashcards.user_id = $1
       ORDER BY flashcards_review_history.next_review_date DESC
     `, [userId]);
-    
+  
+    console.log("🚀 ~ file: flashcards.js:207 ~ getDueUserFlashcards: ~ result.rows:", result.rows)
     return result.rows;
+  
   } catch (err) {
     console.error(err);
     return { error: err.message };

@@ -14,7 +14,7 @@ export default function studentPage() {
                                 <h2 class="pagetitle">Welcome student!</h2>
                         <div className="studentPage">
                             <button className="studentbtn"><Link to="/message">Chat</Link></button>
-                            <button className="studentbtn"><Link to="/student/flashCard">FlashCards</Link></button>
+                            <button className="studentbtn"><Link to="/student/flashCard">Revise flashcards</Link></button>
                         <Component.SearchStudent />
                         </div>
                         </div>

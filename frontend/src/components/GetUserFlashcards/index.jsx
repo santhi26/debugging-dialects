@@ -86,6 +86,7 @@ export default function GetUserFlashcards({ userId }) {
     );
   }
 
+
  return (
     <div>
       <div className={`flip-card ${showAnswer ? "flipped" : ""}`}>
@@ -103,6 +104,7 @@ export default function GetUserFlashcards({ userId }) {
           <div className="flip-card-back">
           <h3 className="front-heading">{currentCard.front}</h3>
           <h3 className="back-heading">{currentCard.back}</h3>
+          <p>{currentCard.definition}</p>
             <div className="button-container">
           <ul className="wrapper">
             <li className="icon easy" onClick={() => handleAnswer("Easy")}>
