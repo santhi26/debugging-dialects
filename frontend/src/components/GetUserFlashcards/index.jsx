@@ -38,6 +38,7 @@ export default function GetUserFlashcards({ userId }) {
           body: JSON.stringify({ user_id: userId, reviewResult }),
         }
       );
+      console.log("🚀 ~ file: index.jsx:41 ~ handleAnswer ~ response:", response)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

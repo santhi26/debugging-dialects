@@ -1,7 +1,7 @@
 
   /* Main Container */
   .flashcard-container {
-    margin-top: 200px;
+    margin-top: 220px;
     display: grid;
     grid-template-rows: 80px 1fr;
     min-height: 100vh;
@@ -39,7 +39,7 @@
   .button-container {
     display: flex;
     gap: 1rem;
-    margin-top: 4rem;
+    margin-top: 100px;
   }
   
   .button {
@@ -103,13 +103,13 @@
 /* Flashcard Styling */
 .flip-card {
     width: 400px;
-    height: 320px;
+    height: 390px;
     perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 68px;
+    margin-bottom: 10px;
   }
   
   .flip-card-inner {
@@ -137,6 +137,8 @@
     border-radius: 10px;
     position: relative;
   }
+
+
   
   .flip-card-front {
     position: absolute;
@@ -371,7 +373,7 @@
 
 .back-heading {
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 26px;
   font-style: italic;
 }
