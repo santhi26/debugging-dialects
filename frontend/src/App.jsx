@@ -18,15 +18,15 @@ function App() {
           <Route path="/teacher/register" element={<Pages.registerTeacher />} />
           <Route path="/student/dashboard" element={<Pages.studentPage />} />
           <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
-          <Route path="/flashCard" element={<Pages.flashCard />} />
-          <Route path="/student/your-flashcards" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
+          <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />
           <Route path="/teacher/profile" element={<Pages.teacherProfile />} />
           <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} />
-          <Route path="student/flashCard" element={<Pages.flashCard />} />
           <Route path="/login" element={<Pages.login />} />
           <Route path="/message" element={<Pages.messagePage/>}/>
           <Route path="/about" element={<Pages.about/>}/>
-          <Route path="/createFlashCard" element={<Pages.createFlashCard/>}/>
+          <Route path="/student/flashcard/screate" element={<Pages.createFlashCard/>}/>
           <Route path="*" element={<Pages.NotFound />} />
         </Routes>
         <Footer />

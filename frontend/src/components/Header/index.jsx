@@ -32,7 +32,7 @@ export default function Header() {
 					  <div className="getfluentpaltext">Chat</div>
 				  </div>
 			  </NavLink>
-			  <NavLink id="menubar-cta" to="/flashcards" style={styles} className="nh-header-getfluentpalbtn w-inline-block">
+			  <NavLink id="menubar-cta" to="/student/flashcards" style={styles} className="nh-header-getfluentpalbtn w-inline-block">
 				  <div className="nh-homebuttons">
 					  <div className="getfluentpaltext">Flashcards</div>
 				  </div>
