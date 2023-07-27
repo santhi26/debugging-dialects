@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34d8e579d075ca19566_GreycliffCF-Bold.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34d8e579d075ca19566_GreycliffCF-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34ddbf5a8888f0b0add_GreycliffCF-DemiBold.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34ddbf5a8888f0b0add_GreycliffCF-DemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34dd72c7bde7a5f6dea_GreycliffCF-ExtraLight.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34dd72c7bde7a5f6dea_GreycliffCF-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34e2a0ea1a5e3242be4_GreycliffCF-Light.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34e2a0ea1a5e3242be4_GreycliffCF-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34ed72c7bde7a5f6e2f_GreycliffCF-Regular.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34ed72c7bde7a5f6e2f_GreycliffCF-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34ddbf5a8888f0b0af2_GreycliffCF-Heavy.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34ddbf5a8888f0b0af2_GreycliffCF-Heavy.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34e806237ea74fd6253_GreycliffCF-ExtraBold.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34e806237ea74fd6253_GreycliffCF-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -56,7 +56,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34e775baaccac02b9f9_GreycliffCF-Thin.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34e775baaccac02b9f9_GreycliffCF-Thin.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -64,7 +64,7 @@
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a34e81b6112b29c24c4b_GreycliffCF-Medium.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a34e81b6112b29c24c4b_GreycliffCF-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -88,7 +88,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d739d6310457e57213_QuincyCF-ExtraBoldItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d739d6310457e57213_QuincyCF-ExtraBoldItalic.woff2') format('woff2');
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -96,7 +96,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a6d72c7bde7a5ff3e5_QuincyCF-Bold.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a6d72c7bde7a5ff3e5_QuincyCF-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -104,7 +104,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d7944f52bfc0ffd5f1_QuincyCF-BoldItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d7944f52bfc0ffd5f1_QuincyCF-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -112,7 +112,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a6e7c0340aef6f2acd_QuincyCF-Black.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a6e7c0340aef6f2acd_QuincyCF-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -120,7 +120,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a62fd64bfc7cebd5bf_QuincyCF-ExtraBold.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a62fd64bfc7cebd5bf_QuincyCF-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -128,7 +128,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d7a86025de7e595ee1_QuincyCF-LightItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d7a86025de7e595ee1_QuincyCF-LightItalic.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -136,7 +136,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d7a86025de7e595f04_QuincyCF-ThinItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d7a86025de7e595f04_QuincyCF-ThinItalic.woff2') format('woff2');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -144,7 +144,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a6e7c0340aef6f2ae8_QuincyCF-Thin.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a6e7c0340aef6f2ae8_QuincyCF-Thin.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -152,7 +152,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a644bdf3e7483e168d_QuincyCF-Regular.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a644bdf3e7483e168d_QuincyCF-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -160,7 +160,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d77c588ba71aa17d96_QuincyCF-RegularItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d77c588ba71aa17d96_QuincyCF-RegularItalic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -168,7 +168,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b8a3a6cb28e20392338f31_QuincyCF-Medium.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b8a3a6cb28e20392338f31_QuincyCF-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -176,7 +176,7 @@
 
 @font-face {
   font-family: 'Quincy';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/64b944d7814d2867c4adfaa5_QuincyCF-MediumItalic.woff2') format('woff2');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/64b944d7814d2867c4adfaa5_QuincyCF-MediumItalic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -184,7 +184,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0cb59636439a69a02c_Whitney%20Medium.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0cb59636439a69a02c_Whitney%20Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -192,7 +192,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0c23db294059846dce_Whitney%20Light.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0c23db294059846dce_Whitney%20Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -200,7 +200,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0c618e0a6fb1b294b2_Whitney%20Light%20Italic.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0c618e0a6fb1b294b2_Whitney%20Light%20Italic.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -208,7 +208,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0c70804530b449506f_Whitney%20Semibold.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0c70804530b449506f_Whitney%20Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -216,7 +216,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0cbc9d9c870be2f15b_Whitney%20Book.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0cbc9d9c870be2f15b_Whitney%20Book.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -224,7 +224,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0c47d161225b879609_Whitney%20Bold.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0c47d161225b879609_Whitney%20Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -232,7 +232,7 @@
 
 @font-face {
   font-family: 'Whitney';
-  src: url('https://assets.website-files.com/635dda7647d1612d7d877c36/635ddb0ce5fc3d46a6bb5ca6_Whitney%20Black.otf') format('opentype');
+  src: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/fonts/635ddb0ce5fc3d46a6bb5ca6_Whitney%20Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -240,7 +240,7 @@
 
 
 body {
-  background-image: url('https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img5720.jpg');
+  background-image: url('https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/images/globe-compressed.jpg');
 background-position: top;
 background-repeat: no-repeat;
 background-attachment: fixed;
