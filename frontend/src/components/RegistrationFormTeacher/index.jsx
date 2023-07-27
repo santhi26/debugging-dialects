@@ -84,6 +84,10 @@ export default function RegistrationFormTeacher() {
     }
     
   return (
+    <>
+    <div className="nh-hero wf-section">
+    <div className="nh-hero-header-wrap">
+        <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
     <form className="Form" onSubmit={handleSubmit}>
         <div className="username">
             <label className="form_label" htmlFor="username">Username </label>
@@ -127,6 +131,9 @@ export default function RegistrationFormTeacher() {
         </div>
         </div>        
     </form>
-  )
+    </div>
+            </div>
+    </>
+)
 }
 
