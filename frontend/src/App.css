@@ -82,7 +82,7 @@ main{
   padding: 20px;
 }
 
-main .message-page {
+.message-page {
   display:flex;
   justify-content: space-between;
   width: 100%;
@@ -93,6 +93,7 @@ main .message-page {
   flex-direction: column;
   float: left;
   border:2px solid red;
+  width: 15%;
 }
 
 .user-list ul {
@@ -102,6 +103,7 @@ main .message-page {
 
 .message-panel {
   width:80%;
+  margin-right: 10px;
 }
 
 .message-board {
@@ -110,17 +112,46 @@ main .message-page {
   border:2px solid blue;
 }
 
+.message-list {
+  overflow: auto;
+  height: 80vh;
+  position: relative;
+  top: 20px;
+  padding:5px;
+
+
+}
+
 #message-form {
   display: flex;
   flex-direction: column;
   position: relative;
   bottom:0;
-  width:100%;
 }
 
 .message {
   border:2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 0;
 }
+
+.message h6, .message p {
+  margin-right: 5px;
+  margin-left:5px;
+}
+
+.user{
+  text-align: right;
+  float: right;
+}
+
+.other {
+  text-align: left;
+}
+
+
 .Form {
   display: flex;
   flex-direction: column;
