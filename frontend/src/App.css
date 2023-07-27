@@ -1020,6 +1020,7 @@ background-attachment: fixed;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 125%;
+  margin-bottom: -15px;
 }
 
 .nh-section-inset {
@@ -1441,7 +1442,7 @@ content: "\00a9 "; /* Unicode character for copyright symbol */
 }
 
 .cta-btn:hover {
-  color: #7a29ed;
+  color: #d04e3a;
   border-color: #b4bcc9;
   transform: scale(1.02);
   box-shadow: 0 2px 6px rgba(205, 210, 225, .74)
@@ -1464,10 +1465,12 @@ content: "\00a9 "; /* Unicode character for copyright symbol */
   max-width: 150px;
   min-width: auto;
   text-align: center;
-  margin-top: 2rem;
+  font-size: 21px;
   margin-left: auto;
   margin-right: auto;
-  display: block
+  display: block;
+  border-radius: 50px;
+  padding: 5px 21px 5px 21px;
 }
 
 .content-wrapper-m-copy {
@@ -1802,7 +1805,7 @@ input.w-button {
 }
 
 .cta-btn.fluentcontentbtn {
-  max-width: 150px;
+  max-width: 550px;
   min-width: auto;
   text-align: center;
   margin-top: 2rem;
