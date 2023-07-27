@@ -14,7 +14,9 @@
   "scripts": {
     "start": "node server.js",
     "setup-db": "node ./database/setup-db.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "test": "jest ./__tests__/socket --watchAll --detectOpenHandles",
+    "coverage": "jest --coverage"
   },
   "name": "backend",
   "version": "1.0.0",
@@ -22,5 +24,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "socket.io-client": "^4.7.1"
+  }
 }

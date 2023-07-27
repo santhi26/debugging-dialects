@@ -36,6 +36,7 @@ app.use('/api/teacher', teachersRouter)
 
 const User = require('./SocketClasses/User');
 let users = [];
+
 //Will run when a client starts a server connection
 
 
@@ -44,6 +45,9 @@ let users = [];
 io.on("connection", socket => {
     // console.log(`${socket.id} has connected.`);
     // console.log(`All socket connections`, Object.keys(io.engine.clients))
+    if (process.env.NODE_ENV === 'test') {
+        users = require('./__tests__/test_data/user_data');
+    }
     socket.join(socket.id);
     let user;
     let messages;
@@ -117,4 +121,4 @@ io.on("connection", socket => {
 
 
 
-module.exports = server;
+module.exports = {app, server, io, db};
