@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">40.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/32</span>
+                <span class='fraction'>13/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">40.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/32</span>
+                <span class='fraction'>13/32</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -147,13 +147,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -170,24 +170,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -224,14 +224,14 @@ const bcrypt = require("bcrypt");
 &nbsp;
 const Students = {
   // Get a student's level by their ID
-  getLevel: async (id) =&gt; {
-    try {
-      const student = await db.query('SELECT student_level FROM students WHERE student_id = $1', [id]);
+  getLevel: <span class="fstat-no" title="function not covered" >as</span>ync (id) =&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const student = <span class="cstat-no" title="statement not covered" >await db.query('SELECT student_level FROM students WHERE student_id = $1', [id]);</span>
 &nbsp;
-      if (student.rows.length &gt; 0) {
-        return student.rows[0].student_level;
+<span class="cstat-no" title="statement not covered" >      if (student.rows.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        return student.rows[0].student_level;</span>
       } else {
-        return { error: "Student not found" };
+<span class="cstat-no" title="statement not covered" >        return { error: "Student not found" };</span>
       }
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      console.error(err);</span>
@@ -248,25 +248,25 @@ const Students = {
         [username, password, email, role]
       );
 &nbsp;
-      const student = <span class="cstat-no" title="statement not covered" >await db.query(</span>
+      const student = await db.query(
         'INSERT INTO students (student_id, student_name, student_home_language) VALUES ($1, $2, $3) RETURNING *',
         [user.rows[0].user_id, username, student_home_language]
       );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return { user: user.rows[0], student: student.rows[0] };</span>
+      return { user: user.rows[0], student: student.rows[0] };
     } catch (err) {
-      console.error(err);
-      return { error: err.message };
+<span class="cstat-no" title="statement not covered" >      console.error(err);</span>
+<span class="cstat-no" title="statement not covered" >      return { error: err.message };</span>
     }
   },
 &nbsp;
-  getHomeLanguage: async (id) =&gt; {
-    try {
-      const student = await db.query('SELECT student_home_language FROM students WHERE student_id = $1', [id]);
+  getHomeLanguage: <span class="fstat-no" title="function not covered" >as</span>ync (id) =&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const student = <span class="cstat-no" title="statement not covered" >await db.query('SELECT student_home_language FROM students WHERE student_id = $1', [id]);</span>
   
-      if (student.rows.length &gt; 0) {
-        return student.rows[0].student_home_language;
-      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >      if (student.rows.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        return student.rows[0].student_home_language;</span>
+      } else {
 <span class="cstat-no" title="statement not covered" >        return { error: "Student not found" };</span>
       }
     } catch (err) {
@@ -304,7 +304,7 @@ module.exports = Students;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T10:55:12.877Z
+                at 2023-07-27T15:34:16.251Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

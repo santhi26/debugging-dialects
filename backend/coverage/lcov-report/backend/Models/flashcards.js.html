@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.36% </span>
+                <span class="strong">11.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/95</span>
+                <span class='fraction'>11/95</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.69% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>1/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.36% </span>
+                <span class="strong">11.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/95</span>
+                <span class='fraction'>11/95</span>
             </div>
         
             
@@ -489,31 +489,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -521,12 +504,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -783,10 +783,10 @@ getAllByLevelAndLanguage: <span class="fstat-no" title="function not covered" >a
 &nbsp;
 // USER CREATED FLASHCARDS //
 &nbsp;
-createUserFlashcard: <span class="fstat-no" title="function not covered" >as</span>ync (user_id, type, title, front, back) =&gt; {
-<span class="cstat-no" title="statement not covered" >  try {</span>
+createUserFlashcard: async (user_id, type, title, front, back) =&gt; {
+  try {
     // Get image from Unsplash API
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(`https://api.unsplash.com/search/photos?page=1&amp;per_page=20&amp;query=${front}&amp;client_id=${UNSPLASH_KEY}`);</span>
+    const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&amp;per_page=20&amp;query=${front}&amp;client_id=${UNSPLASH_KEY}`);
 &nbsp;
     let imageUrl = <span class="cstat-no" title="statement not covered" >null;</span>
     // Iterate over each result until an image with a 3:2 aspect ratio is found
@@ -820,8 +820,8 @@ createUserFlashcard: <span class="fstat-no" title="function not covered" >as</sp
 <span class="cstat-no" title="statement not covered" >      return { error: "Error creating flashcard" };</span>
     }
   } catch (err) {
-<span class="cstat-no" title="statement not covered" >    console.error(err);</span>
-<span class="cstat-no" title="statement not covered" >    return { error: err.message };</span>
+    console.error(err);
+    return { error: err.message };
   }
 },
 &nbsp;
@@ -955,7 +955,7 @@ module.exports = Flashcard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-27T10:55:12.877Z
+                at 2023-07-27T15:34:16.251Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

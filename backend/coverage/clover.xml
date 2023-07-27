@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690455312901" clover="3.2.0">
-  <project timestamp="1690455312901" name="All files">
-    <metrics statements="492" coveredstatements="185" conditionals="106" coveredconditionals="16" methods="52" coveredmethods="14" elements="650" coveredelements="215" complexity="0" loc="492" ncloc="492" packages="5" files="14" classes="14"/>
+<coverage generated="1690472056279" clover="3.2.0">
+  <project timestamp="1690472056279" name="All files">
+    <metrics statements="512" coveredstatements="182" conditionals="108" coveredconditionals="7" methods="55" coveredmethods="13" elements="675" coveredelements="202" complexity="0" loc="512" ncloc="512" packages="5" files="15" classes="15"/>
     <package name="backend">
       <metrics statements="59" coveredstatements="23" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="0"/>
       <file name="api.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/api.js">
@@ -68,9 +68,9 @@
       </file>
     </package>
     <package name="backend.Controllers">
-      <metrics statements="212" coveredstatements="70" conditionals="72" coveredconditionals="10" methods="21" coveredmethods="7"/>
+      <metrics statements="212" coveredstatements="58" conditionals="72" coveredconditionals="4" methods="21" coveredmethods="5"/>
       <file name="flashcards.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Controllers/flashcards.js">
-        <metrics statements="132" coveredstatements="15" conditionals="52" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <metrics statements="132" coveredstatements="20" conditionals="52" coveredconditionals="1" methods="12" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -139,11 +139,11 @@
         <line num="118" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="124" count="1" type="stmt"/>
-        <line num="125" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="128" count="0" type="stmt"/>
-        <line num="130" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="131" count="0" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="127" count="1" type="stmt"/>
+        <line num="128" count="1" type="stmt"/>
+        <line num="130" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="131" count="1" type="stmt"/>
         <line num="133" count="0" type="stmt"/>
         <line num="137" count="1" type="stmt"/>
         <line num="138" count="0" type="stmt"/>
@@ -205,17 +205,17 @@
         <line num="257" count="1" type="stmt"/>
       </file>
       <file name="students.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Controllers/students.js">
-        <metrics statements="36" coveredstatements="30" conditionals="12" coveredconditionals="7" methods="4" coveredmethods="4"/>
+        <metrics statements="36" coveredstatements="18" conditionals="12" coveredconditionals="2" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
@@ -225,14 +225,14 @@
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
@@ -244,7 +244,7 @@
         <line num="66" count="1" type="stmt"/>
       </file>
       <file name="teachers.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Controllers/teachers.js">
-        <metrics statements="26" coveredstatements="22" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <metrics statements="26" coveredstatements="17" conditionals="6" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -256,13 +256,13 @@
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
@@ -295,7 +295,7 @@
       </file>
     </package>
     <package name="backend.Models">
-      <metrics statements="180" coveredstatements="51" conditionals="28" coveredconditionals="6" methods="24" coveredmethods="7"/>
+      <metrics statements="180" coveredstatements="44" conditionals="28" coveredconditionals="2" methods="24" coveredmethods="5"/>
       <file name="Users.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Models/Users.js">
         <metrics statements="24" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -324,7 +324,7 @@
         <line num="41" count="1" type="stmt"/>
       </file>
       <file name="flashcards.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Models/flashcards.js">
-        <metrics statements="95" coveredstatements="7" conditionals="14" coveredconditionals="0" methods="13" coveredmethods="0"/>
+        <metrics statements="95" coveredstatements="11" conditionals="14" coveredconditionals="0" methods="13" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -366,8 +366,8 @@
         <line num="120" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
-        <line num="132" count="0" type="stmt"/>
-        <line num="134" count="0" type="stmt"/>
+        <line num="132" count="1" type="stmt"/>
+        <line num="134" count="1" type="stmt"/>
         <line num="136" count="0" type="stmt"/>
         <line num="138" count="0" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
@@ -382,8 +382,8 @@
         <line num="159" count="0" type="stmt"/>
         <line num="163" count="0" type="stmt"/>
         <line num="165" count="0" type="stmt"/>
-        <line num="168" count="0" type="stmt"/>
-        <line num="169" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="169" count="1" type="stmt"/>
         <line num="176" count="0" type="stmt"/>
         <line num="177" count="0" type="stmt"/>
         <line num="192" count="0" type="stmt"/>
@@ -422,28 +422,28 @@
         <line num="295" count="1" type="stmt"/>
       </file>
       <file name="students.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Models/students.js">
-        <metrics statements="32" coveredstatements="22" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <metrics statements="32" coveredstatements="13" conditionals="6" coveredconditionals="1" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="47" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
@@ -457,7 +457,7 @@
         <line num="78" count="1" type="stmt"/>
       </file>
       <file name="teachers.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/Models/teachers.js">
-        <metrics statements="29" coveredstatements="19" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <metrics statements="29" coveredstatements="17" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -465,16 +465,16 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="46" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
@@ -542,13 +542,36 @@
       </file>
     </package>
     <package name="backend.database">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="24" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="db.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/database/db.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="setup-test-db.js" path="/home/laisjm/Desktop/liskov/lap3/debugging-dialects/backend/database/setup-test-db.js">
+        <metrics statements="17" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="110" count="5" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="117" count="5" type="stmt"/>
+        <line num="118" count="5" type="stmt"/>
+        <line num="149" count="5" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="155" count="1" type="stmt"/>
+        <line num="156" count="5" type="stmt"/>
+        <line num="158" count="5" type="stmt"/>
+        <line num="176" count="5" type="stmt"/>
+        <line num="178" count="0" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
       </file>
     </package>
   </project>
