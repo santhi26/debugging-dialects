@@ -26,7 +26,7 @@ function App() {
           <Route path="/login" element={<Pages.login />} />
           <Route path="/message" element={<Pages.messagePage/>}/>
           <Route path="/about" element={<Pages.about/>}/>
-          <Route path="/student/flashcard/screate" element={<Pages.createFlashCard/>}/>
+          <Route path="/student/flashcard/create" element={<Pages.createFlashCard/>}/>
           <Route path="*" element={<Pages.NotFound />} />
         </Routes>
         <Footer />
