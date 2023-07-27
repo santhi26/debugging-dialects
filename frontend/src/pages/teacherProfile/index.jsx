@@ -6,6 +6,7 @@ export default function updateProfileTeacher() {
         <>
             <Component.StarRating />          
             <Component.SearchTeacher />  
+            <Component.ChatButton />
         </>
     )
 };
