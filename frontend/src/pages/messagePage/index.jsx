@@ -85,7 +85,7 @@ export default function messagePage() {
         <>
                 <div class="general-chat wf-section">
                     <div class="overview-chat fluentchatcontent wf-section">
-                    <h1 class="page-title">Student</h1>
+                    <h1 class="page-title">Chat & Learn</h1>
                                     <main className='message-page'>
                                         <UserList setRecipient={setRecipient}/>
                                         <div className='message-panel'>
