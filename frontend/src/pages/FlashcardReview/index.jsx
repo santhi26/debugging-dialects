@@ -13,7 +13,7 @@ return (
 
 
 
-                                <center><h2 class="pagetitle">Review flashcards</h2></center>
+                <h1 class="page-title">Review Flashcards</h1>
                                   <div className="flashcard-container">
                                     <GetFlashcards userId={userID} />
                                   </div>

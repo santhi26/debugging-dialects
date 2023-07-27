@@ -2356,3 +2356,23 @@ font-size: 20px;
   font-weight: 600;
   line-height: 1.25
 }
+
+
+
+/* PAGE HEADER */
+.page-title {
+  font-family: Quincy, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -.03em;
+  margin-top: 13px;
+  margin-bottom: 0;
+  font-size: 3.5rem;
+  line-height: 3.9rem;
+  color: #21232e;
+  padding-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-shadow: 18px 18px 3px rgba(0,0,0,0.1);
+}
+

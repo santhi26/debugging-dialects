@@ -68,7 +68,7 @@ export default function LoginForm() {
                     <div class="content-wrapper-m-copy center content-section-title">
                         <div class="w-richtext">
                             <div class="w-embed">
-                                <h2 class="pagetitle">Login</h2>
+                            <h1 class="page-title">Login</h1>
                                 <form className="Form" onSubmit={handleSubmit}>
                                     <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                                     <div className="username">

@@ -74,7 +74,7 @@ export default function RegistrationFormStudent() {
                     <div class="content-wrapper-m-copy center content-section-title">
                         <div class="w-richtext">
                             <div class="w-embed">
-                                <h2 class="pagetitle">Student register</h2>
+                            <h1 class="page-title">Sign up</h1>
                                 <form className="Form" onSubmit={handleSubmit}>
                                     <div className="form-row">
                                         <div className="form-group">

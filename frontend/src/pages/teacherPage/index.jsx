@@ -12,7 +12,7 @@ return (
                     <div class="content-wrapper-m-copy center content-section-title">
                         <div class="w-richtext">
                             <div class="w-embed">
-                                <h2 class="pagetitle">Teacher dashboard</h2>
+                            <h1 class="page-title">Student</h1>
                                 <Component.Greetings />      
                                 <Component.Logout />
                             </div>
