@@ -28,7 +28,7 @@ export default function HomePage() {
                             <div class="nh-inner-feature-icon-list">
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-_0ed7c4ff-bef8-42e9-2ed2-4fb12362b78c-db6ab9e5" class="nh-inner-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdb9981b90be3b5fcc673e_ic-laptop-phone.svg" loading="lazy" width="48" alt="" class="ic-laptop-phone" />
+                                        <img src="/assets/icons/money-square.svg" loading="lazy" width="48" alt="" class="ic-laptop-phone" />
                                     </div>
                                     <div id="w-node-e329728d-5cc3-161b-56e3-a49e1d9d46f0-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title">Great value</div>

@@ -6,6 +6,6 @@ export default function StudentLevel() {
     const { level } = useContext(UserContext);
     console.log(level)
     return (
-        <p>Level: {level}</p>
+        level
     );
 }

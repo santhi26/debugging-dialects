@@ -2278,3 +2278,63 @@ font-size: 20px;
             -70px 90px 0 rgba(0, 0, 0, 0);
   }
 }
+
+
+/* DASHBOARD */
+
+.nh-dashtitle {
+  color: #4e4840;
+  text-align: center;
+  letter-spacing: -.5px;
+  font-family: Quincy, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: -90px;
+}
+
+
+.nh-section-inset.howitworks {
+  background-color: #f1edebc2
+}
+
+.nh-sectionsubtitle {
+  color: rgba(50, 46, 46, .55);
+  margin-top: .25rem;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 10px;
+}
+
+.nh-hiw-steps {
+  grid-column-gap: 3rem;
+  justify-content: center;
+  margin-top: 4rem;
+  display: flex
+}
+
+.nh-hiw-step {
+  width: 290px;
+  text-align: center
+}
+
+.nh-step-title {
+  color: #5b4e47;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.nh-step-desc {
+  color: rgba(122, 110, 104, .8);
+  letter-spacing: -.05px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.17rem;
+  font-weight: 600;
+  line-height: 1.25
+}
