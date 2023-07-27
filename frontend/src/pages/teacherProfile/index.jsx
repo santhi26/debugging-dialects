@@ -4,7 +4,9 @@ export default function updateProfileTeacher() {
 
     return (
         <>
-            <Component.SearchTeacher />            
+            <Component.StarRating />          
+            <Component.SearchTeacher />  
+            <Component.ChatButton />
         </>
     )
 };
