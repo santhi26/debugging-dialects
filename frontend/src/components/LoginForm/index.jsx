@@ -62,23 +62,29 @@ export default function LoginForm() {
 
     return (
         <>
-            <div className="nh-hero wf-section">
-                <div className="nh-hero-header-wrap">
-                    <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
-                    <form className="Form" onSubmit={handleSubmit}>
-                        <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
-                        <div className="username">
-                            <label className="form_label" htmlFor="username">Username </label>
-                            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
-                        </div>                
-                        <div className="password">
-                            <label className="form_label" htmlFor="password">Password </label>
-                            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password" id="password" placeholder="Password" required/>
-                        </div>                
-                        <div className="submit-button">
-                            <button type="submit" className="btn">Login</button>
-                        </div>                      
-                    </form>
+            <div class="general wf-section">
+                <div class="overview fluentcontent wf-section">
+                    <div class="content-wrapper-m-copy center content-section-title">
+                        <div class="w-richtext">
+                            <div class="w-embed">
+                                <h2 class="pagetitle">Login</h2>
+                                <form className="Form" onSubmit={handleSubmit}>
+                                    <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
+                                    <div className="username">
+                                        <label className="form_label" htmlFor="username">Username </label>
+                                        <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
+                                    </div>                
+                                    <div className="password">
+                                        <label className="form_label" htmlFor="password">Password </label>
+                                        <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password" id="password" placeholder="Password" required/>
+                                    </div>                
+                                    <div className="submit-button">
+                                        <button type="submit" className="btn">Login</button>
+                                    </div>                      
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
