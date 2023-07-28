@@ -21,7 +21,7 @@ function App() {
           <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
           <Route path="/student/flashcards/" element={<Pages.FlashcardDash />} />
           <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
-          <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/flashcards/ai" element={<Pages.userFlashcardReview />} />
           <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />
           <Route path="/student/flashcards/create" element={<Pages.createFlashCard/>}/>
           <Route path="/student/flashcards/create/ai" element={<Pages.createAiFlashcard/>}/>

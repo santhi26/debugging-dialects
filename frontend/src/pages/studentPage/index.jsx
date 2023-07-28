@@ -27,7 +27,7 @@ export default function studentPage() {
         <a href="/message"><img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/chat.png" loading="lazy" height="60" width="60" alt="" /></a>
         <div class="nh-hiw-text">
           <div class="nh-step-title"><a href="/message">Chat</a></div>
-          <div class="nh-step-desc">Head to the chat page to see the currently online teachers.</div>
+          <div class="nh-step-desc">Head to the chat page to see the currently online <a href="http://localhost:5173/teacher/list">teachers.</a></div>
         </div>
       </div>
       <div class="nh-hiw-step">

@@ -2378,6 +2378,27 @@ font-size: 20px;
   line-height: 1.25
 }
 
+.nh-step-desc a {
+  color: rgba(54, 51, 49, 0.8);
+  letter-spacing: -.05px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.17rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+
+.nh-step-desc a:hover {
+  color: #d04e3a;
+  letter-spacing: -.05px;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.17rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: underline;
+}
+
 
 
 /* PAGE HEADER */
@@ -2746,8 +2767,8 @@ div.person-content .person-test {
 }
 
 .flash-name.flash-title {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   color: #21232e;
   font-family: Greycliff, sans-serif;
   font-weight: 600;
@@ -2770,8 +2791,9 @@ div.person-content .person-test {
   text-align: left;
   margin-bottom: 5px;
   font-family: Greycliff, sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
+  margin-top: 30px;
   line-height: 1.3;
 }
 

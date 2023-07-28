@@ -50,6 +50,7 @@ export default function createAiFlashcards() {
                     </div>
                   </div>
                 </section>
+                
                 <br></br><br></br>
               </section>
             </div>
