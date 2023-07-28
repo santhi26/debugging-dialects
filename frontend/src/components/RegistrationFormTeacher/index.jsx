@@ -75,7 +75,7 @@ export default function RegistrationFormTeacher() {
                     joined_date: new Date().toISOString()
             })}
 
-            const response = await fetch('http://backend-dialects.onrender.com/api/teacher/', options);
+            const response = await fetch('https://backend-dialects.onrender.com/api/teacher/', options);
             const data = await response.json();  
             navigate("/login")                 
             
