@@ -1,28 +1,32 @@
 import { useState, useEffect, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
 import { UserContext } from '../../contexts';
-import { TeacherProfile } from '..';
+import AiFlashcard from '../aiFlashcard/index.jsx';
 import Footer from '../Footer/index.jsx';
 
 export default function createAiFlashcards() {
-  const { setRating } = useContext(UserContext);
+  const userID = localStorage.getItem("userID");
   const [data, setData] = useState([]);
+  const [cardCount, setCardCount] = useState(1);
 
-  const searchTeachersAPI = async () => {
+  const createFlashcardsAPI = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/teacher/allTeachers`);
+      const response = await fetch(`http://localhost:3000/api/flashcard/usercards/prompt/${userID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cardCount }),
+      });
       const result = await response.json();
       setData(result);
-      setRating(result);
-      console.log(result, '<<<<<<', result);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    searchTeachersAPI();
-  }, []);
+    createFlashcardsAPI();
+  }, [cardCount]);
 
   return (
     <>
@@ -30,21 +34,27 @@ export default function createAiFlashcards() {
         <div class="overview fluentcontent wf-section">
           <div class="content-wrapper-m-copy center content-section-title">
             <div class="w-richtext">
-            <h1 class="page-title">Create AI Flashcards</h1>
-              <section id="our-team" class="teacher-section wf-section">
-                <section class="content-wrapper-centered-about">
-                  <div class="title-wrapper-jobs-v1">
-                    <p class="heading-paragraph">
-                      Below is some of our top teachers. They've been hand-picked by our team to ensure you get the best learning experience possible.
-                    </p>
-                  </div>
-                  <div class="team-content-wrap">
-                    <div class="w-layout-grid grid-2">
-                      {data.map((teacher) => <aiFlashcard data={teacher} key={teacher.teacher_id} />)}
+              <h1 class="page-title">Create AI Flashcards</h1>
+              <section id="our-flashcards" class="flashcards-section wf-section">
+                <section class="content-wrapper-centered-flash">
+                  <div class="title-wrapper-flash-v1">
+                    <input
+                      type="number"
+                      min="1"
+                      value={cardCount}
+                      onChange={(e) => setCardCount(e.target.value)}
+                      placeholder="Number of flashcards to create"
+                    />
+                    <button onClick={createFlashcardsAPI}>Create Flashcards</button>
+                    <div class="flash-content-wrap">
+                      <div class="w-layout-flashgrid fgrid-2">
+                        {data.map((card) => (
+                          <AiFlashcard data={card} key={card.flashcard_id} />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </section>
-                <a href="/message" class="cta-btn fluentcontentbtn w-button">Found one? Start chatting now!</a>
               </section>
             </div>
           </div>
