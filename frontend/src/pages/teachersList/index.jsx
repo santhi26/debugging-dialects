@@ -4,8 +4,7 @@ export default function teachersList() {
 
     return (
         <>
-            <Component.TeachersList />          
-            {/* <Component.TeacherProfile />   */}
+            <Component.TeachersList />
         </>
     )
 };
