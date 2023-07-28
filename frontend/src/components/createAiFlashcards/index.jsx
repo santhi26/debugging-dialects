@@ -9,7 +9,7 @@ export default function createAiFlashcards() {
 
   const createFlashcardsAPI = async () => {
     try {
-      const response = await fetch(`http://backend-dialects.onrender.com/api/flashcard/usercards/prompt/${userID}`, {
+      const response = await fetch(`https://backend-dialects.onrender.com/api/flashcard/usercards/prompt/${userID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

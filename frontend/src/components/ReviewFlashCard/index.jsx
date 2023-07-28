@@ -21,7 +21,7 @@ export default function ReviewFlashCard({review}) {
                                
                 })
             }        
-            const response = await fetch(`http://backend-dialects.onrender.com/api/flashcard/${userID}/review
+            const response = await fetch(`https://backend-dialects.onrender.com/api/flashcard/${userID}/review
             `, options);
             const data = await response.json();
 
