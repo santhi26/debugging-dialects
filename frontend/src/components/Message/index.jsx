@@ -2,7 +2,8 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { UserContext } from "../../contexts";
 export default function Message({msg}) {
     const {contextUsername} = useContext(UserContext);
-    const person = msg.sender_username === contextUsername ? ' user' : ' other';
+    let username = localStorage.getItem("username");
+    const person = msg.sender_username === username ? ' user' : ' other';
     // const isInitialMount = useRef(true)
 
     // //for testing purposes

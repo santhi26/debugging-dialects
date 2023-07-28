@@ -2,6 +2,7 @@ import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function LoginForm() {
 
@@ -46,12 +47,13 @@ export default function LoginForm() {
             if(data.username) {
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("token", data.token);    
-                localStorage.setItem("userID", data.user_id);            
+                localStorage.setItem("userID", data.user_id);
+                localStorage.setItem("role", data.role);                 
                 setContextUsername(data.username); 
                 setUserID(data.user_id);
                 setRole(data.role); 
                 console.log(data.role);                  
-                data.role === "student" ? navigate("/student") : navigate("/teacher");                
+                data.role === "student" ? navigate("/student/dashboard") : navigate("/teacher/dashboard");                
             } else {
                 alert("Incorrect Credentials");
             }          
@@ -62,24 +64,31 @@ export default function LoginForm() {
 
     return (
         <>
-            <div className="nh-hero wf-section">
-                <div className="nh-hero-header-wrap">
-                    <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
-                    <form className="Form" onSubmit={handleSubmit}>
-                        <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
-                        <div className="username">
-                            <label className="form_label" htmlFor="username">Username </label>
-                            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
-                        </div>                
-                        <div className="password">
-                            <label className="form_label" htmlFor="password">Password </label>
-                            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password" id="password" placeholder="Password" required/>
-                        </div>                
-                        <div className="submit-button">
-                            <button type="submit" className="btn">Login</button>
-                        </div>                      
-                    </form>
+            <div class="general wf-section">
+                <div class="overview fluentcontent wf-section">
+                    <div class="content-wrapper-m-copy center content-section-title">
+                        <div class="w-richtext">
+                            <div class="w-embed">
+                            <h1 class="page-title">Login</h1>
+                                <form className="Form" onSubmit={handleSubmit}>
+                                    <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
+                                    <div className="username">
+                                        <label className="form_label" htmlFor="username">Username </label>
+                                        <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
+                                    </div>                
+                                    <div className="password">
+                                        <label className="form_label" htmlFor="password">Password </label>
+                                        <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password" id="password" placeholder="Password" required/>
+                                    </div>                
+                                    <div className="submit-button">
+                                        <button type="submit" className="btn">Login</button>
+                                    </div>                      
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

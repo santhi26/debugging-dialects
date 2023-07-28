@@ -5,10 +5,10 @@ import {TeacherProfile, StudentLevel} from '../'
 
 
 export default function SearchStudent() {
-    const { userID } = useContext(UserContext);
     const { level, setLevel } = useContext(UserContext);
     const [data, setData] = useState([])
     const location = useLocation();
+    const userID = localStorage.getItem("userID");
 
     
     useEffect(() =>{

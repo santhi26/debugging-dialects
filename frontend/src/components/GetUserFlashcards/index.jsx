@@ -5,6 +5,9 @@ export default function GetUserFlashcards({ userId }) {
   const [flashCards, setFlashCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [noCardsLeft, setNoCardsLeft] = useState(false);
+  const [audioElement, setAudioElement] = useState(null);
+
 
   useEffect(() => {
     const fetchFlashCards = async () => {
@@ -26,6 +29,15 @@ export default function GetUserFlashcards({ userId }) {
     fetchFlashCards();
   }, [userId]);
 
+  useEffect(() => {
+    return () => {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+    };
+  }, [audioElement]);
+
   const handleAnswer = async (reviewResult) => {
     try {
       const response = await fetch(
@@ -38,6 +50,7 @@ export default function GetUserFlashcards({ userId }) {
           body: JSON.stringify({ user_id: userId, reviewResult }),
         }
       );
+      console.log("🚀 ~ file: index.jsx:41 ~ handleAnswer ~ response:", response)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -47,20 +60,51 @@ export default function GetUserFlashcards({ userId }) {
         setCurrentCard(flashCards[nextCardIndex]);
         setShowAnswer(false);
       } else {
-        alert("You have finished reviewing all due flashcards");
+        setNoCardsLeft(true);  // Set noCardsLeft to true when there are no more cards
       }
     } catch (error) {
       console.error(error);
     }
   };
 
+  
+
   const handleRevealAnswer = () => {
     setShowAnswer(true);
+    const audio = new Audio(currentCard.audio); // Assuming `audio` property in `currentCard` holds the URL for the audio file
+    setAudioElement(audio);
+    audio.play();
   };
+
+  
+  
 
   if (!currentCard) {
     return <p className="loading">Loading...</p>;
   }
+
+
+  if (noCardsLeft) {
+    return (
+      <div>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="card-content">
+             <h3 className="front-heading">Well done!</h3>
+             <br/><br/>
+             <p>You've reviewed all your cards for the day.</p>
+             <p>Hungry for me? Use our AI to make some!</p>
+              <div className="image-container">
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
 
  return (
     <div>
@@ -79,6 +123,7 @@ export default function GetUserFlashcards({ userId }) {
           <div className="flip-card-back">
           <h3 className="front-heading">{currentCard.front}</h3>
           <h3 className="back-heading">{currentCard.back}</h3>
+          <p>{currentCard.thedefinition}</p>
             <div className="button-container">
           <ul className="wrapper">
             <li className="icon easy" onClick={() => handleAnswer("Easy")}>

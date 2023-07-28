@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function RegistrationFormTeacher() {
 
@@ -83,57 +84,60 @@ export default function RegistrationFormTeacher() {
         }
     }
     
-  return (
-    <>
-    <div className="nh-hero wf-section">
-    <div className="nh-hero-header-wrap">
-        <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
-    <form className="Form" onSubmit={handleSubmit}>
-        <div className="username">
-            <label className="form_label" htmlFor="username">Username </label>
-            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
-        </div>
-        <div className="email">
-            <label className="form_label" htmlFor="email">Email </label>
-            <input className="form_input" value={email} onChange = {(e) => handleInputChange(e)} type="email" id="email" placeholder="Email" required/>       
-        </div>
-        <div className="fullName">
-            <label className="form_label" htmlFor="fullName">Full Name </label>
-            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="text" id="fullName" placeholder="Full Name"/>       
-        </div>
-        <div className="homeLanguage">
-            <label className="form_label" htmlFor="homeLanguage">Home Language </label>
-            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage"  id="homeLanguage" placeholder="Home Language" />
-        </div>
-        <div className="qualifications">
-            <label className="form_label" htmlFor="qualifications">Qualifications </label>
-            <textarea className="form_input" value={qualifications} onChange = {(e) => handleInputChange(e)} type="password" id="qualifications" placeholder="Qualifications" />
-        </div> 
-        <div className="biography">
-            <label className="form_label" htmlFor="biography">Biography </label>
-            <textarea className="form_input" value={biography} onChange = {(e) => handleInputChange(e)} type="biography" id="biography" placeholder="Biography" />       
-        </div>
-        <div className="image">
-          <label className="form_label" htmlFor="image">Image URL </label>
-          <input className="form_input" type="text" value={image} onChange = {(e) => handleInputChange(e)} id="image" placeholder="Image" />
-          
-        </div>
-        <div className="password">
-            <label className="form_label" htmlFor="password">Password </label>
-            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password"  id="password" placeholder="Password" required/>
-        </div>
-        <div className="confirm-password">
-            <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
-            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>
-         
-        <div className="submit-button">
-            <button type="submit" className="btn">Register</button>
-        </div>
-        </div>        
-    </form>
-    </div>
+    return (
+        <div class="general wf-section">
+            <div class="overview fluentcontent wf-section">
+                <div class="content-wrapper-m-copy center content-section-title">
+                    <div class="w-richtext">
+                        <div class="w-embed">
+                        <h1 class="page-title">Sign up</h1>
+                                <form className="Form" onSubmit={handleSubmit}>
+                                        <div className="username">
+                                            <label className="form_label" htmlFor="username">Username </label>
+                                            <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
+                                        </div>
+                                        <div className="email">
+                                            <label className="form_label" htmlFor="email">Email </label>
+                                            <input className="form_input" value={email} onChange = {(e) => handleInputChange(e)} type="email" id="email" placeholder="Email" required/>       
+                                        </div>
+                                        <div className="fullName">
+                                            <label className="form_label" htmlFor="fullName">Full Name </label>
+                                            <input className="form_input" value={fullName} onChange = {(e) => handleInputChange(e)} type="text" id="fullName" placeholder="Full Name"/>       
+                                        </div>
+                                        <div className="homeLanguage">
+                                            <label className="form_label" htmlFor="homeLanguage">Home Language </label>
+                                            <input className="form_input" value={homeLanguage} onChange = {(e) => handleInputChange(e)} type="homeLanguage"  id="homeLanguage" placeholder="Home Language" />
+                                        </div>
+                                        <div className="qualifications">
+                                            <label className="form_label" htmlFor="qualifications">Qualifications </label>
+                                            <textarea className="form_input" value={qualifications} onChange = {(e) => handleInputChange(e)} type="password" id="qualifications" placeholder="Qualifications" />
+                                        </div> 
+                                        <div className="biography">
+                                            <label className="form_label" htmlFor="biography">Biography </label>
+                                            <textarea className="form_input" value={biography} onChange = {(e) => handleInputChange(e)} type="biography" id="biography" placeholder="Biography" />       
+                                        </div>
+                                        <div className="image">
+                                        <label className="form_label" htmlFor="image">Image URL </label>
+                                        <input className="form_input" type="text" value={image} onChange = {(e) => handleInputChange(e)} id="image" placeholder="Image" />
+                                        
+                                        </div>
+                                        <div className="password">
+                                            <label className="form_label" htmlFor="password">Password </label>
+                                            <input className="form_input" value={password} onChange = {(e) => handleInputChange(e)} type="password"  id="password" placeholder="Password" required/>
+                                        </div>
+                                        <div className="confirm-password">
+                                            <label className="form_label" htmlFor="confirmPassword">Confirm Password </label>
+                                            <input className="form_input" value={confirmPassword} onChange = {(e) => handleInputChange(e)} type="password" id="confirmPassword" placeholder="Confirm Password" required/>
+                                        </div>
+                                        <div className="submit-button">
+                                            <button type="submit" className="btn">Register</button>
+                                        </div>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </>
-)
+            <Footer />
+        </div>
+    )
 }
-

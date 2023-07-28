@@ -21,9 +21,9 @@ export default function MessageBoard({messages, recipient}) {
 
     return (
         <div className="message-board">
-            <h2><u>Messages</u></h2>
+            <h2>Messages</h2>
             {recipient && userRole ? (
-                <h3>{recipient}, {userRole[0].toUpperCase() + userRole.slice(1)}</h3>
+                <center><h3>{recipient} ({userRole[0].toUpperCase() + userRole.slice(1)})</h3></center>
             ):""}
             <div className='message-list'>
                 <ul>

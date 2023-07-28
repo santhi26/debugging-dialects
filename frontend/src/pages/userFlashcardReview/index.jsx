@@ -2,20 +2,29 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../contexts';
 import GetUserFlashcards from '../../components/GetUserFlashcards';
 import '../userFlashcardReview/flashcardReview.css';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function UserFlashcardReview() {
   const userID = localStorage.getItem("userID");
 
-  return (
+return (
     <>
-        <div className="nh-hero wf-section">
-            <div className="nh-hero-header-wrap">
-                <div className="w-layout-blockcontainer nh-hero-header w-container"></div>
-                    <div className="flashcard-container">
-                      <GetUserFlashcards userId={userID} />
-                    </div>
-                    </div>
-                </div>
-    </>
-)
+            <div class="general wf-section">
+                <div class="overview fluentcontent wf-section">
+
+
+
+                <h1 class="page-title">Review Your Flashcards</h1>
+                                  <div className="flashcard-container">
+                                    <GetUserFlashcards userId={userID} />
+                                  </div>
+
+
+
+                </div><Footer />
+                
+            </div>
+          
+        </>
+    )
 }

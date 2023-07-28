@@ -1,7 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {useNavigate, useLocation} from 'react-router-dom';
+import { UserContext } from '../../contexts';
+import {ChatButton} from '../'
 
 export default function TeacherProfile({data}) {  
+
+  const {role} = useContext(UserContext);
   const navigate = useNavigate();  
   const location = useLocation();
   const {teacher_name, 
@@ -16,13 +20,15 @@ export default function TeacherProfile({data}) {
     <>
       {!isUpdateProfilePage && (
         <>
-          <div>Teacher Profile</div>
-          <img src={teacher_profile_image} alt="Teacher Profile" />
-          <p>Name: {teacher_name}</p>
-          <p>Home Language: {teacher_home_language}</p>
-          <p>Qualifications: {qualifications}</p>
-          <p>Biography: {teacher_biography}</p>
-          <button onClick={() => navigate("/updateTeacherProfile")}>Update Profile</button>
+
+          <div class="team-member-card">
+            <img src={teacher_profile_image} loading="lazy" width="90" height="90" alt="" class="team-avatar" />
+            <div class="person-content">
+            <div class="person-name teacher-name">{teacher_name}</div>
+            <p class="person-qualifications"><b>{qualifications}</b></p>
+            <p class="person-bio">{teacher_biography}</p>
+            </div>
+          </div>
         </>
       )}
     </>

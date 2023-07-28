@@ -18,7 +18,10 @@ export default function messagePage() {
 
     //
     // console.log(contextUsername);
-    const username = contextUsername;
+    // const username = contextUsername;
+    let username = localStorage.getItem("username");
+
+
 
     //upon loading the page, the username is sent to the server
     useEffect(() => {
@@ -82,16 +85,23 @@ export default function messagePage() {
     // }, [messages])
 
     return (
-        <main className='message-page'>
-            {/* <h1>Message Page</h1> */}
-            <UserList setRecipient={setRecipient}/>
-            <div className='message-panel'>
-            <MessageBoard messages={displayMessages} recipient={recipient}/>
-                <form id='message-form'>
-                    <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
-                </form>
+        <>
+                <div class="general-chat wf-section">
+                    <div class="overview-chat fluentchatcontent wf-section">
+                    <h1 class="page-title">Chat & Learn</h1>
+                                    <main className='message-page'>
+                                        <UserList setRecipient={setRecipient}/>
+                                        <div className='message-panel'>
+                                        <MessageBoard messages={displayMessages} recipient={recipient}/>
+                                            <form id='message-form'>
+                                                <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
+                                            </form>
+                                        </div>
+                                    </main>
+
+
+                </div>
             </div>
-            
-        </main>
+        </>
     )
-};
+}
