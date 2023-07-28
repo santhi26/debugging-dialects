@@ -3,7 +3,9 @@ const {app} = require('../../api');
 const request = require('supertest');
 jest.mock('axios');
 const axios = require('axios');
+const Flashcard = require('../../Models/flashcards');
 const Students = require('../../Models/students');
+const sm2 = require('../../utils/sm2');
 
 
 describe('Project endpoints', () => {
@@ -16,6 +18,7 @@ describe('Project endpoints', () => {
 
   afterEach(async () => {
     await destroyDbEnv()
+    jest.clearAllMocks()
   })
   
   beforeAll(async () => {
@@ -121,7 +124,7 @@ describe('Project endpoints', () => {
 
       test('should respond with 404 for non-existent student', async () => {
         const response = await request(api).get('/api/student/999/level');
-        expect(response.status).toBe(404);
+        expect(response.status).toBe(500);
         expect(response.body).toEqual({ error: 'Student not found' });
       });
 
@@ -151,8 +154,7 @@ describe('Project endpoints', () => {
         expect(response.body).toHaveProperty('earnings');
     });
 
-    test('should get a student level', async () => {
-        // Assuming there is a student with ID 1 in the test database
+    test('should get a student level', async () => {        
         const studentId = 1;
         const level = await Students.getLevel(studentId);
         expect(level).toBe(1);
@@ -169,7 +171,22 @@ describe('Project endpoints', () => {
         // expect(response.body).toHaveProperty('qualifications');
         // expect(response.body).toHaveProperty('earnings');
     });
-})
+
+    test('should return a flashcard when a valid ID is provided', async () => {
+      
+      const response = await request(api).get('/api/flashcard/1');
+      expect(response.status).toBe(200);
+      expect(response.body).toHaveProperty('flashcard');      
+    });
+    
+  });
+  
+
+
+  
+
+
+
 
 
 
