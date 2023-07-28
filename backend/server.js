@@ -1,4 +1,4 @@
-const server = require('./api.js')
+const {server} = require('./api.js')
 
 const PORT = process.env.PORT || 3000
 

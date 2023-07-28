@@ -1,7 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {useNavigate, useLocation} from 'react-router-dom';
+import { UserContext } from '../../contexts';
+import {ChatButton} from '../'
 
 export default function TeacherProfile({data}) {  
+
+  const {role} = useContext(UserContext);
   const navigate = useNavigate();  
   const location = useLocation();
   const {teacher_name, 
@@ -22,7 +26,8 @@ export default function TeacherProfile({data}) {
           <p>Home Language: {teacher_home_language}</p>
           <p>Qualifications: {qualifications}</p>
           <p>Biography: {teacher_biography}</p>
-          <button onClick={() => navigate("/updateTeacherProfile")}>Update Profile</button>
+
+          {role === "teacher " ? (<button onClick={() => navigate("/updateTeacherProfile")}>Update Profile</button>) : (<ChatButton />)}
         </>
       )}
     </>

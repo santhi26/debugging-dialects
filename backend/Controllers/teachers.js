@@ -29,6 +29,16 @@ const getTeacherDetails = async (req, res) => {
   }
 };
 
+const getAllTeachers = async (req, res) => { 
+  const teacher = await Teachers.getAllTeachers();
+
+  if (teacher.error) {
+    res.status(500).json({ error: teacher.error });  
+  } else {
+    res.status(200).json(teacher);
+  }
+};
+
 const updateTeacherDetails = async (req, res) => {
   const id = parseInt(req.params.id, 10); // Make sure id is an integer
   const data = req.body;
@@ -46,4 +56,5 @@ module.exports = {
   createTeacher,
   getTeacherDetails,
   updateTeacherDetails,
+  getAllTeachers
 };
