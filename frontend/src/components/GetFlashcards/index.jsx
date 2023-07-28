@@ -13,7 +13,7 @@ export default function GetUserFlashcards({ userId }) {
     const fetchFlashCards = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/flashcard/due/${userId}`
+          `http://backend-dialects.onrender.com/api/flashcard/due/${userId}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -41,7 +41,7 @@ export default function GetUserFlashcards({ userId }) {
   const handleAnswer = async (reviewResult) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/flashcard/${currentCard.flashcard_id}/review`,
+        `http://backend-dialects.onrender.com/api/flashcard/${currentCard.flashcard_id}/review`,
         {
           method: "POST",
           headers: {

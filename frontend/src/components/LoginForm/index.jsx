@@ -41,7 +41,7 @@ export default function LoginForm() {
                 })
             };
 
-            const response = await fetch('http://localhost:3000/api/user/login', options);
+            const response = await fetch('http://backend-dialects.onrender.com/api/user/login', options);
             const data = await response.json();  
 
             if(data.username) {

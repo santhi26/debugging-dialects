@@ -10,7 +10,7 @@ export default function TeachersList() {
 
   const searchTeachersAPI = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/teacher/allTeachers`);
+      const response = await fetch(`http://backend-dialects.onrender.com/api/teacher/allTeachers`);
       const result = await response.json();
       setData(result);
       setRating(result);

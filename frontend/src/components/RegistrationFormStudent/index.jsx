@@ -59,7 +59,7 @@ export default function RegistrationFormStudent() {
                     joined_date: new Date().toISOString()
             })}
 
-            const response = await fetch('http://localhost:3000/api/user/register/student', options);
+            const response = await fetch('http://backend-dialects.onrender.com/api/user/register/student', options);
             const data = await response.json();  
             navigate("/login");       
             

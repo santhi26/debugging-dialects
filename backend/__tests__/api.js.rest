@@ -1,46 +1,46 @@
 ###
 # GET A STUDENTS DETAILS
-GET http://localhost:3000/api/student/1/details
+GET http://backend-dialects.onrender.com/api/student/1/details
 ###
 
 ###
 # GET A TEACHERS DETAILS
-GET http://localhost:3000/api/teacher/1/details
+GET http://backend-dialects.onrender.com/api/teacher/1/details
 ###
 
 ###
 # GET A STUDENTS LEVEL
-GET http://localhost:3000/api/student/1/level
+GET http://backend-dialects.onrender.com/api/student/1/level
 ###
 
 ###
 # GET A STUDENTS HOME LANGUAGE
-GET http://localhost:3000/api/student/1/language
+GET http://backend-dialects.onrender.com/api/student/1/language
 ###
 
 ###
 # GET A FLASHCARD
-GET http://localhost:3000/api/flashcard/1
+GET http://backend-dialects.onrender.com/api/flashcard/1
 ###
 
 ###
 # SEE FLASHCARDS FOR A LANGUAGE AND LEVEL
-GET http://localhost:3000/api/flashcard/7/French
+GET http://backend-dialects.onrender.com/api/flashcard/7/French
 ###
 
 ###
 # SEE FLASHCARDS DUE
-GET http://localhost:3000/api/flashcard/due/1
+GET http://backend-dialects.onrender.com/api/flashcard/due/1
 ###
 
 ###
 # SEE USER FLASHCARDS DUE
-GET http://localhost:3000/api/flashcard/usercards/due/1
+GET http://backend-dialects.onrender.com/api/flashcard/usercards/due/1
 ###
 
 ###
 # MARK A FLASHCARD AS REVIEWED
-POST http://localhost:3000/api/flashcard/5/review
+POST http://backend-dialects.onrender.com/api/flashcard/5/review
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 
 ###
 # MARK A FLASHCARD AS REVIEWED THAT THEY HAVEN'T REVIEWED BEFORE
-POST http://localhost:3000/api/flashcard/3/review
+POST http://backend-dialects.onrender.com/api/flashcard/3/review
 Content-Type: application/json
 
 {
@@ -62,7 +62,7 @@ Content-Type: application/json
 
 ###
 # MARK A USER FLASHCARD AS REVIEWED
-POST http://localhost:3000/api/flashcard/usercards/3/review
+POST http://backend-dialects.onrender.com/api/flashcard/usercards/3/review
 Content-Type: application/json
 
 {
@@ -73,7 +73,7 @@ Content-Type: application/json
 
 ###
 # CREATE A FLASHCARD
-POST http://localhost:3000/api/flashcard/create
+POST http://backend-dialects.onrender.com/api/flashcard/create
 Content-Type: application/json
 
 {
@@ -87,7 +87,7 @@ Content-Type: application/json
 
 ###
 # CREATE AN AI FLASHCARD
-POST http://localhost:3000/api/flashcard/usercards/prompt/1
+POST http://backend-dialects.onrender.com/api/flashcard/usercards/prompt/1
 Content-Type: application/json
 
 {
@@ -98,7 +98,7 @@ Content-Type: application/json
 
 ###
 # CREATE A NEW STUDENT
-POST http://localhost:3000/api/student
+POST http://backend-dialects.onrender.com/api/student
 Content-Type: application/json
 
 {
@@ -112,7 +112,7 @@ Content-Type: application/json
 
 ###
 # CREATE A NEW TEACHER
-POST http://localhost:3000/api/teacher
+POST http://backend-dialects.onrender.com/api/teacher
 Content-Type: application/json
 
 {
@@ -129,7 +129,7 @@ Content-Type: application/json
 
 ###
 # UPDATE A TEACHER'S DETAILS
-PUT http://localhost:3000/api/teacher/1/update
+PUT http://backend-dialects.onrender.com/api/teacher/1/update
 Content-Type: application/json
 
 {

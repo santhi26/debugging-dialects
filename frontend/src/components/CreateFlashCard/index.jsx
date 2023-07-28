@@ -47,7 +47,7 @@ const handleSubmit  = (e) => {
                 back: answer            
             })
         }        
-        const response = await fetch(`http://localhost:3000/api/flashcard/create
+        const response = await fetch(`http://backend-dialects.onrender.com/api/flashcard/create
         `, options);
         const data = await response.json();
         alert("card created")
