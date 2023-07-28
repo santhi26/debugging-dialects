@@ -9,7 +9,6 @@ import { socket } from '../../socket';
 export default function messagePage() {
     //imports global variables used across app
     const {users, setUsers, messages, setMessages, contextUsername} = useContext(UserContext);
-    const [newMessage, setNewMessage] = useState("");
     const [textInput, setTextInput] = useState("");
     const [recipient, setRecipient] = useState("");
     const [displayMessages, setDisplayMessages] = useState([{}]);
@@ -18,7 +17,7 @@ export default function messagePage() {
     socket.connect();
 
     //
-    console.log(contextUsername);
+    // console.log(contextUsername);
     const username = contextUsername;
 
     //upon loading the page, the username is sent to the server
@@ -31,6 +30,7 @@ export default function messagePage() {
         //listens for server sending list of all users.
         socket.on('users', (user) => {
             setUsers(user);
+            
         })
 
         //listens for server sending list of all messages for user.
@@ -39,11 +39,13 @@ export default function messagePage() {
         })
 
         socket.on("new_message", msg => {
-            console.log(msg);
             setMessages((messages)=>[...messages, msg]);
         })
 
-
+        return () => {
+            socket.disconnect();
+            socket.off();
+        }
     }, [socket]);
 
     function handleInput(e) {
@@ -53,7 +55,8 @@ export default function messagePage() {
     function sendMessage(e) {
         e.preventDefault();
         const recipient_id = users.filter(acc => acc.username === recipient)[0].user_id
-        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id});
+        const datetime = new Date();
+        socket.emit("new_message", {sender_username:username, recipient_username:recipient, message:textInput, recipient_id:recipient_id, date_sent:datetime});
     }
     
 
@@ -69,26 +72,33 @@ export default function messagePage() {
 
 
     //used for dev testing, can be deleted for production.
-    useEffect(()=>{
-        console.log(users);
-    }, [users])
+    // useEffect(()=>{
+    //     console.log(users);
+    // }, [users])
 
-    useEffect(()=>{
-        console.log('Messages');
-        console.log(messages);
-    }, [messages])
+    // useEffect(()=>{
+    //     console.log('Messages');
+    //     console.log(messages);
+    // }, [messages])
 
     return (
-        <main className='message-page'>
-            {/* <h1>Message Page</h1> */}
-            <UserList setRecipient={setRecipient}/>
-            <div className='message-panel'>
-            <MessageBoard messages={displayMessages} recipient={recipient}/>
-                <form id='message-form'>
-                    <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
-                </form>
+        <>
+                <div class="general-chat wf-section">
+                    <div class="overview-chat fluentchatcontent wf-section">
+                    <center><h1 class="pagetitle">Real-time chat</h1></center>
+                                    <main className='message-page'>
+                                        <UserList setRecipient={setRecipient}/>
+                                        <div className='message-panel'>
+                                        <MessageBoard messages={displayMessages} recipient={recipient}/>
+                                            <form id='message-form'>
+                                                <input type='text' onChange={handleInput}/><button type='submit' onClick={sendMessage}>Send</button>
+                                            </form>
+                                        </div>
+                                    </main>
+
+
+                </div>
             </div>
-            
-        </main>
+        </>
     )
-};
+}

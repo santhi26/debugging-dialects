@@ -36,18 +36,23 @@ app.use('/api/teacher', teachersRouter)
 
 const User = require('./SocketClasses/User');
 let users = [];
+
 //Will run when a client starts a server connection
 
 
 //this needs to be re-done massively, but serves as a good example.
 //Needs to first check db for user and their messages, if doesn't exist
 io.on("connection", socket => {
-    console.log(`${socket.id} has connected.`);
+    // console.log(`${socket.id} has connected.`);
+    // console.log(`All socket connections`, Object.keys(io.engine.clients))
+    if (process.env.NODE_ENV === 'test') {
+        users = require('./test_data/user_data');
+    }
     socket.join(socket.id);
     let user;
     let messages;
     socket.on("username", async (username) => { //only needs username, rest of data can be gathered from db...
-        console.log(`Incoming username: ${username}`);
+        // console.log(`Incoming username: ${username}`);
 
         socket.username = username;
         if (users.filter(acc => acc.username == username).length > 0) {
@@ -69,7 +74,7 @@ io.on("connection", socket => {
             }
         }
         // socket.emit('users', users); //this sends the updated user list to all users. suboptimal but acceptable
-        console.log(users);
+        // console.log(users);
         // io.to(socket.id).emit('users', users);
         io.emit("users", users);
 
@@ -77,6 +82,7 @@ io.on("connection", socket => {
         try {
             const messageResponse = await db.query('SELECT * FROM messages WHERE sender_username = $1 OR recipient_username = $1;', [username]);
             messages = messageResponse.rows
+            // console.log(messages);
         } catch(err) {
             console.log({'error': err});
         }
@@ -86,8 +92,8 @@ io.on("connection", socket => {
 
 
     socket.on('new_message', async (msg)=>{
-        console.log(msg);
-        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message) VALUES ($1, $2, $3);', [msg.sender_username, msg.recipient_username, msg.message]);
+        // console.log(msg);
+        const response = await db.query('INSERT INTO messages(sender_username, recipient_username, message, date_sent) VALUES ($1, $2, $3, $4);', [msg.sender_username, msg.recipient_username, msg.message, msg.date_sent]);
 
         // socket.to(socket.id).to(msg.recipient_id).emit('new_message', msg);
         io.to(socket.id).emit("new_message", msg);
@@ -95,14 +101,14 @@ io.on("connection", socket => {
     })
 
     socket.on("disconnect", ()=>{
-        console.log(`${socket.id} has disconnected.`)
+        // console.log(`${socket.id} has disconnected.`)
         users.forEach(acc => {
             if (acc.username === socket.username) {
                 acc.user_id = "";
                 acc.is_online = false;
             }
         })
-        console.log(users)
+        // console.log(users)
         // would then need to send this info to all users.
         io.emit("users", users);
     })
@@ -115,4 +121,4 @@ io.on("connection", socket => {
 
 
 
-module.exports = server;
+module.exports = {app, server, io, db};

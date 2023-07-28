@@ -1,36 +1,38 @@
-import React from 'react'
+import React from 'react';
 import * as Pages from './pages';
-import {Routes, Route} from 'react-router-dom';
-import {Header} from './components';
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './components';
+import { Footer } from './components'; // Import the Footer component here
+import './App.css';
 import { UserProvider } from './contexts';
 
 function App() {
   return (
     <>
-     <UserProvider>
+      <UserProvider>
+        <Header />
         <Routes>
-          <Route path="/" element={<Header />} >
-            <Route index element={<Pages.homePage />} /> 
-            <Route path="/registerHome" element={<Pages.registerHome />} /> 
-            <Route path="/register" element={<Pages.register />} /> 
-            <Route path="/registerTeacher" element={<Pages.registerTeacher />} /> 
-            <Route path="/student" element={<Pages.studentPage />} /> 
-            <Route path="/teacher" element={<Pages.teacherPage />} /> 
-            <Route path="/flashCard" element={<Pages.flashCard />} /> 
-            <Route path="/userflashcards" element={<Pages.userFlashcardReview />} /> 
-            <Route path="/teacher/profile" element={<Pages.teacherProfile />} /> 
-            <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} /> 
-            <Route path="student/flashCard" element={<Pages.flashCard />} /> 
-            <Route path="/login" element={<Pages.login />} />
-            <Route path="/message" element={<Pages.messagePage/>}/>
-            <Route path="/about" element={<Pages.about/>}/>
-            <Route path="/createFlashCard" element={<Pages.createFlashCard/>}/>
-          </Route>
+          <Route path="/" element={<Pages.homePage />} />
+          <Route path="/register" element={<Pages.RegisterHome />} />
+          <Route path="/student/register" element={<Pages.RegisterStudent />} />
+          <Route path="/teacher/register" element={<Pages.registerTeacher />} />
+          <Route path="/student/dashboard" element={<Pages.studentPage />} />
+          <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
+          <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
+          <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />
+          <Route path="/teacher/profile" element={<Pages.teacherProfile />} />
+          <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} />
+          <Route path="/login" element={<Pages.login />} />
+          <Route path="/message" element={<Pages.messagePage/>}/>
+          <Route path="/about" element={<Pages.about/>}/>
+          <Route path="/student/flashcard/create" element={<Pages.createFlashCard/>}/>
+          <Route path="*" element={<Pages.NotFound />} />
         </Routes>
-     </UserProvider>    
+        <Footer />
+      </UserProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

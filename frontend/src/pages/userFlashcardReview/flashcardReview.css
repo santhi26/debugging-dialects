@@ -1,22 +1,7 @@
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #EAE7DC;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin: 0.5em 0;
-  }
-  
-  em {
-    font-style: italic;
-  }
-  
+
   /* Main Container */
   .flashcard-container {
+    margin-top: 220px;
     display: grid;
     grid-template-rows: 80px 1fr;
     min-height: 100vh;
@@ -54,7 +39,7 @@ body {
   .button-container {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 100px;
   }
   
   .button {
@@ -117,13 +102,14 @@ body {
 
 /* Flashcard Styling */
 .flip-card {
-    width: 450px;
+    width: 400px;
     height: 390px;
     perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 10px;
   }
   
   .flip-card-inner {
@@ -151,6 +137,8 @@ body {
     border-radius: 10px;
     position: relative;
   }
+
+
   
   .flip-card-front {
     position: absolute;
@@ -375,3 +363,17 @@ body {
     background: #E85A4F;
     color: #fff;
   }
+
+
+.front-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.back-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-style: italic;
+}

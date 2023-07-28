@@ -21,16 +21,16 @@ export default function UserList({setRecipient}) {
 
     return (
         <div className='user-list'>
-            <h2><u>Active Users</u></h2>
+            <h2>Online</h2>
             <ul>
                 {activeUsers.map(act => (
-                    <button type='button' key={act.user_id} onClick={changeRecipient}>{act.username}</button>
+                    <button type='button' class="cta-btn fluentchatcontentbtn w-button" key={act.username} onClick={changeRecipient}>{act.username}</button>
                 ))}
             </ul>
-            <h2><u>Inactive Users</u></h2>
+            <h2>Past Chats</h2>
             <ul>
                 {inactiveUsers.map(act => (
-                    <button type='button' key={act.user_id} onClick={changeRecipient}>{act.username}</button>
+                    <button type='button' class="cta-btn fluentchatcontentbtn w-button" key={act.username} onClick={changeRecipient}>{act.username}</button>
                 ))}
             </ul>
         </div>
