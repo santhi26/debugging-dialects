@@ -67,9 +67,8 @@ export default function LoginForm() {
     return (
         <>
             <form className="Form" onSubmit={handleSubmit}>
-                <h1>FluentPal</h1>
+                <h1 id= "heading">FluentPal</h1>
                 <h2>Login</h2>
-                <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                 <div className="username">
                     <label className="form_label" htmlFor="username">Username </label>
                     <input className="form_input" value={username} onChange = {(e) => handleInputChange(e)} name="" type="text" id="username" placeholder="username" required/>       
