@@ -56,7 +56,7 @@ export default function TeacherProfileForm() {
                     qualifications: qualifications
             })}
 
-            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/update`, options);
+            const response = await fetch(`http://backend-dialects.onrender.com/api/teacher/${userID}/update`, options);
             await response.json();  
                       
             
@@ -67,7 +67,7 @@ export default function TeacherProfileForm() {
 
     const searchTeacherAPI = async() => {
         try {
-            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/details`);
+            const response = await fetch(`http://backend-dialects.onrender.com/api/teacher/${userID}/details`);
             const result = await response.json(); 
             setData(result);           
             
