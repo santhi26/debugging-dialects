@@ -30,7 +30,7 @@ const getTeacherDetails = async (req, res) => {
 };
 
 const getAllTeachers = async (req, res) => { 
-  const teacher = await Teachers.getAllTeachers;
+  const teacher = await Teachers.getAllTeachers();
 
   if (teacher.error) {
     res.status(500).json({ error: teacher.error });  

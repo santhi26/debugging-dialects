@@ -56,12 +56,11 @@ const Teachers = {
   getAllTeachers: async () => {
     try {
       const teacher = await db.query(
-        'SELECT * FROM teachers'
-        
+        'SELECT * FROM teachers'        
       );
   
       if (teacher.rows.length > 0) {
-        return teacher.rows[0];
+        return teacher.rows;
       } else {
         return { error: "Teacher not found" };
       }
