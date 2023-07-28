@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import { UserContext } from '../../contexts';
+import { useState } from 'react';
 import AiFlashcard from '../aiFlashcard/index.jsx';
 import Footer from '../Footer/index.jsx';
 
@@ -23,10 +22,6 @@ export default function createAiFlashcards() {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    createFlashcardsAPI();
-  }, [cardCount]);
 
   return (
     <>
@@ -55,6 +50,7 @@ export default function createAiFlashcards() {
                     </div>
                   </div>
                 </section>
+                <br></br><br></br>
               </section>
             </div>
           </div>

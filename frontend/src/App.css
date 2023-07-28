@@ -1160,6 +1160,28 @@ background-attachment: fixed;
   line-height: 1.2;
 }
 
+.nh-inner-feature-item-title a {
+  color: #d8e8db;
+  letter-spacing: 0;
+  margin-bottom: .1rem;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.5625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.nh-inner-feature-item-title a:hover {
+  color: #eaf3eb;
+  letter-spacing: 0;
+  margin-bottom: .1rem;
+  font-family: Greycliff, sans-serif;
+  font-size: 1.5625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: underline;
+}
+
 .nh-inner-feature-item-title.benefits-feature-item-title {
   color: rgb(66, 62, 57);
 }

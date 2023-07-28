@@ -31,7 +31,7 @@ export default function FlashcardDash() {
                                         <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/brain.png" loading="lazy" width="48" alt="" className="ic-laptop-phone" />
                                     </div>
                                     <div id="w-node-e329728d-5cc3-161b-56e3-a49e1d9d46f0-db6ab9e5" className="nh-inner-feature-details">
-                                        <div className="nh-inner-feature-item-title">REVISE: Ready-made</div>
+                                        <div className="nh-inner-feature-item-title"><a href="/student/flashcards/default">REVISE: Ready-made</a></div>
                                         <div className="nh-inner-feature-item-desc">We have thousands of ready-made flashcards for you. And you'll only get shown flashcards at your learning level. As you level-up you'll get more and more.</div>
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@ export default function FlashcardDash() {
                                         <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/online.png" loading="lazy" width="48" alt="" className="ic-no-lcoud" />
                                     </div>
                                     <div id="w-node-a4309e21-65da-e3da-ec7d-f8db0be004ff-db6ab9e5" className="nh-inner-feature-details">
-                                        <div className="nh-inner-feature-item-title">REVISE: Your flashcards</div>
+                                        <div className="nh-inner-feature-item-title"><a href="/student/flashcards/ai">REVISE: Your flashcards</a></div>
                                         <div className="nh-inner-feature-item-desc">Revise the flashcards you've created as well as the ones you've got AI to make!</div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@ export default function FlashcardDash() {
                                         <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/money.png" loading="lazy" width="42" id="w-node-dc4737ed-5f6a-8e6a-8b18-2dfb05251186-db6ab9e5" alt="" className="ic-incognito" />
                                     </div>
                                     <div id="w-node-_5d474926-7521-2699-6bbc-1457dc8bc2d9-db6ab9e5" className="nh-inner-feature-details">
-                                        <div className="nh-inner-feature-item-title">CREATE: AI-generated</div>
+                                        <div className="nh-inner-feature-item-title"><a href="/student/flashcards/create/ai">CREATE: AI-generated</a></div>
                                         <div className="nh-inner-feature-item-desc">Use our state-of-art AI to create flashcards. Tell it the topic and the number you want it to make and <em>boom</em>, new flashcards!</div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ export default function FlashcardDash() {
                                         <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/money.png" loading="lazy" width="42" id="w-node-dc4737ed-5f6a-8e6a-8b18-2dfb05251186-db6ab9e5" alt="" className="ic-incognito" />
                                     </div>
                                     <div id="w-node-_5d474926-7521-2699-6bbc-1457dc8bc2d9-db6ab9e5" className="nh-inner-feature-details">
-                                        <div className="nh-inner-feature-item-title">CREATE: Your own</div>
+                                        <div className="nh-inner-feature-item-title"><a href="/student/flashcards/create/">CREATE: Your own</a></div>
                                         <div className="nh-inner-feature-item-desc">Want to do things the good old-fashioned way? Feel free to make your own. We'll automagically add word definitions and audio pronunciations.</div>
                                     </div>
                                 </div>
