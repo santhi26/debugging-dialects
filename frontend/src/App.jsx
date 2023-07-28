@@ -2,7 +2,7 @@ import React from 'react';
 import * as Pages from './pages';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components';
-import { Footer } from './components'; // Import the Footer component here
+import { Footer } from './components';
 import './App.css';
 import { UserProvider } from './contexts';
 
@@ -16,21 +16,22 @@ function App() {
           <Route path="/register" element={<Pages.RegisterHome />} />
           <Route path="/student/register" element={<Pages.RegisterStudent />} />
           <Route path="/teacher/register" element={<Pages.registerTeacher />} />
-          <Route path="/teacher/allTeachers" element={<Pages.teachersList/>} />
+          <Route path="/teacher/list" element={<Pages.teachersList/>} />
           <Route path="/student/dashboard" element={<Pages.studentPage />} />
           <Route path="/teacher/dashboard" element={<Pages.teacherPage />} />
+          <Route path="/student/flashcards/" element={<Pages.FlashcardDash />} />
           <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
-          <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
+          <Route path="/student/flashcards/ai" element={<Pages.userFlashcardReview />} />
           <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />
+          <Route path="/student/flashcards/create" element={<Pages.createFlashCard/>}/>
+          <Route path="/student/flashcards/create/ai" element={<Pages.createAiFlashcard/>}/>
           <Route path="/teacher/profile" element={<Pages.teacherProfile />} />
           <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} />
           <Route path="/login" element={<Pages.login />} />
           <Route path="/message" element={<Pages.messagePage/>}/>
           <Route path="/about" element={<Pages.about/>}/>
-          <Route path="/student/flashcard/create" element={<Pages.createFlashCard/>}/>
           <Route path="*" element={<Pages.NotFound />} />
         </Routes>
-        <Footer />
       </UserProvider>
     </>
   );

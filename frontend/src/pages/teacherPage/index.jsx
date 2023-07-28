@@ -1,5 +1,6 @@
 import * as Component from '../../components';
 import {useState, useEffect, useContext} from 'react';
+import Footer from '../../components/Footer/index.jsx';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 
@@ -12,13 +13,14 @@ return (
                     <div class="content-wrapper-m-copy center content-section-title">
                         <div class="w-richtext">
                             <div class="w-embed">
-                                <h2 class="pagetitle">Teacher dashboard</h2>
+                            <h1 class="page-title">Student</h1>
                                 <Component.Greetings />      
                                 <Component.Logout />
                             </div>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

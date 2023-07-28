@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-export default function GetFlashcards({ userId }) {
-  console.log("🚀 ~ file: index.jsx:4 ~ GetFlashcards ~ userId:", userId);
+export default function GetUserFlashcards({ userId }) {
+  console.log("🚀 ~ file: index.jsx:4 ~ GetUserFlashcards ~ userId:", userId);
   const [flashCards, setFlashCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [noCardsLeft, setNoCardsLeft] = useState(false);
+  const [audioElement, setAudioElement] = useState(null);
+
 
   useEffect(() => {
     const fetchFlashCards = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/flashcard/usercards/due/${userId}`
+          `http://localhost:3000/api/flashcard/due/${userId}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -27,10 +29,19 @@ export default function GetFlashcards({ userId }) {
     fetchFlashCards();
   }, [userId]);
 
+  useEffect(() => {
+    return () => {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+    };
+  }, [audioElement]);
+
   const handleAnswer = async (reviewResult) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/flashcard/usercards/${currentCard.flashcard_id}/review`,
+        `http://localhost:3000/api/flashcard/${currentCard.flashcard_id}/review`,
         {
           method: "POST",
           headers: {
@@ -56,9 +67,17 @@ export default function GetFlashcards({ userId }) {
     }
   };
 
+  
+
   const handleRevealAnswer = () => {
     setShowAnswer(true);
+    const audio = new Audio(currentCard.audio); // Assuming `audio` property in `currentCard` holds the URL for the audio file
+    setAudioElement(audio);
+    audio.play();
   };
+
+  
+  
 
   if (!currentCard) {
     return <p className="loading">Loading...</p>;
@@ -74,8 +93,8 @@ export default function GetFlashcards({ userId }) {
             <div className="card-content">
              <h3 className="front-heading">Well done!</h3>
              <br/><br/>
-             <p>You've reviewed all your cards for the day.</p>
-             <p>Hungry for me? Use our AI to make some!</p>
+             <p>You've reviewed all your cards for the day!</p>
+             <p>Hungry for more? Use our AI to make some!</p>
               <div className="image-container">
               </div>
             </div>
@@ -85,6 +104,7 @@ export default function GetFlashcards({ userId }) {
       </div>
     );
   }
+
 
  return (
     <div>
@@ -103,6 +123,7 @@ export default function GetFlashcards({ userId }) {
           <div className="flip-card-back">
           <h3 className="front-heading">{currentCard.front}</h3>
           <h3 className="back-heading">{currentCard.back}</h3>
+          <p>{currentCard.thedefinition}</p>
             <div className="button-container">
           <ul className="wrapper">
             <li className="icon easy" onClick={() => handleAnswer("Easy")}>

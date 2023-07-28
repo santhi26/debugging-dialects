@@ -20,7 +20,7 @@ export default function HomePage() {
                         <div id="w-node-_1b22c488-7d69-553b-e7bd-4359dd6ca000-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title">Chat and learn</div>
                             <div class="nh-section-grid-item-desc">Talk in realtime to English teachers. And let our AI-generated flashcards help you learn new words and phrases.</div>
-                            <a href="/student/register" class="nh-section-item-button w-inline-block">
+                            <a href="/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start learning...</div>
                             </a>
                         </div>
@@ -28,7 +28,7 @@ export default function HomePage() {
                             <div class="nh-inner-feature-icon-list">
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-_0ed7c4ff-bef8-42e9-2ed2-4fb12362b78c-db6ab9e5" class="nh-inner-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdb9981b90be3b5fcc673e_ic-laptop-phone.svg" loading="lazy" width="48" alt="" class="ic-laptop-phone" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/brain.png" loading="lazy" width="48" alt="" class="ic-laptop-phone" />
                                     </div>
                                     <div id="w-node-e329728d-5cc3-161b-56e3-a49e1d9d46f0-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title">Great value</div>
@@ -37,7 +37,7 @@ export default function HomePage() {
                                 </div>
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-a4309e21-65da-e3da-ec7d-f8db0be004fe-db6ab9e5" class="nh-inner-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdb37ad95372adf50c147d_ic-cloud-slash.svg" loading="lazy" width="48" alt="" class="ic-no-lcoud" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/online.png" loading="lazy" width="48" alt="" class="ic-no-lcoud" />
                                     </div>
                                     <div id="w-node-a4309e21-65da-e3da-ec7d-f8db0be004ff-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title">Always available</div>
@@ -46,7 +46,7 @@ export default function HomePage() {
                                 </div>
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-_5d474926-7521-2699-6bbc-1457dc8bc2d8-db6ab9e5" class="nh-inner-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdb161b703f9575b6b9f2d_ic-incognito.svg" loading="lazy" width="42" id="w-node-dc4737ed-5f6a-8e6a-8b18-2dfb05251186-db6ab9e5" alt="" class="ic-incognito" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/money.png" loading="lazy" width="42" id="w-node-dc4737ed-5f6a-8e6a-8b18-2dfb05251186-db6ab9e5" alt="" class="ic-incognito" />
                                     </div>
                                     <div id="w-node-_5d474926-7521-2699-6bbc-1457dc8bc2d9-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title">AI flashcards</div>
@@ -64,7 +64,7 @@ export default function HomePage() {
                         <div id="w-node-_09c4110e-2975-3b26-ca10-ba09c30f8eff-db6ab9e5" class="nh-section-grid-item">
                             <div class="nh-section-grid-item-title benefittitle">Teacher? Earn money from home.</div>
                             <div class="nh-section-grid-item-desc benefitdesc">Get a quick and easy new income stream by teaching when <em>you</em> choose.</div>
-                            <a href="/teacher/register" class="nh-section-item-button w-inline-block">
+                            <a href="/register" class="nh-section-item-button w-inline-block">
                                 <div class="nh-learnmorebtntext">Start teaching...</div>
                             </a>
                         </div>
@@ -72,7 +72,7 @@ export default function HomePage() {
                             <div class="nh-inner-feature-icon-list">
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b0331f-db6ab9e5" class="nh-inner-feature-icon-block benefits-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdc452a7cb1c7fd41a6830_ic-brain.svg" loading="lazy" width="56" alt="" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/clock.png" loading="lazy" width="56" alt="" />
                                     </div>
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b03320-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title benefits-feature-item-title">Choose your hours</div>
@@ -81,7 +81,7 @@ export default function HomePage() {
                                 </div>
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b03326-db6ab9e5" class="nh-inner-feature-icon-block benefits-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdba8bfbdbe6e05fc12995_ic-no-speaker.svg" loading="lazy" width="48" alt="" class="ic-no-speaker" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/beach.png" loading="lazy" width="48" alt="" class="ic-no-speaker" />
                                     </div>
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b03327-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title benefits-feature-item-title">Work from the beach</div>
@@ -90,7 +90,7 @@ export default function HomePage() {
                                 </div>
                                 <div class="nh-inner-feature-icon-item">
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b0332d-db6ab9e5" class="nh-inner-feature-icon-block benefits-feature-icon-block">
-                                        <img src="https://assets-global.website-files.com/635dda7647d1612d7d877c36/64bdc13eb6b02693f01c190b_ic-limitless.svg" loading="lazy" width="46" alt="" />
+                                        <img src="https://raw.githubusercontent.com/santhi26/debugging-dialects/elliot-dev/frontend/src/assets/icons/cash.png" loading="lazy" width="46" alt="" />
                                     </div>
                                     <div id="w-node-df542443-be75-0808-bfbb-7b19d9b0332e-db6ab9e5" class="nh-inner-feature-details">
                                         <div class="nh-inner-feature-item-title benefits-feature-item-title">Daily payouts</div>
@@ -108,7 +108,7 @@ export default function HomePage() {
             <section class="nh-section-inset testimonialsection wf-section">
                 <div class="w-layout-blockcontainer nh-wrap sectionverticalpadding w-container">
                     <div class="nh-title-wrap wider-title-wrap">
-                        <div class="nh-sectiontitle testimonialtitle">We're great. But don't take just our word for it...</div>
+                        <div class="nh-sectiontitle testimonialtitle">Don't take just our word for it...</div>
                     </div>
                     <div class="nh-bottom-testimonials-wrap">
                         <div id="w-node-_5ba1ead9-6220-f643-f969-356542c0e98d-db6ab9e5" class="nh-bottom-testimonial">
@@ -139,6 +139,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </section>
         </>
     );

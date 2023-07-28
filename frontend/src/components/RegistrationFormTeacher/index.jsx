@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function RegistrationFormTeacher() {
 
@@ -89,7 +90,7 @@ export default function RegistrationFormTeacher() {
                 <div class="content-wrapper-m-copy center content-section-title">
                     <div class="w-richtext">
                         <div class="w-embed">
-                            <h2 class="pagetitle">Teacher register</h2>
+                        <h1 class="page-title">Sign up</h1>
                                 <form className="Form" onSubmit={handleSubmit}>
                                         <div className="username">
                                             <label className="form_label" htmlFor="username">Username </label>
@@ -136,6 +137,7 @@ export default function RegistrationFormTeacher() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

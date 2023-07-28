@@ -2,6 +2,7 @@ import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function LoginForm() {
 
@@ -68,7 +69,7 @@ export default function LoginForm() {
                     <div class="content-wrapper-m-copy center content-section-title">
                         <div class="w-richtext">
                             <div class="w-embed">
-                                <h2 class="pagetitle">Login</h2>
+                            <h1 class="page-title">Login</h1>
                                 <form className="Form" onSubmit={handleSubmit}>
                                     <p>Not got an account? <Link to="/registerHome">Signup</Link></p>
                                     <div className="username">
@@ -87,6 +88,7 @@ export default function LoginForm() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )
