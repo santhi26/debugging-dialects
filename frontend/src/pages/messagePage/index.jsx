@@ -18,7 +18,10 @@ export default function messagePage() {
 
     //
     // console.log(contextUsername);
-    const username = contextUsername;
+    // const username = contextUsername;
+    let username = localStorage.getItem("username");
+
+
 
     //upon loading the page, the username is sent to the server
     useEffect(() => {

@@ -30,14 +30,14 @@ export default function createAiFlashcards() {
 
   return (
     <>
-      <div class="general wf-section">
-        <div class="overview fluentcontent wf-section">
-          <div class="content-wrapper-m-copy center content-section-title">
-            <div class="w-richtext">
-              <h1 class="page-title">Create AI Flashcards</h1>
-              <section id="our-flashcards" class="flashcards-section wf-section">
-                <section class="content-wrapper-centered-flash">
-                  <div class="title-wrapper-flash-v1">
+      <div className="general wf-section">
+        <div className="overview fluentcontent wf-section">
+          <div className="content-wrapper-m-copy center content-section-title">
+            <div className="w-richtext">
+              <h1 className="page-title">Create AI Flashcards</h1>
+              <section id="our-flashcards" className="flashcards-section wf-section">
+                <section className="content-wrapper-centered-flash">
+                  <div className="title-wrapper-flash-v1">
                     <input
                       type="number"
                       min="1"
@@ -46,8 +46,8 @@ export default function createAiFlashcards() {
                       placeholder="Number of flashcards to create"
                     />
                     <button onClick={createFlashcardsAPI}>Create Flashcards</button>
-                    <div class="flash-content-wrap">
-                      <div class="w-layout-flashgrid fgrid-2">
+                    <div className="flash-content-wrap">
+                      <div className="w-layout-flashgrid fgrid-2">
                         {data.map((card) => (
                           <AiFlashcard data={card} key={card.flashcard_id} />
                         ))}

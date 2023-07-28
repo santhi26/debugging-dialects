@@ -2663,18 +2663,19 @@ div.person-content .person-test {
 .w-layout-flashgrid {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
-  display: grid
+  display: grid;
 }
 
 .fgrid-2 {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
   justify-content: stretch;
-  justify-items: stretch
+  justify-items: stretch;
 }
 
 ._2-fgrid-2 {
@@ -2683,11 +2684,11 @@ div.person-content .person-test {
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
-  display: grid
+  display: grid;
 }
 
 ._2-fgrid-2.bottom {
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr;
 }
 
 .aicard {
@@ -2705,7 +2706,7 @@ div.person-content .person-test {
 
 .flash-avatar {
   border: 1px rgba(137, 142, 166, .2);
-  border-radius: 100px
+  border-radius: 10px;
 }
 
 .flash-content {
@@ -2722,11 +2723,13 @@ div.person-content .person-test {
   font-weight: 500;
 }
 
-.flash-name.flash-name {
+.flash-name.flash-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #21232e;
   font-family: Greycliff, sans-serif;
   font-weight: 600;
-  font-size: 23px;
+  font-size: 30px;
 }
 
 .flash-qualifications {
@@ -2734,7 +2737,7 @@ div.person-content .person-test {
   text-align: left;
   margin-bottom: 5px;
   font-family: Greycliff, sans-serif;
-  font-size: 17px;
+  font-size: 28px;
   font-weight: 600;
   margin-top: 0px;
   margin-bottom: -10px;
@@ -2776,5 +2779,5 @@ div.person-content .person-test {
 
 .image-4.team-icon-adjust {
   padding-top: 8px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
