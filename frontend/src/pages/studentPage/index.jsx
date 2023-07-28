@@ -20,7 +20,7 @@ export default function studentPage() {
   <div class="w-layout-blockcontainer nh-wrap sectionverticalpadding w-container">
     <div class="nh-title-wrap">
       <div class="nh-dashtitle">Welcome {username}!</div>
-      <div class="nh-sectionsubtitle">This is your dashboard. You're currently level <Component.SearchStudent />.</div>
+      <div class="nh-sectionsubtitle">This is your dashboard. You're currently level 1.</div>
     </div>
     <div class="nh-hiw-steps">
       <div class="nh-hiw-step">
