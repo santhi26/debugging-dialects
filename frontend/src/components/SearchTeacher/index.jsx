@@ -12,7 +12,7 @@ export default function searchTeacher() {
 
     const searchTeacherAPI = async() => {
         try {
-            const response = await fetch(`http://localhost:3000/api/teacher/${userID}/details`);
+            const response = await fetch(`http://backend-dialects.onrender.com/api/teacher/${userID}/details`);
             const result = await response.json();
             setData(result);    
             setRating(result.teacher_rating)       

@@ -12,7 +12,7 @@ export default function GetFlashCard() {
   useEffect(() => {
     const flashCardsAPI = async() => {
       try {
-        const response = await fetch(`http://localhost:3000/api/flashcard/due/${userID}
+        const response = await fetch(`http://backend-dialects.onrender.com/api/flashcard/due/${userID}
         `);
         const data = await response.json();
         console.log(data, userID)

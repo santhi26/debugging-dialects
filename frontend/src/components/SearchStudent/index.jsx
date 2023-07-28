@@ -14,7 +14,7 @@ export default function SearchStudent() {
     useEffect(() =>{
         const searchStudentAPI = async() => {
             try {
-                const response = await fetch(`http://localhost:3000/api/student/${userID}/details`);
+                const response = await fetch(`http://backend-dialects.onrender.com/api/student/${userID}/details`);
                 const result = await response.json();
                 setData(result);   
                 setLevel(result.student_level);
