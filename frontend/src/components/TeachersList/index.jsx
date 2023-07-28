@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { UserContext } from '../../contexts';
 import { TeacherProfile } from '../';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function TeachersList() {
   const { setRating } = useContext(UserContext);
@@ -43,10 +44,12 @@ export default function TeachersList() {
                     </div>
                   </div>
                 </section>
+                <a href="/message" class="cta-btn fluentcontentbtn w-button">Found one? Start chatting now!</a>
               </section>
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

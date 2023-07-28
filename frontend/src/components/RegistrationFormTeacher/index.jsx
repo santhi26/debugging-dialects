@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function RegistrationFormTeacher() {
 
@@ -136,6 +137,7 @@ export default function RegistrationFormTeacher() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

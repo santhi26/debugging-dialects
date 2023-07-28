@@ -1334,7 +1334,6 @@ background-attachment: fixed;
 }
 
 /* Footer Styles */
-/* Footer Styles */
 .nh-footer {
 background-color: #f6f4ef;
 padding: 40px 0;
@@ -2387,7 +2386,7 @@ font-size: 20px;
   padding-bottom: 0;
   display: flex;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .teacher-section {
@@ -2400,7 +2399,7 @@ font-size: 20px;
   padding-bottom: 3rem;
   display: flex;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .content-wrapper-centered-about {
@@ -2412,6 +2411,7 @@ font-size: 20px;
   display: block;
   overflow: hidden;
   margin-top: -50px;
+  margin-bottom: -200px;
 }
 
 .title-wrapper-jobs-v1 {

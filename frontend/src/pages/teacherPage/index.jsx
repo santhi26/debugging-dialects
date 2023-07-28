@@ -1,5 +1,6 @@
 import * as Component from '../../components';
 import {useState, useEffect, useContext} from 'react';
+import Footer from '../../components/Footer/index.jsx';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 
@@ -19,6 +20,7 @@ return (
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

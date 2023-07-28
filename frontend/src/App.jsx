@@ -2,7 +2,7 @@ import React from 'react';
 import * as Pages from './pages';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components';
-import { Footer } from './components'; // Import the Footer component here
+import { Footer } from './components';
 import './App.css';
 import { UserProvider } from './contexts';
 
@@ -28,10 +28,9 @@ function App() {
           <Route path="/login" element={<Pages.login />} />
           <Route path="/message" element={<Pages.messagePage/>}/>
           <Route path="/about" element={<Pages.about/>}/>
-          <Route path="/student/flashcard/create" element={<Pages.createFlashCard/>}/>
+          <Route path="/student/flashcards/create" element={<Pages.createFlashCard/>}/>
           <Route path="*" element={<Pages.NotFound />} />
         </Routes>
-        <Footer />
       </UserProvider>
     </>
   );

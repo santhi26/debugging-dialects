@@ -2,6 +2,7 @@ import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function LoginForm() {
 
@@ -87,6 +88,7 @@ export default function LoginForm() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

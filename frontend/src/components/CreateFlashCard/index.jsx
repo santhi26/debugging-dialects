@@ -1,6 +1,7 @@
 import {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { UserContext } from '../../contexts';
+import Footer from '../../components/Footer/index.jsx';
 
 
 export default function CreateFlashCard() {
@@ -94,6 +95,7 @@ const handleSubmit  = (e) => {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

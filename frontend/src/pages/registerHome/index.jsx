@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
+
 
 export default function RegisterHome() {
   return (
@@ -148,6 +150,7 @@ export default function RegisterHome() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

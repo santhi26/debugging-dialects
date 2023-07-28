@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../contexts';
 import GetFlashcards from '../../components/GetFlashcards';
 import '../userFlashcardReview/flashcardReview.css';
+import Footer from '../../components/Footer/index.jsx';
 
 export default function UserFlashcardReview() {
   const userID = localStorage.getItem("userID");
@@ -21,6 +22,7 @@ return (
 
 
                 </div>
+                <Footer />
             </div>
         </>
     )

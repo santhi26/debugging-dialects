@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Component from '../../components';
 import {Link} from 'react-router-dom';
+import Footer from '../../components/Footer/index.jsx';
 
 const username = localStorage.getItem("username");
 
@@ -65,6 +66,7 @@ export default function FlashcardDash() {
                         </div>
                     </div>
                 </div>
+                <Footer />
                 </section>
         </>
     )
