@@ -56,9 +56,10 @@ const Teachers = {
   getAllTeachers: async () => {
     try {
       const teacher = await db.query(
-        'SELECT * FROM teachers'
-        
+        'SELECT * FROM teachers'        
       );
+      console.log(teacher)
+
   
       if (teacher.rows.length > 0) {
         return teacher.rows;
