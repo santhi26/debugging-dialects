@@ -23,12 +23,13 @@ function App() {
           <Route path="/student/flashcards/getold" element={<Pages.flashCard />} />
           <Route path="/student/flashcards/yours" element={<Pages.userFlashcardReview />} />
           <Route path="/student/flashcards/default" element={<Pages.FlashcardReview />} />
+          <Route path="/student/flashcards/create" element={<Pages.createFlashCard/>}/>
+          <Route path="/student/flashcards/create/ai" element={<Pages.createAiFlashcard/>}/>
           <Route path="/teacher/profile" element={<Pages.teacherProfile />} />
           <Route path="/updateTeacherProfile" element={<Pages.updateProfileTeacher />} />
           <Route path="/login" element={<Pages.login />} />
           <Route path="/message" element={<Pages.messagePage/>}/>
           <Route path="/about" element={<Pages.about/>}/>
-          <Route path="/student/flashcards/create" element={<Pages.createFlashCard/>}/>
           <Route path="*" element={<Pages.NotFound />} />
         </Routes>
       </UserProvider>

@@ -15,3 +15,6 @@ export {default as updateProfileTeacher} from './updateProfileTeacher';
 export {default as teacherProfile} from './teacherProfile';
 export {default as FlashcardDash} from './FlashcardDash';
 export {default as teachersList} from './teachersList';
+export {default as createAiFlashcard} from './createAiFlashcard';
+
+
