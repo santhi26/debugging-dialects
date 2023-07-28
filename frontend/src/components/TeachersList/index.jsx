@@ -6,7 +6,6 @@ import {TeacherProfile} from '../'
 
     
 export default function TeachersList() {
-    const { userID } = useContext(UserContext);
     const { setRating } = useContext(UserContext);
     const [data, setData] = useState([])
     
@@ -22,16 +21,15 @@ export default function TeachersList() {
             console.log(error)
         }
     }
-
     useEffect(() =>{
       searchTeachersAPI()
-      
+
     },[])
 
     return (
         <div className="teachers-container">
 			<ul className="teachers-list">
-				{data.map((teacher) => <TeacherProfile data={data} key={teacher.teacher_id} />)}
+				{data.map((teacher) => <TeacherProfile data={teacher} key={teacher.teacher_id} />)}
 			</ul>
 		</div>
     )

@@ -5,8 +5,7 @@ export default function teachersList() {
     return (
         <>
             <Component.TeachersList />          
-            <Component.SearchTeacher />  
-            <Component.ChatButton />
+            {/* <Component.TeacherProfile />   */}
         </>
     )
 };
