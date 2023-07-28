@@ -121,6 +121,9 @@ CREATE TABLE user_flashcards_normal (
     PRIMARY KEY (flashcard_id, title)
 );
 
+
+
+
 INSERT INTO flashcards (type, level, language)
 VALUES
     ('Normal', 1, 'Spanish'),
